@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estrutura `for..of`</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="estrutura-forof">Estrutura <code>for..of</code></h1>
+<p>Usamos esse tipo de laço quando temos vários elementos dentro de um array, ou outra estrutura que armazena vários elementos dentro dela. O <code>for..of</code> tem a seguinte estrutura:</p>
+<pre><code class="language-js"><div><span class="hljs-keyword">for</span> (variavel <span class="hljs-keyword">of</span> array) {
+  instruções
+}
+</div></code></pre>
+<p>Suponha um array contendo os seguintes dados <code>arr = [&quot;Andres&quot;, &quot;Fabiano&quot;,&quot;Laura&quot;,&quot;Mari&quot;, &quot;João&quot;]</code> e tenho interesse em mostrar uma mensagem de bom dia para todos os elementos do array. Por exemplo, <code>Bom dia Andres</code>, <code>Bom dia Fabiano</code> e assim por diante.</p>
+<pre><code class="language-js"><div><span class="hljs-comment">// bom_dia/bom_dia.js</span>
+<span class="hljs-keyword">var</span> arr = [<span class="hljs-string">"Andres"</span>, <span class="hljs-string">"Fabiano"</span>,<span class="hljs-string">"Laura"</span>,<span class="hljs-string">"Mari"</span>, <span class="hljs-string">"João"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> nome <span class="hljs-keyword">of</span> arr) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Bom Dia '</span> + nome + <span class="hljs-string">"!"</span>)
+}
+</div></code></pre>
+<p>Neste programa acontece o seguinte:</p>
+<ol>
+<li>Armazenamos os nomes em um array chamado <code>arr</code></li>
+<li>Inicia-se o <code>for</code> atribuíndo a uma variável chamada <code>nome</code> o primeiro nome do array, no caso, <code>nome</code> recebe <code>&quot;Andres&quot;</code></li>
+<li>Mostra a mensagem de <code>&quot;Bom Dia Andres!&quot;</code></li>
+<li>A variável <code>nome</code> recebe o segundo valor do array <code>&quot;Fabiano&quot;</code></li>
+<li>Mostra a mensagem de <code>&quot;Bom Dia Fabiano!&quot;</code></li>
+<li>A variável <code>nome</code> recebe o terceiro valor do array <code>&quot;Laura&quot;</code></li>
+<li>Mostra a mensagem de <code>&quot;Bom Dia Laura!&quot;</code></li>
+<li>A variável <code>nome</code> recebe o quarto valor do array <code>&quot;Mari&quot;</code></li>
+<li>Mostra a mensagem de <code>&quot;Bom Dia Mari!&quot;</code></li>
+<li>A variável <code>nome</code> recebe o quinto valor do array <code>&quot;João&quot;</code></li>
+<li>Mostra a mensagem de <code>&quot;Bom Dia João!&quot;</code></li>
+<li>Como não tem mais elementos no array <code>arr</code> então conclui o <code>for..of</code></li>
+<li>Termina o programa.</li>
+</ol>
+<p>A saída esperada para esse programa será:</p>
+<div style="border: 1px dashed black; padding: 5px;">
+Bom Dia Andres!<br>
+Bom Dia Fabiano!<br>
+Bom Dia Laura!<br>
+Bom Dia Mari!<br>
+Bom Dia João!
+</div>
+<p>Vamos praticar essa estrutura para resolver alguns problemas.</p>
+<p><strong>Problema 1</strong></p>
+<p>Faça um programa que leia um nome completo e mostre qual é a primeira letra de cada nome. O arquivo de entrada conterá vários nomes separados por espaço.</p>
+<p>Arquivo de entrdada:</p>
+<pre><code class="language-js"><div><span class="hljs-comment">// iniciais_do_nome/input.txt</span>
+Carlos Andres Ferrero
+</div></code></pre>
+<p>Programa:</p>
+<pre><code class="language-js"><div><span class="hljs-comment">// iniciais_do_nome/iniciais_do_nome.js</span>
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> nomes = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">' '</span>);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> nome <span class="hljs-keyword">of</span> nomes){
+    <span class="hljs-keyword">let</span> primeira_letra = nome[<span class="hljs-number">0</span>];
+    <span class="hljs-built_in">console</span>.log(primeira_letra);
+}
+</div></code></pre>
+<p>Saída esperada:</p>
+<div style="border: 1px dashed black; padding: 5px;">
+C<br>
+A<br>
+F<br>
+</div>
+<p><strong>Problema 2</strong></p>
+<p>O comprimento dos textos em Tweets é comumente próximo a 33 caracteres, mas o limite permitido é de 280 caracteres. Você quer fazer uma aplicação que, se o tweet tiver mais do que 33 caracteres então vai adicionar após os 33 caracteres os três pontos <code>...</code>.</p>
+<p>No arquivo de entrada você receberá vários tweets.</p>
+<pre><code><div>// tweets/input.txt
+@homem100medo:Lembrando que Tetris é na verdade uma metáfora da vida, pois nele seus erros se acumulam e os acertos desaparecem, jogo muito educativo.
+@julhapema:Gente é sério, já tamo em 2015. Quando é que a gente vai decidir que o futuro já chegou e começar a usar roupa prateada?
+@a4038789:Bom vou nessa a gente se fala outra hora minha bateria vai acabar ta em 78%
+@sinfo:a gente nunca parou pra pensar nos sentimentos da árvore se ela gosta de ser transformada no caderno do luan santana
+@luansgo:vamo marca um dia pra marca um dia
+</div></code></pre>
+<p>Programa:</p>
+<pre><code class="language-js"><div><span class="hljs-comment">// tweets/tweets.js</span>
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> posts = lines;
+<span class="hljs-keyword">var</span> limite = <span class="hljs-number">33</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> post <span class="hljs-keyword">of</span> posts){
+    <span class="hljs-keyword">let</span> post_dados = post.split(<span class="hljs-string">':'</span>);
+    <span class="hljs-keyword">let</span> usuario = post_dados[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">let</span> tweet = post_dados[<span class="hljs-number">1</span>];
+
+    <span class="hljs-keyword">if</span> (tweet.length &gt; limite)
+        tweet = tweet.substring(<span class="hljs-number">0</span>,limite) + <span class="hljs-string">'...'</span>
+    
+    <span class="hljs-built_in">console</span>.log(usuario + <span class="hljs-string">':'</span> + tweet)
+}
+</div></code></pre>
+<p>Saída esperada:</p>
+<div style="border: 1px dashed black; padding: 5px;">
+@homem100medo:Lembrando que Tetris é na verdade...<br>
+@julhapema:Gente é sério, já tamo em 2015. Q...<br>
+@a4038789:Bom vou nessa a gente se fala out...<br>
+@sinfo:a gente nunca parou pra pensar no...<br>
+@luansgo:vamo marca um dia pra marca um di...<br>
+</div>
+<h2 id="integrando-javascript-com-html">Integrando Javascript com HTML</h2>
+<p>Um exemplo do que pode ser produzido integrando Javascript com HTML é apresentado no exemplo abaixo.</p>
+<pre><code class="language-html"><div><span class="hljs-comment">&lt;!-- tabuada/tabuada.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Tabuada<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">1</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Operação<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Resultado<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tabuada"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">    
+    <span class="hljs-keyword">var</span> valor = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">var</span> tabuada = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tabuada'</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++){
+        <span class="hljs-keyword">let</span> tr = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"tr"</span>);
+        tr.innerHTML = <span class="hljs-string">"&lt;td&gt;"</span> + valor + <span class="hljs-string">" x "</span> + i + <span class="hljs-string">"&lt;/td&gt;"</span> +
+                       <span class="hljs-string">"&lt;td&gt;"</span> + (valor * i) + <span class="hljs-string">"&lt;/td&gt;"</span>;
+        tabuada.appendChild(tr);
+    }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>O resultado esperado será uma tabela com a tabuada do número 7.</p>
+<h3 id="exerc%c3%adcios">Exercícios</h3>
+<p>Resolver a lista de exercícios proposta no URI sobre Estruturas de Repetição.</p>
+
+    </body>
+    </html>
