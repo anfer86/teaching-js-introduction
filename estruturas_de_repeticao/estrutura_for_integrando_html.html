@@ -22,8 +22,78 @@
     </head>
     <body class="vscode-light">
         <h1 id="exemplo-do-uso-do-for-com-html">Exemplo do uso do For com HTML</h1>
-<p>Um exemplo do que pode ser produzido integrando Javascript com HTML é apresentado no exemplo abaixo.</p>
-<p>Neste exemplo, apresentamos uma tabuada de um número, construindo uma tabela dinamicamente usando <code>for</code>.</p>
+<p>O seguinte código HTML mostra a tabuada do número 7.</p>
+<pre><code class="language-html"><div><span class="hljs-comment">&lt;!-- tabuada/tabuada_fixa.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Tabuada<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">1</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Operação<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Resultado<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>7 x 0<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>7 x 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>7 x 9.<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>63<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>    
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px;">
+        <table border=1>
+            <thead>
+                <tr>
+                    <th>Operação</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>7 x 0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>7 x 1</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>7 x 2</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>7 x 9.</td>
+                    <td>63</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+<p>Criar essa tabela na mão dá bastante trabalho, ainda mais se precisássemos criar uma tabuada para outros números, pois teríamos que fazer cada uma dessas tabelas em páginas HTML diferentes.</p>
+<p>Esse conteúdo pode ser produzido integrando Javascript com HTML e é apresentado no exemplo abaixo, utilizando a estrutura <code>for</code>.</p>
 <pre><code class="language-html"><div><span class="hljs-comment">&lt;!-- tabuada/tabuada.html --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>

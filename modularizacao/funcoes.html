@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Funções</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="fun%c3%a7%c3%b5es">Funções</h1>
+<p>Uma função é um subprograma ou sub-rotina que tem como objetivo executar uma tarefa específica. Funções são executadas quando algum outro programa ou subprograma chama elas, como por exemplo como chamamos a função <code>Math.max()</code> para saber qual é o valor máximo de um array de valores.</p>
+<pre><code class="language-javascript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nome_da_funcao</span>(<span class="hljs-params"> [parametros] </span>)</span>{
+  instrucoes;
+  <span class="hljs-keyword">return</span> instrucao;
+}
+</div></code></pre>
+<p>Assim, uma função possui um nome, pode (opcionalmente) receber um conjunto de valores parâmetros e retornar (opcionalmente) alguma informação. Para entender melhor porque as funções que definimos podem ou não receber parâmetros e podem ou não retornar valores vamos ver os seguinte 4 exemplos de funções para dar uma mensagem de boas vindas aos integrantes do curso de programação.</p>
+<p>Crie os arquivos dos seguintes programas em uma pasta chamada <code>modularizacao/</code>.</p>
+<p><strong>Exemplo 1</strong>: a função <code>bom_dia</code> mostra uma mensagem de bom dia. Ela não recebe nenhuma informação e não retorna nenhuma informação.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_1.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bom_dia</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'---------------------------------------'</span>)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Bom Dia!'</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Seja bem vindo ao curso de Programação!'</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'---------------------------------------'</span>)
+}
+<span class="hljs-comment">// Agora podemos chamar (invocar) a função</span>
+bom_dia();
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+---------------------------------------<br>
+Bom Dia!<br>
+Seja bem vindo ao curso de Programação!<br>
+---------------------------------------<br>
+</div>
+<p><strong>Exemplo 2</strong>: a função <code>bom_dia</code> retorna uma mensagem de bom dia para o programa. Assim o programa decide o que fazer com ela. Ela não recebe nenhuma informação.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_2.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bom_dia</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">let</span> mensagem = <span class="hljs-string">'Bom dia!'</span>;
+    <span class="hljs-keyword">return</span> mensagem;    
+}
+
+<span class="hljs-keyword">var</span> m = bom_dia();
+<span class="hljs-built_in">console</span>.log (m + <span class="hljs-string">' Seja bem vindo ao curso de Programação!'</span> );
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+Bom dia! Seja bem vindo ao curso de Programação!<br>
+</div>
+<p>Note que neste exercício deixamos o programa principal mostrar a mensagem no formato de sua preferência. Por isso não mostramos as linhas de cabeçalho.</p>
+<p><strong>Exemplo 3</strong>: esta versão da função <code>bom_dia</code> mostra uma mensagem de bom dia para um nome específico. Esta função recebe uma string, mas não retorna nenhuma informação.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_3.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bom_dia</span>(<span class="hljs-params">nome</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'---------------------------------------'</span>)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Bom Dia '</span> + nome +<span class="hljs-string">'!'</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Seja bem vindo ao curso de Programação!'</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'---------------------------------------'</span>)
+}
+<span class="hljs-comment">// Agora podemos chamar (invocar) a função</span>
+bom_dia(<span class="hljs-string">'Andrés'</span>);
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+---------------------------------------<br>
+Bom Dia Andrés!<br>
+Seja bem vindo ao curso de Programação!<br>
+---------------------------------------<br>
+</div>
+<p><strong>Exemplo 4</strong>: a função <code>bom_dia</code> retorna uma mensagem de bom dia para o programa personalizada com o nome de alguém. Assim o programa decide o que fazer com essa mensagem.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_2.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bom_dia</span>(<span class="hljs-params">nome</span>)</span>{
+    <span class="hljs-keyword">let</span> mensagem = <span class="hljs-string">'Bom Dia '</span> + nome +<span class="hljs-string">'!'</span> ;
+    <span class="hljs-keyword">return</span> mensagem;    
+}
+
+<span class="hljs-keyword">var</span> m = bom_dia();
+<span class="hljs-built_in">console</span>.log (m + <span class="hljs-string">' Seja bem vindo ao curso de Programação!'</span> );
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+Bom dia Andrés! Seja bem vindo ao curso de Programação!
+</div>
+
+    </body>
+    </html>

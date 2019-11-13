@@ -1,7 +1,8 @@
 # Estrutura `while`
 
 Usamos esse tipo de laço quando não sabemos quantas vezes queremos executar uma determinado bloco de instruções, mas sabemos que temos que repetí-lo algumas vezes enquanto alguma condição for satisfeita.
-O `for` tem a seguinte estrutura:
+
+O `while` tem a seguinte estrutura:
 
 ```js
 while ([condicao]){
@@ -9,10 +10,10 @@ while ([condicao]){
 }
 ```
 
-Quando executamos esse for ocorre o seguinte:
+Quando executamos esse `while` ocorre o seguinte: 
 - `condicao` é avaliada. Se o valor de condição é falso, então o laço terminará. Se a expressão condição é verdadeira o laço continua.
 
-Veja o seguinte exemplo, vamos fazer um programa em que teu objetivo é acertar um objetivo, o número 7. Você vai sortear um número de 1 até 10. Se esse número for o número 7 então o laço para, senão ele deverá continuar a sortear números até que o número sorteado sejá o número 7.
+Veja o seguinte exemplo, vamos fazer um programa que vai sortear números de 1 a 10 até que o número sorteado seja o número 7. Assim, o programa continuará a sortear números enquanto o número sorteado seja diferente de 7.
 
 ```javascript
 // sorteio/sorteio.js
@@ -23,17 +24,19 @@ function sortear(max) {
 var objetivo = 7;
 var numero = sortear(10);
 while (numero != objetivo) {
-    console.log('O número sorteado foi ' + numero + '.Vamos sortear outro número.')
+    console.log('O número sorteado foi ' + numero + '. Vamos sortear outro número.')
     numero = sortear(10);
 }
 console.log('Você atingiu seu objetivo, o número sorteado foi o ' + numero)
 ```
 
-*Para praticar:* implemente um programa que faça o sorteio de números de 1 a 100 e sorteie o valor do `objetivo`.
+> **Pratique!**: implemente um programa que faça o sorteio de números de 1 a 100 e sorteie também o valor do `objetivo`.
 
 **Problema 1**
 
-O professor gostaria de calcular a média das notas de uma turma, mas comumente nos dias de prova alguns alunos faltam. Calcular a média das notas consiste em somar as notas e dividir pelo total de notas. Mas o professor não sabe exatamente quantas notas ele deve somar para posteriormente calcular a média. Você vai receber um arquivo de entrada contendo notas de 1 a 10 com uma casa decimal, uma nota por linha. Na última linha você vai encontrar o valor -1, o que indica que não há mais notas a serem somadas.
+O professor gostaria de calcular a média das notas de uma turma, mas comumente nos dias de prova alguns alunos faltam. Calcular a média das notas consiste em somar as notas e dividir pelo total de notas. Mas o professor não sabe exatamente quantas notas ele deve usar para calcular a média, isso vai depender do dia da prova. 
+
+Você vai receber um arquivo de entrada contendo notas de 1 a 10 com uma casa decimal, uma nota por linha. Na última linha você vai encontrar o valor -1, o que indica que não há mais notas a serem consideradas para o cálculo da média.
 
 Arquivo de entrdada:
 ```js
@@ -46,7 +49,7 @@ Arquivo de entrdada:
 -1
 ```
 
-Solução:
+Nesta solução vamos usar a função `shift()` para acessar os dados, com o objetivo de mostrar a sequência com que vamos consumindo cada nota até chegar no último valor. Solução:
 
 ```javascript
 var input = require('fs').readFileSync('input.txt', 'utf8');
@@ -90,7 +93,7 @@ Passo a passo o que está acontecendo no programa:
 
 **Problema 2**
 
-Você está construíndo uma página Web e quer obrigar o cliente a comprar o teu produto. Assim, ao abrir a página você vai mostrar uma mensagem para o usuário perguntando se ele quer comprar o produto. Se ele não quiser comprar, clicando em cancelar, você vai mostrar a mensagem novamente, até que ele cliquei em Ok e finalmente compre o teu produto.
+Você está construíndo uma página Web e quer obrigar o cliente a comprar o teu produto. Assim, ao abrir a página você vai mostrar uma mensagem para o cliente perguntando se ele quer comprar o produto. Se ele não quiser comprar, clicando em cancelar, você vai mostrar a mensagem novamente, até que ele cliquei em Ok e finalmente compre o teu produto.
 
 ```javascript
 <html>
@@ -114,9 +117,11 @@ Você está construíndo uma página Web e quer obrigar o cliente a comprar o te
 </html>
 ```
 
+> **Nota:** Ao utilizarmos a função `confirm` dentro da tag `<script>` em um documento HTML o Browser vai mostrar uma tela de confirmação com a mensagem passada como argumento para essa função. Essa mensagem tem duas opções: `ok` e `cancelar`. Se o usuário escolhe `ok` a função retorna `true` (verdadeiro) e se escolhe `cancelar` retorna `false` (falso).
+
 **Problema 3**
 
-Você está recebendo dados provenientes de uma fila de entrada ao cinema. Para um determinado filme a idade mínima é de 16 anos. Por isso, o teu programa deve deixar passar as pessoas com idade maior ou igual que 16 anos. Em caso de haver alguém com menos que 16 anos deverá chamar o segurança para retirar essa pessoa da fila e parar o programa.
+Você está recebendo dados provenientes de uma fila de entrada ao cinema. Para um determinado filme a idade mínima é de 16 anos. Por isso, o teu programa deve deixar passar as pessoas com idade maior ou igual que 16 anos. Em caso de haver alguém com menos de 16 anos deverá chamar o segurança para retirar essa pessoa da fila e parar o programa.
 
 No arquivo de entrada você receberá valores identificadores dos clientes e a sua idade, como segue:
 
@@ -144,11 +149,8 @@ var cliente_dados = lines.shift().split(", ");
 var cliente_id = cliente_dados[0];
 var cliente_idade = Number(cliente_dados[1]);
 
-var idade_minima = 16;
-
-while (cliente_idade >= idade_minima){
-    console.log('Cliente ' + cliente_id + " pode passar.");
-    
+while (cliente_idade >= 16){
+    console.log('Cliente ' + cliente_id + " pode passar.");    
     cliente_dados = lines.shift().split(", ");
     cliente_id = cliente_dados[0];
     cliente_idade = Number(cliente_dados[1]);    
@@ -157,12 +159,26 @@ while (cliente_idade >= idade_minima){
 console.log('Cliente ' + cliente_id + " não pode passar. Chamar o segurança.");
 ```
 
+Resultado esperado:
+
+<div style="border: 1px dashed black; padding: 5px;">
+Cliente 12113 pode passar.<br>
+Cliente 10221 pode passar.<br>
+Cliente 99454 pode passar.<br>
+Cliente 56445 pode passar.<br>
+Cliente 34585 pode passar.<br>
+Cliente 88332 pode passar.<br>
+Cliente 34573 não pode passar. Chamar o segurança.<br>
+</div>
+
+
 ## Exercícios
 
 **Exercício 1**
 
-Você foi contratado para melhorar o programa de fila de cinema implementado anteriormente. Como existem filmes que tem diferentes valores de idade mínima o teu programa tem que se adaptar para diferentes valores de idade mínima. Assim, a única alteração em relação ao exercício anterior é que a idade mínima será apresentada na primeira linha do arquivo, da seguinte forma:
+Você foi contratado para melhorar o programa de fila de cinema implementado anteriormente. Como existem filmes que tem diferentes valores de idade mínima o teu programa tem que se adaptar para diferentes valores de idade mínima. Assim, a única alteração em relação ao exercício anterior é que a idade mínima será apresentada na primeira linha do arquivo de entrada.
 
+Arquivo de entrada:
 ```
 14
 12113, 17
@@ -181,6 +197,6 @@ Você foi contratado para melhorar o programa de fila de cinema implementado ant
 
 Desenvolva um programa que faça o sorteio de dois dados, com valores de 1 a 6. Repita o processo até que os dois dados sorteados possuam o mesmo valor.
 
-**Exercício 3**
+**Atividade Complementar**
 
-Crie uma nova versão do exercício anterior com 3 dados.
+Pesquisar na Internet pela a estrutura `do..while` e implementar algum programa que use essa estrutura. Pense na diferença entre usar essa nova estrutura e a estrutura `while` apresentada anteriormente.
