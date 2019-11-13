@@ -102,25 +102,25 @@
 </ol>
 <p><strong>Problema 2</strong></p>
 <p>Você está construíndo uma página Web e quer obrigar o cliente a comprar o teu produto. Assim, ao abrir a página você vai mostrar uma mensagem para o cliente perguntando se ele quer comprar o produto. Se ele não quiser comprar, clicando em cancelar, você vai mostrar a mensagem novamente, até que ele cliquei em Ok e finalmente compre o teu produto.</p>
-<pre><code class="language-javascript"><div>&lt;html&gt;
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Comprar Produto<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-    &lt;body&gt;
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Comprando um produto<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
-        &lt;p id=<span class="hljs-string">'mensagem'</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
-    &lt;<span class="hljs-regexp">/body&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Comprando um produto<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'mensagem'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-    &lt;script&gt;
-    var resposta = confirm('Você gostaria de comprar o produto?');
-    while (resposta != true){
-        resposta = confirm('Você gostaria de comprar o produto?');
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> resposta = confirm(<span class="hljs-string">'Você gostaria de comprar o produto?'</span>);
+    <span class="hljs-keyword">while</span> (resposta != <span class="hljs-literal">true</span>){
+        resposta = confirm(<span class="hljs-string">'Você gostaria de comprar o produto?'</span>);
     }
-    var mensagem = document.getElementById('mensagem');
-    mensagem.innerHTML = "Parabéns, você acabou de comprar o produto!";
-    &lt;/</span>script&gt;
-<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+    <span class="hljs-keyword">var</span> mensagem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'mensagem'</span>);
+    mensagem.innerHTML = <span class="hljs-string">"Parabéns, você acabou de comprar o produto!"</span>;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
 <blockquote>
 <p><strong>Nota:</strong> Ao utilizarmos a função <code>confirm</code> dentro da tag <code>&lt;script&gt;</code> em um documento HTML o Browser vai mostrar uma tela de confirmação com a mensagem passada como argumento para essa função. Essa mensagem tem duas opções: <code>ok</code> e <code>cancelar</code>. Se o usuário escolhe <code>ok</code> a função retorna <code>true</code> (verdadeiro) e se escolhe <code>cancelar</code> retorna <code>false</code> (falso).</p>
@@ -184,6 +184,8 @@ Cliente 34573 não pode passar. Chamar o segurança.<br>
 </div></code></pre>
 <p><strong>Exercício 2</strong></p>
 <p>Desenvolva um programa que faça o sorteio de dois dados, com valores de 1 a 6. Repita o processo até que os dois dados sorteados possuam o mesmo valor.</p>
+<p><strong>Atividade Complementar</strong></p>
+<p>Pesquisar na Internet pela a estrutura <code>do..while</code> e implementar algum programa que use essa estrutura. Pense na diferença entre usar essa nova estrutura e a estrutura <code>while</code> apresentada anteriormente.</p>
 
     </body>
     </html>

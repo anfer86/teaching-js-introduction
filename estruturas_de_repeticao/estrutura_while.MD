@@ -95,7 +95,7 @@ Passo a passo o que está acontecendo no programa:
 
 Você está construíndo uma página Web e quer obrigar o cliente a comprar o teu produto. Assim, ao abrir a página você vai mostrar uma mensagem para o cliente perguntando se ele quer comprar o produto. Se ele não quiser comprar, clicando em cancelar, você vai mostrar a mensagem novamente, até que ele cliquei em Ok e finalmente compre o teu produto.
 
-```javascript
+```html
 <html>
     <head>
         <title>Comprar Produto</title>
