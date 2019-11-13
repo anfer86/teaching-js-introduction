@@ -122,42 +122,6 @@ Saída esperada:
 @luansgo:vamo marca um dia pra marca um di...<br>
 </div>
 
-## Integrando Javascript com HTML
-
-Um exemplo do que pode ser produzido integrando Javascript com HTML é apresentado no exemplo abaixo.
-
-```html
-<!-- tabuada/tabuada.html -->
-<html>
-    <head>
-        <title>Tabuada</title>
-    </head>
-
-    <body>
-        <table border=1>
-            <thead>
-                <th>Operação</th>
-                <th>Resultado</th>
-            </thead>
-            <tbody id="tabuada">
-            </tbody>
-        </table>
-    </body>
-
-    <script>    
-    var valor = 7;
-    var tabuada = document.getElementById('tabuada');
-    for (let i=0; i < 10; i++){
-        let tr = document.createElement("tr");
-        tr.innerHTML = "<td>" + valor + " x " + i + "</td>" +
-                       "<td>" + (valor * i) + "</td>";
-        tabuada.appendChild(tr);
-    }
-    </script>
-</html>
-```
-
-O resultado esperado será uma tabela com a tabuada do número 7.
 
 ### Exercícios
 

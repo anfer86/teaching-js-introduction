@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   
-  <title>IFSC JS</title>
+  <title>Javascript (IFSC)</title>
   
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,15 +24,50 @@
     
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">IFSC JS</div>
       
+      
+      <div class="sidebar-heading text-center">                  
+            <img class="w-75 nav-brand" src="https://www.ifsc.edu.br/image/layout_set_logo?img_id=902745&t=1568216961625">           
+        </div>
+            
+      <div class="sidebar-heading">Conteúdo</div>
+
       <div class="list-group list-group-flush">
         <!--
           <a href="#" class="menu_item">Dashboard</a>
           <a href="#" class="menu_item">Shortcuts</a>
         -->
-        
-        <a href="estruturas_de_decisao/index.html" class="menu_item" data-toggle="collapse" data-target="#submenu_decisao">Estruturas de Decisão</a>
+        <a href="" class="menu_item" data-toggle="collapse" data-target="#submenu_introducao">Introdução</a>
+        <div class="collapse" id="submenu_introducao" aria-expanded="false">
+          <ul class="flex-column pl-2 nav">
+            <li><a class="menu_subitem" href="#">Algoritmos</a></li>
+            <li><a class="menu_subitem" href="#">Linguagens de Programação</a></li>
+            <li><a class="menu_subitem" href="#">Introdução a Javascript</a></li>
+          </ul>
+        </div>        
+
+
+        <a href="#" class="menu_item" data-toggle="collapse" data-target="#submenu_variaveis">Variáveis e Tipos de Dados</a>
+        <div class="collapse" id="submenu_variaveis" aria-expanded="false">
+          <ul class="flex-column pl-2 nav">
+            <li><a class="menu_subitem" href="#">Entrada e saída de dados</a></li>
+            <li><a class="menu_subitem" href="#">Variáveis</a></li>
+            <li><a class="menu_subitem" href="#">Tipos de dados</a></li>
+          </ul>
+        </div>        
+
+        <a href="#" class="menu_item" data-toggle="collapse" data-target="#submenu_expressoes">Operadores e Expressões</a>
+        <div class="collapse" id="submenu_expressoes" aria-expanded="false">
+          <ul class="flex-column pl-2 nav">
+            <li><a class="menu_subitem" href="#">Atribuições</a></li>
+            <li><a class="menu_subitem" href="#">Operadores aritméticos</a></li>
+            <li><a class="menu_subitem" href="#">Operadores relacionais</a></li>
+            <li><a class="menu_subitem" href="#">Operadores lógicos</a></li>            
+            <li><a class="menu_subitem" href="#">Expressões lógicas</a></li>            
+          </ul>
+        </div>
+       
+        <a href="#" class="menu_item" data-toggle="collapse" data-target="#submenu_decisao">Estruturas de Decisão</a>
         <div class="collapse" id="submenu_decisao" aria-expanded="false">
           <ul class="flex-column pl-2 nav">
             <li><a class="menu_subitem" href="#">Estrutura if</a></li>
@@ -45,19 +80,32 @@
         <a href="estruturas_de_repeticao/index.html" class="menu_item" data-toggle="collapse" data-target="#submenu_repeticao">Estruturas de Repetição</a>
         <div class="collapse" id="submenu_repeticao" aria-expanded="false">
           <ul class="flex-column pl-2 nav">
-            <li><a class="menu_subitem" href="#" onclick="return false;">Laços Contados</a></li>            
+            <li><a class="menu_subitem" onclick="return false;">Laços Contados</a></li>            
             <ul class="flex-column pl-2 nav">
               <li><a class="menu_subitem" href="estruturas_de_repeticao/estrutura_for.html">Estrutura for</a></li>
               <li><a class="menu_subitem" href="estruturas_de_repeticao/estrutura_for_of.html">Estrutura for..of</a></li>
+              <li><a class="menu_subitem" href="estruturas_de_repeticao/estrutura_for_integrando_html.html">Exemplo com HTML</a></li>
             </ul>
             <li><a class="menu_subitem" href="#">Laços Condicionais</a></li>
             <ul class="flex-column pl-2 nav">
-              <li><a class="menu_subitem" href="#">Estrutura while..do</a></li>
-              <li><a class="menu_subitem" href="#">Estrutura do..while</a></li>                   
+              <li><a class="menu_subitem" href="estruturas_de_repeticao/estrutura_while.html">Estrutura while</a></li>
+              <!-- <li><a class="menu_subitem" href="#">Estrutura do..while</a></li>  -->
             </ul>
           </ul>
         </div>       
         
+        <a href="#" class="menu_item" data-toggle="collapse" data-target="#submenu_regexp">Expressões Regulares</a>
+        <div class="collapse" id="submenu_regexp" aria-expanded="false">
+          <ul class="flex-column pl-2 nav">
+            <li><a class="menu_subitem" href="#">Escrevendo Expressões Regulares</a></li>
+            <li><a class="menu_subitem" href="#">Principais Caracteres</a></li>
+            <li><a class="menu_subitem" href="#">Métodos de String que suportam ER</a></li>
+            <li><a class="menu_subitem" href="#">Procurando Dados em Strings</a></li>            
+          </ul>
+        </div>
+
+        
+
         
       </div>
     </div>
@@ -68,12 +116,13 @@
       
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
-        
+        <div>Introdução à Programação com Javascript</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
           <!--
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
               <li class="nav-item active">
@@ -99,7 +148,7 @@
         </div>
       </nav>
       
-      <div class="embed-responsive h-100">
+      <div class="embed-responsive" style="height: 90%;">
         <iframe id="frame" class="embed-responsive-item" src=""></iframe>        
       </div>
       
@@ -118,12 +167,15 @@
   
   <!-- Menu Toggle Script -->
   <script>
+    
+    
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
     
     $(".menu_item").attr('class', 'list-group-item list-group-item-action bg-light mylink');
+    
     $(".menu_subitem").attr('class', 'mylink nav-link py-1');    
     
     $(".mylink").click(function(e) {
@@ -131,8 +183,6 @@
       console.log(this.href);
       $('#frame').attr('src', this.href);
     });
-    
-    
     
   </script>
   

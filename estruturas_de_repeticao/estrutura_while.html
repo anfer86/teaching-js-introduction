@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estrutura `while`</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="estrutura-while">Estrutura <code>while</code></h1>
+<p>Usamos esse tipo de laço quando não sabemos quantas vezes queremos executar uma determinado bloco de instruções, mas sabemos que temos que repetí-lo algumas vezes enquanto alguma condição for satisfeita.
+O <code>for</code> tem a seguinte estrutura:</p>
+<pre><code class="language-js"><div><span class="hljs-keyword">while</span> ([condicao]){
+  instruções
+}
+</div></code></pre>
+<p>Quando executamos esse for ocorre o seguinte:</p>
+<ul>
+<li><code>condicao</code> é avaliada. Se o valor de condição é falso, então o laço terminará. Se a expressão condição é verdadeira o laço continua.</li>
+</ul>
+<p>Veja o seguinte exemplo, vamos fazer um programa em que teu objetivo é acertar um objetivo, o número 7. Você vai sortear um número de 1 até 10. Se esse número for o número 7 então o laço para, senão ele deverá continuar a sortear números até que o número sorteado sejá o número 7.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// sorteio/sorteio.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sortear</span>(<span class="hljs-params">max</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> + <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * max);
+}
+
+<span class="hljs-keyword">var</span> objetivo = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">var</span> numero = sortear(<span class="hljs-number">10</span>);
+<span class="hljs-keyword">while</span> (numero != objetivo) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'O número sorteado foi '</span> + numero + <span class="hljs-string">'.Vamos sortear outro número.'</span>)
+    numero = sortear(<span class="hljs-number">10</span>);
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Você atingiu seu objetivo, o número sorteado foi o '</span> + numero)
+</div></code></pre>
+<p><em>Para praticar:</em> implemente um programa que faça o sorteio de números de 1 a 100 e sorteie o valor do <code>objetivo</code>.</p>
+<p><strong>Problema 1</strong></p>
+<p>O professor gostaria de calcular a média das notas de uma turma, mas comumente nos dias de prova alguns alunos faltam. Calcular a média das notas consiste em somar as notas e dividir pelo total de notas. Mas o professor não sabe exatamente quantas notas ele deve somar para posteriormente calcular a média. Você vai receber um arquivo de entrada contendo notas de 1 a 10 com uma casa decimal, uma nota por linha. Na última linha você vai encontrar o valor -1, o que indica que não há mais notas a serem somadas.</p>
+<p>Arquivo de entrdada:</p>
+<pre><code class="language-js"><div><span class="hljs-comment">// media_notas_while/input.txt</span>
+<span class="hljs-number">9.0</span>
+<span class="hljs-number">8.8</span>
+<span class="hljs-number">8.3</span>
+<span class="hljs-number">9.1</span>
+<span class="hljs-number">9.2</span>
+<span class="hljs-number">-1</span>
+</div></code></pre>
+<p>Solução:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> n = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> soma = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">var</span> valor = <span class="hljs-built_in">Number</span>(lines.shift());
+
+<span class="hljs-keyword">while</span> (valor != <span class="hljs-number">-1</span>){        
+    soma += valor;
+    n += <span class="hljs-number">1</span>;
+    valor = <span class="hljs-built_in">Number</span>(lines.shift());
+}
+
+<span class="hljs-keyword">var</span> media = soma / n;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Média: '</span>, media.toFixed(<span class="hljs-number">1</span>));
+</div></code></pre>
+<p>Passo a passo o que está acontecendo no programa:</p>
+<ol>
+<li>Lemos o conteúdo do arquivo <code>input.txt</code> com as notas e armazenamos isso na variável <code>lines</code>.</li>
+<li>Inicializa uma variável contadora <code>n</code> que vai armazenar o número de notas presentes no arquivo.</li>
+<li>Inicializa uma variável acumuladora <code>soma</code> que vai armazenar a soma das notas, o que é útil para calcular a média ao final do programa.</li>
+<li>Lê o primeiro valor do arquivo de entrada e armazena na variável <code>valor</code>. O valor armazenado será <code>9.0</code>.</li>
+<li>Verifica se <code>valor != -1</code>. Como é verdadeiro executa o bloco de instruções. Acumula o valor da nota à variável <code>soma</code> e aumenta em uma unidade o contador de notas <code>n</code>.</li>
+<li>Lê o próximo valor do arquivo de entrada e armazena na variável <code>valor</code>. O valor armzazenado será <code>8.8</code>.</li>
+<li>Verifica se <code>valor != -1</code>. Como é verdadeiro executa o bloco de instruções. Acumula o valor da nota à variável <code>soma</code> e aumenta em uma unidade o contador de notas <code>n</code>.</li>
+<li>Lê o próximo valor do arquivo de entrada e armazena na variável <code>valor</code>. O valor armzazenado será <code>8.3</code>.</li>
+<li>Verifica se <code>valor != -1</code>. Como é verdadeiro executa o bloco de instruções. Acumula o valor da nota à variável <code>soma</code> e aumenta em uma unidade o contador de notas <code>n</code>.</li>
+<li>Lê o próximo valor do arquivo de entrada e armazena na variável <code>valor</code>. O valor armzazenado será <code>9.1</code>.</li>
+<li>Verifica se <code>valor != -1</code>. Como é verdadeiro executa o bloco de instruções. Acumula o valor da nota à variável <code>soma</code> e aumenta em uma unidade o contador de notas <code>n</code>.</li>
+<li>Lê o próximo valor do arquivo de entrada e armazena na variável <code>valor</code>. O valor armzazenado será <code>9.2</code>.</li>
+<li>Verifica se <code>valor != -1</code>. Como é verdadeiro executa o bloco de instruções. Acumula o valor da nota à variável <code>soma</code> e aumenta em uma unidade o contador de notas <code>n</code>.</li>
+<li>Lê o próximo valor do arquivo de entrada e armazena na variável <code>valor</code>. O valor armzazenado será <code>-1</code>.</li>
+<li>Verifica se <code>valor != -1</code>. Como é <strong>falso</strong> não executa o bloco de comandos e sai do laço while.</li>
+<li>Realiza o cálculo da média usando as variáveis <code>soma</code> e <code>n</code>.</li>
+<li>Mostra a média com uma casa decimal.</li>
+<li>Termina o programa.</li>
+</ol>
+<p><strong>Problema 2</strong></p>
+<p>Você está construíndo uma página Web e quer obrigar o cliente a comprar o teu produto. Assim, ao abrir a página você vai mostrar uma mensagem para o usuário perguntando se ele quer comprar o produto. Se ele não quiser comprar, clicando em cancelar, você vai mostrar a mensagem novamente, até que ele cliquei em Ok e finalmente compre o teu produto.</p>
+<pre><code class="language-javascript"><div>&lt;html&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Comprar Produto<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
+
+    &lt;body&gt;
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Comprando um produto<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+        &lt;p id=<span class="hljs-string">'mensagem'</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    &lt;<span class="hljs-regexp">/body&gt;
+
+    &lt;script&gt;
+    var resposta = confirm('Você gostaria de comprar o produto?');
+    while (resposta != true){
+        resposta = confirm('Você gostaria de comprar o produto?');
+    }
+    var mensagem = document.getElementById('mensagem');
+    mensagem.innerHTML = "Parabéns, você acabou de comprar o produto!";
+    &lt;/</span>script&gt;
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+</div></code></pre>
+<p><strong>Problema 3</strong></p>
+<p>Você está recebendo dados provenientes de uma fila de entrada ao cinema. Para um determinado filme a idade mínima é de 16 anos. Por isso, o teu programa deve deixar passar as pessoas com idade maior ou igual que 16 anos. Em caso de haver alguém com menos que 16 anos deverá chamar o segurança para retirar essa pessoa da fila e parar o programa.</p>
+<p>No arquivo de entrada você receberá valores identificadores dos clientes e a sua idade, como segue:</p>
+<pre><code><div>12113, 17
+10221, 20
+99454, 32
+56445, 17
+34585, 16
+88332, 80
+34573, 14
+12947, 23
+88349, 12
+11100, 60
+</div></code></pre>
+<p>Solução:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> cliente_dados = lines.shift().split(<span class="hljs-string">", "</span>);
+<span class="hljs-keyword">var</span> cliente_id = cliente_dados[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">var</span> cliente_idade = <span class="hljs-built_in">Number</span>(cliente_dados[<span class="hljs-number">1</span>]);
+
+<span class="hljs-keyword">var</span> idade_minima = <span class="hljs-number">16</span>;
+
+<span class="hljs-keyword">while</span> (cliente_idade &gt;= idade_minima){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cliente '</span> + cliente_id + <span class="hljs-string">" pode passar."</span>);
+    
+    cliente_dados = lines.shift().split(<span class="hljs-string">", "</span>);
+    cliente_id = cliente_dados[<span class="hljs-number">0</span>];
+    cliente_idade = <span class="hljs-built_in">Number</span>(cliente_dados[<span class="hljs-number">1</span>]);    
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cliente '</span> + cliente_id + <span class="hljs-string">" não pode passar. Chamar o segurança."</span>);
+</div></code></pre>
+<h2 id="exerc%c3%adcios">Exercícios</h2>
+<p><strong>Exercício 1</strong></p>
+<p>Você foi contratado para melhorar o programa de fila de cinema implementado anteriormente. Como existem filmes que tem diferentes valores de idade mínima o teu programa tem que se adaptar para diferentes valores de idade mínima. Assim, a única alteração em relação ao exercício anterior é que a idade mínima será apresentada na primeira linha do arquivo, da seguinte forma:</p>
+<pre><code><div>14
+12113, 17
+10221, 20
+99454, 32
+56445, 17
+34585, 16
+88332, 80
+34573, 14
+12947, 23
+88349, 12
+11100, 60
+</div></code></pre>
+<p><strong>Exercício 2</strong></p>
+<p>Desenvolva um programa que faça o sorteio de dois dados, com valores de 1 a 6. Repita o processo até que os dois dados sorteados possuam o mesmo valor.</p>
+<p><strong>Exercício 3</strong></p>
+<p>Crie uma nova versão do exercício anterior com 3 dados.</p>
+
+    </body>
+    </html>
