@@ -121,8 +121,3 @@ Saída esperada:
 @sinfo:a gente nunca parou pra pensar no...<br>
 @luansgo:vamo marca um dia pra marca um di...<br>
 </div>
-
-
-### Exercícios
-
-Resolver a lista de exercícios proposta no URI sobre Estruturas de Repetição.
