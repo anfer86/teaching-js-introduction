@@ -1,7 +1,7 @@
 # Modularização de Programas
 
 Na computação um conceito importante é o de modularização de programas, que tem dois principais objetivos:
-- Resolver problemas complexos dividindo o problema em problemas simples;
+- Resolver problemas complexos dividindo o problema em problemas simples.
 - Reutilizar códigos que se repetem várias vezes em um programa ou em vários programas.
 - Evitar replicar código muito parecido em várias partes do programa, o que dificulta a manutenção do código.
 

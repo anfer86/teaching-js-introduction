@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Funções</title>
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         <style>
 .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
@@ -18,7 +18,7 @@
             }
         </style>
         
-        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
     </head>
     <body class="vscode-light">
         <h1 id="fun%c3%a7%c3%b5es">Funções</h1>
@@ -82,7 +82,7 @@ Seja bem vindo ao curso de Programação!<br>
 ---------------------------------------<br>
 </div>
 <p><strong>Exemplo 4</strong>: a função <code>bom_dia</code> retorna uma mensagem de bom dia para o programa personalizada com o nome de alguém. Assim o programa decide o que fazer com essa mensagem.</p>
-<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_2.js</span>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_4.js</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bom_dia</span>(<span class="hljs-params">nome</span>)</span>{
     <span class="hljs-keyword">let</span> mensagem = <span class="hljs-string">'Bom Dia '</span> + nome +<span class="hljs-string">'!'</span> ;
     <span class="hljs-keyword">return</span> mensagem;    
@@ -95,6 +95,110 @@ Seja bem vindo ao curso de Programação!<br>
 <div style="border: 1px dashed black; padding: 5px; font-family: courier">
 Bom dia Andrés! Seja bem vindo ao curso de Programação!
 </div>
+<p><strong>Exemplo 5</strong>: você foi contratado para implementar algumas funções que serão utilizadas por uma loja online. A loja está oferecendo 25% de desconto no produto de maior valor que a pessoa comprar, mas a pessoa tem que comprar pelo menos cinco produtos.</p>
+<p><em>Parte 1</em>: faça uma função que receba um array contendo os preços dos produtos e retorne o total a pagar.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_5_parte_1.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calcular_total</span>(<span class="hljs-params">valores</span>)</span>{
+    <span class="hljs-keyword">let</span> n = valores.length;
+    <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        total += valores[i];
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-comment">/** Testando se a função funciona corretamente */</span>
+<span class="hljs-keyword">var</span> precos_produtos = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">45</span>, <span class="hljs-number">300</span>, <span class="hljs-number">3</span>];
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Preços dos produtos (R$):'</span>, precos_produtos);
+
+<span class="hljs-keyword">var</span> total_sem_desconto = calcular_total(precos_produtos);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Total a pagar sem desconto (R$):'</span>, total_sem_desconto );
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+Preços dos produtos (R$): [ 10, 20, 45, 300, 3 ]<br>
+Total a pagar sem desconto: 378<br>
+</div>
+<p><em>Parte 2</em>: faça uma função que receba um array contendo os preços dos produtos e identifique qual é a posição do array que possui o produto de maior preço.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_5_parte_2.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">produto_maior_preco</span>(<span class="hljs-params">valores</span>)</span>{
+    <span class="hljs-keyword">let</span> n = valores.length;
+    <span class="hljs-keyword">let</span> pos_maior = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
+        <span class="hljs-keyword">if</span> (valores[i] &gt; valores[pos_maior] ){
+            pos_maior = i;
+        }
+    }    
+    <span class="hljs-keyword">return</span> pos_maior;    
+}
+
+<span class="hljs-comment">/** Testando se a função funciona corretamente */</span>
+<span class="hljs-keyword">var</span> precos_produtos = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">45</span>, <span class="hljs-number">300</span>, <span class="hljs-number">3</span>];
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Preços dos produtos (R$):'</span>, precos_produtos);
+
+<span class="hljs-keyword">var</span> pos_maior = produto_maior_preco(precos_produtos);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Posição do produto de maior preço:'</span>, pos_maior );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Valor do produto de maior preço (R$):'</span>, precos_produtos[pos_maior] );
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+Preços dos produtos (R$): [ 10, 20, 45, 300, 3 ]<br>
+Posição do produto de maior preço: 3<br>
+Valor do produto de maior preço: 300<br>
+</div>
+<p><em>Parte 3</em>: faça uma função que receba um array contendo os preços dos produtos e um valor de desconto e retorne o valor total a pagar com desconto.</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// modularizacao/exemplo_5_parte_3.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calcular_total</span>(<span class="hljs-params">valores</span>)</span>{
+    <span class="hljs-keyword">let</span> n = valores.length;
+    <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        total += valores[i];
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">produto_maior_preco</span>(<span class="hljs-params">valores</span>)</span>{
+    <span class="hljs-keyword">let</span> n = valores.length;
+    <span class="hljs-keyword">let</span> pos_maior = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
+        <span class="hljs-keyword">if</span> (valores[i] &gt; valores[pos_maior] ){
+            pos_maior = i;
+        }
+    }    
+    <span class="hljs-keyword">return</span> pos_maior;    
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calcular_total_com_desconto</span>(<span class="hljs-params">valores, desconto</span>)</span>{
+    <span class="hljs-keyword">let</span> pos_maior = produto_maior_preco(valores);
+    valores[pos_maior] = valores[pos_maior] * (<span class="hljs-number">1</span> - desconto); <span class="hljs-comment">// desconto de 25%</span>
+    <span class="hljs-keyword">let</span> total_com_desconto = calcular_total(valores);
+    <span class="hljs-keyword">return</span> total_com_desconto;
+}
+
+<span class="hljs-comment">/** Testando se a função funciona corretamente */</span>
+<span class="hljs-keyword">var</span> precos_produtos = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">45</span>, <span class="hljs-number">300</span>, <span class="hljs-number">3</span>];
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Preços dos produtos (R$):'</span>, precos_produtos);
+
+<span class="hljs-keyword">var</span> total_sem_desconto = calcular_total(precos_produtos);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Total a pagar sem desconto (R$):'</span>, total_sem_desconto );
+
+<span class="hljs-keyword">var</span> pos_maior = produto_maior_preco(precos_produtos);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Posição do produto de maior preço:'</span>, pos_maior );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Valor do produto de maior preço (R$):'</span>, precos_produtos[pos_maior] );
+
+<span class="hljs-keyword">var</span> total_com_desconto = calcular_total_com_desconto(precos_produtos, <span class="hljs-number">0.25</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Total a pagar com desconto (R$):'</span>, total_com_desconto );
+</div></code></pre>
+<p>Resultado esperado:</p>
+<div style="border: 1px dashed black; padding: 5px; font-family: courier">
+Preços dos produtos (R$): [ 10, 20, 45, 300, 3 ]<br>
+Total a pagar sem desconto (R$): 378<br>
+Posição do produto de maior preço: 3<br>
+Valor do produto de maior preço (R$): 300<br>
+Total a pagar com desconto (R$): 303<br>
+</div>
+<p><em>Parte 4</em>: como mencionado, a loja gostaria de aplicar esse desconto de 25% no maior produto se o número de produtos for pelo menos 5. Altere a função <code>calcular_total_com_desconto</code> para que aceite também o limite mínimo de produtos como parâmetro. Caso não haja 5 produtos na lista então você deve mostrar o valor sem desconto.</p>
+<p><em>Parte 5</em>: em um próximo evento a loja gostaria de fazer desconto progressivo sob o produto de maior valor. Se o usuário levar pelo menos 5 produtos o desconto sob o maior produto será de 25%, se levar pelo menos 7 produtos, será de 35% e se levar pelo menos 10 produtos o desconto será de 50%. Implemente uma nova função chamada <code>calcular_total_com_desconto_progressivo</code> para essa nova funcionalidade.</p>
 
     </body>
     </html>
