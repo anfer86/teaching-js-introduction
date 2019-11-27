@@ -199,6 +199,75 @@ Total a pagar com desconto (R$): 303<br>
 </div>
 <p><em>Parte 4</em>: como mencionado, a loja gostaria de aplicar esse desconto de 25% no maior produto se o número de produtos for pelo menos 5. Altere a função <code>calcular_total_com_desconto</code> para que aceite também o limite mínimo de produtos como parâmetro. Caso não haja 5 produtos na lista então você deve mostrar o valor sem desconto.</p>
 <p><em>Parte 5</em>: em um próximo evento a loja gostaria de fazer desconto progressivo sob o produto de maior valor. Se o usuário levar pelo menos 5 produtos o desconto sob o maior produto será de 25%, se levar pelo menos 7 produtos, será de 35% e se levar pelo menos 10 produtos o desconto será de 50%. Implemente uma nova função chamada <code>calcular_total_com_desconto_progressivo</code> para essa nova funcionalidade.</p>
+<h2 id="exerc%c3%adcios">Exercícios</h2>
+<p><strong>Exercício 1</strong></p>
+<p>Implemente uma função que mostre a tabuada de um número. Chame a função de <code>tabuada</code> e ela deve funcionar assim. Se executar (invocar) a função <code>tabuada(3)</code> deverá mostrar a tabuada do número 3. Use essa função para mostrar as tabuadas dos números 3, 5 e 7.</p>
+<p>Resultado esperado:</p>
+<pre><code><div>Tabuada do número: 3
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+Tabuada do número: 5
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+Tabuada do número: 7
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+</div></code></pre>
+<p><strong>Exercício 2</strong></p>
+<p>Implemente uma função que mostre as tabuadas dos números contidos em um array. Por exemplo, se eu executar a função <code>tabuada_array([3,5,7])</code> o programa deve mostrar a tabuada do exemplos anterior. Se executar <code>tabuada_array([1,2,3,4])</code> será mostrada a tabuada dos números de 1 a 4. Na implementação dessa nova função você pode usar a função <code>tabuada</code> do anterior.</p>
+<p><strong>Exercício 3</strong></p>
+<p>Leia uma quantidade indeterminada de duplas de valores inteiros X e Y. Escreva para cada X e Y uma mensagem que indique se estes valores foram digitados em ordem crescente ou decrescente. A entrada contém vários casos de teste. Cada caso contém dois valores inteiros X e Y. A leitura deve ser encerrada ao ser fornecido valores iguais para X e Y.</p>
+<p>Para isso, crie uma função chamada <code>analisar_ordem</code> que receba dois valores <code>X</code> e <code>Y</code> e retorne se eles estão em ordem crescente ou decrescente e, se eles forem iguais, retorne iguais. Posteriormente, faça um programa principal que leia as entradas do arquivo e mostre os resultados até que os valores de entrada sejam iguais.</p>
+<table>
+<thead>
+<tr>
+<th>Exemplos de Entrada</th>
+<th>Exemplos de Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 4</td>
+<td>Decrescente</td>
+</tr>
+<tr>
+<td>7 2</td>
+<td>Decrescente</td>
+</tr>
+<tr>
+<td>3 8</td>
+<td>Crescente</td>
+</tr>
+<tr>
+<td>2 2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
     </body>
     </html>
