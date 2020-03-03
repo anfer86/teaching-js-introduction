@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Operadores Aritméticos</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <script src="jquery-3.4.1.min.js"></script>
+<script src="jquery_preventDefault.js"></script>  
+<h1 id="operadores-aritm%c3%a9ticos">Operadores Aritméticos</h1>
+<p>Os operadores aritméticos são utilizados para realizar cálculos. A maior parte dos operadores são funcionalidades que estão presentes em qualquer calculadora.</p>
+<table>
+<thead>
+<tr>
+<th>Operador<br>artimético</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Adição</td>
+<td><code>&gt; 5 + 7</code><br><code>12</code></td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtração</td>
+<td><code>&gt; 7 - 5</code><br><code>2</code></td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplicação</td>
+<td><code>&gt; 5 * 3</code><br><code>15</code></td>
+</tr>
+<tr>
+<td>/</td>
+<td>Multiplicação</td>
+<td><code>&gt; 15 / 3</code><br><code>5</code></td>
+</tr>
+<tr>
+<td>%</td>
+<td>Resto da divisão</td>
+<td><code>&gt; 9 / 6</code><br><code>3</code></td>
+</tr>
+<tr>
+<td>++</td>
+<td>Incremento (1 unidade)</td>
+<td><code>&gt; var x = 5;</code><br><code>&gt; x++; </code><br><code>6</code></td>
+</tr>
+<tr>
+<td>++</td>
+<td>Decremento (1 unidade)</td>
+<td><code>&gt; var x = 5;</code><br><code>&gt; x--; </code><br><code>4</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="problemas-resolvidos">Problemas Resolvidos</h2>
+<p><strong>Divisão da Pizza</strong></p>
+<p>Um grupo de amigos/as querem pedir uma pizza. A ideia deles é que todos comam o mesmo número de fatias.</p>
+<p>Mostre um programa que receba como entrada:</p>
+<ul>
+<li>O número de porções da pizza</li>
+<li>O número de amigos para dividir</li>
+</ul>
+<p>E mostre como saída:</p>
+<ul>
+<li>O número de porções por pessoa</li>
+<li>O número de porções que sobraram</li>
+</ul>
+<p>Exemplos de entrada/saída:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Exemplo de Entrada</th>
+<th>Exemplo de Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8<br>3</td>
+<td>2<br>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12<br>4</td>
+<td>3<br>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>16<br>5</td>
+<td>3<br>1</td>
+</tr>
+</tbody>
+</table>
+<p>O exemplo #1 recebe como entrada 8 porções de pizza para dividir em 3 amigos. O programa mostra que cada pessoa vai comer 2 pedaços e que irão sobrar 2.</p>
+<p>Vamos implementar o programa usando as operações de <em>divisão</em> e de <em>resto da divisão</em>.</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> porcoes = <span class="hljs-built_in">parseInt</span>(lines.shift());
+<span class="hljs-keyword">var</span> pessoas = <span class="hljs-built_in">parseInt</span>(lines.shift());
+
+<span class="hljs-keyword">var</span> porcoes_por_pessoa = <span class="hljs-built_in">parseInt</span>( porcoes / pessoas );
+<span class="hljs-keyword">var</span> sobra = porcoes % pessoas;
+
+<span class="hljs-built_in">console</span>.log(porcoes_por_pessoa);
+<span class="hljs-built_in">console</span>.log(sobra);
+</div></code></pre>
+
+    </body>
+    </html>

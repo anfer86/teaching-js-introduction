@@ -15,6 +15,7 @@
   
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+
   
 </head>
 
@@ -47,7 +48,7 @@
         </div>        
         
         
-        <a href="#" class="menu_item" data-toggle="collapse" data-target="#submenu_variaveis">Variáveis e Tipos de Dados</a>
+        <a href="javascript:;" class="menu_item" data-toggle="collapse" data-target="#submenu_variaveis">Variáveis e Tipos de Dados</a>
         <div class="collapse" id="submenu_variaveis" aria-expanded="false">
           <ul class="flex-column pl-2 nav">
             <!-- <li><a class="menu_subitem" href="#">Entrada e saída de dados</a></li> -->
@@ -56,14 +57,14 @@
           </ul>
         </div>        
         
-        <a href="#" class="menu_item" data-toggle="collapse" data-target="#submenu_expressoes">Operadores e Expressões</a>
+        <a href="javascript:;" class="menu_item" data-toggle="collapse" data-target="#submenu_expressoes">Operadores e Expressões</a>
         <div class="collapse" id="submenu_expressoes" aria-expanded="false">
-          <ul class="flex-column pl-2 nav">
-            <li><a class="menu_subitem" href="#">Atribuições</a></li>
-            <li><a class="menu_subitem" href="#">Operadores aritméticos</a></li>
-            <li><a class="menu_subitem" href="#">Operadores relacionais</a></li>
-            <li><a class="menu_subitem" href="#">Operadores lógicos</a></li>            
-            <li><a class="menu_subitem" href="#">Expressões lógicas</a></li>            
+          <ul class="flex-column pl-2 nav">            
+            <li><a class="menu_subitem" href="operadores_expressoes/operadores_artimeticos.html">Operadores Aritméticos</a></li>
+            <li><a class="menu_subitem" href="operadores_expressoes/operadores_de_atribuicao.html">Operadores de Atribuição</a></li>
+            <!-- <li><a class="menu_subitem" href="#">Operadores relacionais</a></li> -->
+            <li><a class="menu_subitem" href="operadores_expressoes/operadores_comparacao.html">Operadores de Comparação</a></li>            
+            <li><a class="menu_subitem" href="operadores_expressoes/expressoes_logicas.html">Expressões Lógicas</a></li>            
           </ul>
         </div>
         
@@ -194,5 +195,8 @@
   </script>
   
 </body>
+
+<script src="jquery-3.4.1.min.js"></script>
+<script src="jquery_preventDefault.js"></script>  
 
 </html>

@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>
+
 # Variáveis
 
 Durante a criação de algoritmos torna-se necessário armazenar dados e informações com resultados parciais ou finais, resultado das instruções que são executadas. 
