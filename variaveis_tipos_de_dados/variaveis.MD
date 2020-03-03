@@ -56,9 +56,36 @@ Os nomes de variáveis **não podem**:
 - Conter caracteres especiais: +,-,*,/,%,(,),{,},!,@,#.
 - Usar nomes reservados para outras funcionalidades. Em javascript alguns exemplos são: *function*, *var*, *new*, *for*, *return*.
 
-> Exemplos de nomes de variáveis permitidas são: ```nome_cliente```, ```salario_atual```, ```cidade```, ```nota1```, ```nota2```.
+Exemplos de nomes de variáveis permitidas são: `nome_cliente`, `salario_atual`, `cidade`, `nota1`, `nota2`.
 
-> Exemplos de nomes de variáveis **não permitidas** são: ```nome cliente```, ```1ra_nota```, ```nota#1```, ```function```. Ao tentar criar variáveis com esses nomes o interpretador da linguagem vai emitir um erro, não sendo possível executar o restante do programa.
+Exemplos de nomes de variáveis **não permitidas** são:
+- `nome cliente`, pois possui espaço entre `nome` e `cliente`
+- `1ra_nota`, pois inicia com número
+- `nota#1`, pois contém o caractere especial `#`
+- `function`, pois é uma palavra reservada do javascript
+> **Nota**: ao tentar criar variáveis com esses nomes o interpretador da linguagem vai emitir um erro, não sendo possível executar o restante do programa
+
+## Uso de Maiúsculas e Minúsculas
+
+Javascript é uma linguagem *case-sensitive*, o que significa que é sensível ao uso de maiúsculas e minúsculas ao definido variáveis. Assim, se criarmos uma variável chamada `salario`, não podemos nos referir a essa variável usando `Salario` ou `SALARIO`. Se a variável foi definida em minúsculo deve ser sempre usada dessa forma.
+
+Ainda vale ressaltar que se definirmos uma variável `salario` e outra `SALARIO` estaríamos nos referindo a duas variáveis diferentes que usam endereços de memória diferentes para armazenamento.
+
+## Nome de Variáveis com Palavras Compostas
+
+Em muitas ocasiões precisamos definir nomes de variáveis com mais do que uma palavra. Para isso existem dois padrões comumente aceitos:
+
+### CamelCase
+
+Neste padrão cada palavra é iniciada com maiúsculas e unidas sem espaços. Por exemplo, uma variável que se refere ao *salário inicial* de alguém, o nome da variável seria `SalarioInicial` ou `salarioInicial`.
+
+Um outro exemplo, ao criar uma variável para armazenar o valor de *salário com bônus* de vendas, o nome da variável seria `SalarioComBonus` ou `salarioComBonus`.
+
+> **Nota**: você deve ter observado que demos duas opções em cada exemplo. A primeira opção inicia com letra maiúscula e é chamada **UpperCamelCase**. A segunda opção inicial com letra minúscula e é chamada **lowerCamelCase**. Para variáveis e funções é *mais comum* utilizar *lowerCamelCase*.
+
+### Under_score
+
+Neste padrão as palavras são unidas por underscore (_) no lugar de espaço. Por exemplo, a variável de *salário inicial* seria nomeada como `salario_inicial`. Geralmente usam-se as palavras em minúsculo para variáveis e funções.
 
 ## Reutilizando Áreas de Memória
  
@@ -95,4 +122,27 @@ Os dados na memória ficaram conforme tabela abaixo. O valor ```3500.00``` risca
 
 ## Constantes
 
+Assim como as variáveis, consistem em áreas de memória para armazenar dados. Mas, diferente das variáveis, as constantes não podem ter seus dados alterados. 
+
+Uma constante é definida com um valor inicial e não é possível alterar o seu valor no decorrer do programa.
+
+Veja o seguinte exemplo. Vamos criar uma constante com um valor inicial, por exemplo, 3500, e vamos tentar realizar o reajuste do salario em 15%:
+
+```javascript
+// arquivo constantes/uso_incorreto.js
+const salario = 3500.00;
+salario = salario + salario * 0.15
+```
+
+Ao tentar executar esse programa, o *node* vai mostrar o erro **TypeError: Assignment to constant variable.** Esse erro significa que estamos tentar atribuir (*assign*) um valor para uma constante (*constant*). E por definição isso não é permitido.
+
+Além desse erro, o exemplo também mostra uma prática incomum ao definir constantes. As constantes são geralmente nomeadas em maiúsculo, por exemplo, `PI`, `NUMERO_MAXIMO_DE_ALUNOS`, `NUMERO_MINIMO_DE_ALUNOS`. Declaramos essas constantes da seguinte forma:
+
+```javascript
+// arquivo constantes/uso_correto.js
+const PI = 4.14159;
+const NUMERO_MAXIMO_DE_ALUNOS = 40;
+const NUMERO_MINIMO_DE_ALUNOS = 6;
+...
+```
 

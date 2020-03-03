@@ -92,12 +92,30 @@ Novo salário: R$ 4025 <br>
 <li>Conter caracteres especiais: +,-,*,/,%,(,),{,},!,@,#.</li>
 <li>Usar nomes reservados para outras funcionalidades. Em javascript alguns exemplos são: <em>function</em>, <em>var</em>, <em>new</em>, <em>for</em>, <em>return</em>.</li>
 </ul>
-<blockquote>
 <p>Exemplos de nomes de variáveis permitidas são: <code>nome_cliente</code>, <code>salario_atual</code>, <code>cidade</code>, <code>nota1</code>, <code>nota2</code>.</p>
-</blockquote>
+<p>Exemplos de nomes de variáveis <strong>não permitidas</strong> são:</p>
+<ul>
+<li><code>nome cliente</code>, pois possui espaço entre <code>nome</code> e <code>cliente</code></li>
+<li><code>1ra_nota</code>, pois inicia com número</li>
+<li><code>nota#1</code>, pois contém o caractere especial <code>#</code></li>
+<li><code>function</code>, pois é uma palavra reservada do javascript</li>
+</ul>
 <blockquote>
-<p>Exemplos de nomes de variáveis <strong>não permitidas</strong> são: <code>nome cliente</code>, <code>1ra_nota</code>, <code>nota#1</code>, <code>function</code>. Ao tentar criar variáveis com esses nomes o interpretador da linguagem vai emitir um erro, não sendo possível executar o restante do programa.</p>
+<p><strong>Nota</strong>: ao tentar criar variáveis com esses nomes o interpretador da linguagem vai emitir um erro, não sendo possível executar o restante do programa</p>
 </blockquote>
+<h2 id="uso-de-mai%c3%basculas-e-min%c3%basculas">Uso de Maiúsculas e Minúsculas</h2>
+<p>Javascript é uma linguagem <em>case-sensitive</em>, o que significa que é sensível ao uso de maiúsculas e minúsculas ao definido variáveis. Assim, se criarmos uma variável chamada <code>salario</code>, não podemos nos referir a essa variável usando <code>Salario</code> ou <code>SALARIO</code>. Se a variável foi definida em minúsculo deve ser sempre usada dessa forma.</p>
+<p>Ainda vale ressaltar que se definirmos uma variável <code>salario</code> e outra <code>SALARIO</code> estaríamos nos referindo a duas variáveis diferentes que usam endereços de memória diferentes para armazenamento.</p>
+<h2 id="nome-de-vari%c3%a1veis-com-palavras-compostas">Nome de Variáveis com Palavras Compostas</h2>
+<p>Em muitas ocasiões precisamos definir nomes de variáveis com mais do que uma palavra. Para isso existem dois padrões comumente aceitos:</p>
+<h3 id="camelcase">CamelCase</h3>
+<p>Neste padrão cada palavra é iniciada com maiúsculas e unidas sem espaços. Por exemplo, uma variável que se refere ao <em>salário inicial</em> de alguém, o nome da variável seria <code>SalarioInicial</code> ou <code>salarioInicial</code>.</p>
+<p>Um outro exemplo, ao criar uma variável para armazenar o valor de <em>salário com bônus</em> de vendas, o nome da variável seria <code>SalarioComBonus</code> ou <code>salarioComBonus</code>.</p>
+<blockquote>
+<p><strong>Nota</strong>: você deve ter observado que demos duas opções em cada exemplo. A primeira opção inicia com letra maiúscula e é chamada <strong>UpperCamelCase</strong>. A segunda opção inicial com letra minúscula e é chamada <strong>lowerCamelCase</strong>. Para variáveis e funções é <em>mais comum</em> utilizar <em>lowerCamelCase</em>.</p>
+</blockquote>
+<h3 id="underscore">Under_score</h3>
+<p>Neste padrão as palavras são unidas por underscore (_) no lugar de espaço. Por exemplo, a variável de <em>salário inicial</em> seria nomeada como <code>salario_inicial</code>. Geralmente usam-se as palavras em minúsculo para variáveis e funções.</p>
 <h2 id="reutilizando-%c3%81reas-de-mem%c3%b3ria">Reutilizando Áreas de Memória</h2>
 <p>Observando o programa <code>reajuste_salario</code>, verificamos que criamos três variáveis para armazenar os dados e resultados parciais. As variáveis são assim chamadas, pois são áreas de memória que podem <em>variar</em> o seu valor o longo do desenvolvimento do programa. Assim, podemos reutilizar as áreas der memória para atribuir resultados dos cálculo.</p>
 <p>Vamos reescrever o programa anterior, criando uma variável chamada <code>salario</code> para armazenar inicialmente o salario atual mas posteriormente o salário reajustados. Vejamos:</p>
@@ -144,6 +162,21 @@ salario = salario + salario * reajuste; <span class="hljs-comment">// *** altera
 </tbody>
 </table>
 <h2 id="constantes">Constantes</h2>
+<p>Assim como as variáveis, consistem em áreas de memória para armazenar dados. Mas, diferente das variáveis, as constantes não podem ter seus dados alterados.</p>
+<p>Uma constante é definida com um valor inicial e não é possível alterar o seu valor no decorrer do programa.</p>
+<p>Veja o seguinte exemplo. Vamos criar uma constante com um valor inicial, por exemplo, 3500, e vamos tentar realizar o reajuste do salario em 15%:</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo constantes/uso_incorreto.js</span>
+<span class="hljs-keyword">const</span> salario = <span class="hljs-number">3500.00</span>;
+salario = salario + salario * <span class="hljs-number">0.15</span>
+</div></code></pre>
+<p>Ao tentar executar esse programa, o <em>node</em> vai mostrar o erro <strong>TypeError: Assignment to constant variable.</strong> Esse erro significa que estamos tentar atribuir (<em>assign</em>) um valor para uma constante (<em>constant</em>). E por definição isso não é permitido.</p>
+<p>Além desse erro, o exemplo também mostra uma prática incomum ao definir constantes. As constantes são geralmente nomeadas em maiúsculo, por exemplo, <code>PI</code>, <code>NUMERO_MAXIMO_DE_ALUNOS</code>, <code>NUMERO_MINIMO_DE_ALUNOS</code>. Declaramos essas constantes da seguinte forma:</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo constantes/uso_correto.js</span>
+<span class="hljs-keyword">const</span> PI = <span class="hljs-number">4.14159</span>;
+<span class="hljs-keyword">const</span> NUMERO_MAXIMO_DE_ALUNOS = <span class="hljs-number">40</span>;
+<span class="hljs-keyword">const</span> NUMERO_MINIMO_DE_ALUNOS = <span class="hljs-number">6</span>;
+...
+</div></code></pre>
 
     </body>
     </html>
