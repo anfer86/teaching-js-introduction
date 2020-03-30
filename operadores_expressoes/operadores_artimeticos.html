@@ -57,7 +57,7 @@
 <tr>
 <td>%</td>
 <td>Resto da divisão</td>
-<td><code>&gt; 9 / 6</code><br><code>3</code></td>
+<td><code>&gt; 9 % 6</code><br><code>3</code></td>
 </tr>
 <tr>
 <td>++</td>
@@ -65,7 +65,7 @@
 <td><code>&gt; var x = 5;</code><br><code>&gt; x++; </code><br><code>6</code></td>
 </tr>
 <tr>
-<td>++</td>
+<td>--</td>
 <td>Decremento (1 unidade)</td>
 <td><code>&gt; var x = 5;</code><br><code>&gt; x--; </code><br><code>4</code></td>
 </tr>
@@ -116,8 +116,8 @@
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
 <span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
 
-<span class="hljs-keyword">var</span> porcoes = <span class="hljs-built_in">parseInt</span>(lines.shift());
-<span class="hljs-keyword">var</span> pessoas = <span class="hljs-built_in">parseInt</span>(lines.shift());
+<span class="hljs-keyword">var</span> porcoes = <span class="hljs-built_in">parseInt</span>(lines[<span class="hljs-number">0</span>]);
+<span class="hljs-keyword">var</span> pessoas = <span class="hljs-built_in">parseInt</span>(lines[<span class="hljs-number">1</span>]);
 
 <span class="hljs-keyword">var</span> porcoes_por_pessoa = <span class="hljs-built_in">parseInt</span>( porcoes / pessoas );
 <span class="hljs-keyword">var</span> sobra = porcoes % pessoas;

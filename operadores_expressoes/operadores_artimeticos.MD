@@ -11,9 +11,9 @@ Os operadores aritméticos são utilizados para realizar cálculos. A maior part
 | - | Subtração | `> 7 - 5`<br>`2` | 
 | * | Multiplicação | `> 5 * 3`<br>`15` | 
 | / | Multiplicação | `> 15 / 3`<br>`5` | 
-| % | Resto da divisão | `> 9 / 6`<br>`3` | 
+| % | Resto da divisão | `> 9 % 6`<br>`3` | 
 | ++ | Incremento (1 unidade) | `> var x = 5;`<br>`> x++; `<br>`6` |
-| ++ | Decremento (1 unidade) | `> var x = 5;`<br>`> x--; `<br>`4` |
+| -- | Decremento (1 unidade) | `> var x = 5;`<br>`> x--; `<br>`4` |
 
 ## Problemas Resolvidos
 
@@ -45,8 +45,8 @@ Vamos implementar o programa usando as operações de *divisão* e de *resto da 
 var input = require('fs').readFileSync('input.txt', 'utf8');
 var lines = input.split('\n');
 
-var porcoes = parseInt(lines.shift());
-var pessoas = parseInt(lines.shift());
+var porcoes = parseInt(lines[0]);
+var pessoas = parseInt(lines[1]);
 
 var porcoes_por_pessoa = parseInt( porcoes / pessoas );
 var sobra = porcoes % pessoas;
