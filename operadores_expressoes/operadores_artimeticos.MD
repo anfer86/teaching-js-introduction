@@ -10,7 +10,7 @@ Os operadores aritméticos são utilizados para realizar cálculos. A maior part
 | + | Adição | `> 5 + 7`<br>`12` |
 | - | Subtração | `> 7 - 5`<br>`2` | 
 | * | Multiplicação | `> 5 * 3`<br>`15` | 
-| / | Multiplicação | `> 15 / 3`<br>`5` | 
+| / | Divisão | `> 15 / 3`<br>`5` | 
 | % | Resto da divisão | `> 9 % 6`<br>`3` | 
 | ++ | Incremento (1 unidade) | `> var x = 5;`<br>`> x++; `<br>`6` |
 | -- | Decremento (1 unidade) | `> var x = 5;`<br>`> x--; `<br>`4` |
