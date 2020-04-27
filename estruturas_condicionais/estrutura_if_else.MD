@@ -87,3 +87,32 @@ console.log(valor)
 
 Note que neste programa apenas vamos alterar o `valor` em caso de que esse valor seja negativo, caso contrário não precisamos mudar o seu valor.
 
+**Problema Sair de Aula**: ler os dados de um aluno que quer fazer uma solicitação para sair antes da aula. Se for menor de idade mostrar um aviso. Os dados de entrada do aluno serão no formato: `nome,curso,idade`, como segue no exemplo abaixo.
+
+| Exemplos<br>de Entrada  | Exemplos<br>de Saída
+| ------------- | ------------- |
+| Jaime,Técnico em Informática,17 | O aluno Jaime do curso Técnico em Informática solicitou sair da aula.<br>Aviso: o aluno é menor de idade.|
+| Marcos,Técnico em Biotecnologia,18 | O aluno Marcos do curso Técnico em Biotecnologia solicitou sair da aula. |
+
+```javascript
+// arquivo estruturas_condicionais/sair_da_aula/sair_da_aula.js
+
+var input = require('fs').readFileSync('input.txt', 'utf8');
+var lines = input.split('\n');
+
+var dados = lines[0].split(',');
+
+var nome = dados[0];
+var curso = dados[1];
+var idade = Number(dados[2]); // Pode usar também parseInt(dados[2])
+
+console.log('O aluno '+ nome + ' do curso '+ curso + ' solicitou sair da aula.';)
+
+// se for menor de idade 
+if (idade < 18){
+        
+    // Mostramos um aviso
+    console.log('Aviso: o aluno é menor de idade.');
+
+}
+```

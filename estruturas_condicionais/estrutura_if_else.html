@@ -151,6 +151,46 @@ Neste problema tem que ler um número e mostrar o valor absoluto desse número. 
 <span class="hljs-built_in">console</span>.log(valor)
 </div></code></pre>
 <p>Note que neste programa apenas vamos alterar o <code>valor</code> em caso de que esse valor seja negativo, caso contrário não precisamos mudar o seu valor.</p>
+<p><strong>Problema Sair de Aula</strong>: ler os dados de um aluno que quer fazer uma solicitação para sair antes da aula. Se for menor de idade mostrar um aviso. Os dados de entrada do aluno serão no formato: <code>nome,curso,idade</code>, como segue no exemplo abaixo.</p>
+<table>
+<thead>
+<tr>
+<th>Exemplos<br>de Entrada</th>
+<th>Exemplos<br>de Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jaime,Técnico em Informática,17</td>
+<td>O aluno Jaime do curso Técnico em Informática solicitou sair da aula.<br>Aviso: o aluno é menor de idade.</td>
+</tr>
+<tr>
+<td>Marcos,Técnico em Biotecnologia,18</td>
+<td>O aluno Marcos do curso Técnico em Biotecnologia solicitou sair da aula.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo estruturas_condicionais/sair_da_aula/sair_da_aula.js</span>
+
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> dados = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">','</span>);
+
+<span class="hljs-keyword">var</span> nome = dados[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">var</span> curso = dados[<span class="hljs-number">1</span>];
+<span class="hljs-keyword">var</span> idade = <span class="hljs-built_in">Number</span>(dados[<span class="hljs-number">2</span>]); <span class="hljs-comment">// Pode usar também parseInt(dados[2])</span>
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'O aluno '</span>+ nome + <span class="hljs-string">' do curso '</span>+ curso + <span class="hljs-string">' solicitou sair da aula.'</span>;)
+
+<span class="hljs-comment">// se for menor de idade </span>
+<span class="hljs-keyword">if</span> (idade &lt; <span class="hljs-number">18</span>){
+        
+    <span class="hljs-comment">// Mostramos um aviso</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Aviso: o aluno é menor de idade.'</span>);
+
+}
+</div></code></pre>
 
     </body>
     </html>
