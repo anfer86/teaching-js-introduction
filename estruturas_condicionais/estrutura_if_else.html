@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estrutura IF-ELSE</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body class="vscode-light">
+        <script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>  
+<h1 id="estrutura-if-else">Estrutura IF-ELSE</h1>
+<p>As estruturas de seleção ou condicionais servem para desviar o fluxo de execução de instruções. O fato de um programa decidir executar um certo conjunto de instruções (ou outro) geralmente depende do estado (valor) de uma ou mais variáveis. Por esse motivo, deve-se analisar o valor dela(s) para saber que rumo a execução do programa deve tomar.</p>
+<p><strong>Problema exemplo</strong>: uma empresa necessita atualizar o salário de seus funcionários. Você precisa desenvolver um programa que dado um valor de salário faça o reajuste do valor conforme a tabela abaixo:</p>
+<table>
+<thead>
+<tr>
+<th>Salário</th>
+<th style="text-align:center">Reajuste (aumento de salário)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>De 0 a R$ 1000</td>
+<td style="text-align:center"><code>25%</code></td>
+</tr>
+<tr>
+<td>Acima de R$ 1000</td>
+<td style="text-align:center"><code>10%</code></td>
+</tr>
+</tbody>
+</table>
+<p>Assim, se um funcionário recebe <code>R$ 600</code> o reajuste será de <code>25%</code>, isto é o seu novo salário será <code>600 * (1 + 0,25) = R$ 750</code>. Já um outro que recebe <code>R$ 2.000</code>, o reajuste será de <code>10%</code>.</p>
+<p>Para calcular os valores de reajuste de acordo com o salário atual do funcionário precisamos verificar <strong>se ele é menor ou igual a R$ 1000</strong>. Se for, nós calculamos o reajuste com <code>25%</code>, senão calculamos o reajuste com <code>10%</code>. Vejamos alguns exemplos entrada e saída para este programa.</p>
+<table>
+<thead>
+<tr>
+<th>Exemplos<br>de Entrada</th>
+<th>Exemplos<br>de Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>Novo salário: R$ 125,00</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>Novo salário: R$ 1250,00</td>
+</tr>
+<tr>
+<td>600</td>
+<td>Novo salário: R$ 750,00</td>
+</tr>
+<tr>
+<td>1500</td>
+<td>Novo salário: R$ 1650,00</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>Novo salário: R$ 2200,00</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos receber o valor do salário atual do funcionário em um arquivo de entrada chamado <code>input.txt</code></p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo estruturas_condicionais/reajuste_salario.js</span>
+
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> salario = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]);
+
+<span class="hljs-comment">// se o salário é menor ou igual a R$ 1000</span>
+<span class="hljs-keyword">if</span> (salario &lt;= <span class="hljs-number">1000</span>){
+    
+    <span class="hljs-comment">// reajuste de 25%</span>
+    novo_salario = salario + salario * <span class="hljs-number">0.25</span>;
+
+} <span class="hljs-keyword">else</span> { <span class="hljs-comment">// caso contrário</span>
+
+    <span class="hljs-comment">// reajuste de 10%</span>
+    novo_salario = salario + salario * <span class="hljs-number">0.10</span>;
+
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Novo salário R$ '</span> + novo_salario.toFixed(<span class="hljs-number">2</span>) )
+</div></code></pre>
+
+    </body>
+    </html>
