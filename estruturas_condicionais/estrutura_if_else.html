@@ -100,7 +100,8 @@
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Novo salário R$ '</span> + novo_salario.toFixed(<span class="hljs-number">2</span>) )
 </div></code></pre>
 <h3 id="estrutura-simples-e-composta">Estrutura Simples e Composta</h3>
-<p>Dependendo do tipo de problema que precisamos resolver podemos usar IF e ELSE ou podemos usar apenas o IF. No exemplo anterior mostramos como usamos IF-ELSE, na situação em que temos que executar alguma instrução quando a condição (<code>salário &lt;= 1000</code>), e também temos que executar alguma instrução quando a condição é falsa (<code>else</code>).</p>
+<p>Dependendo do tipo de problema que precisamos resolver podemos usar IF e ELSE ou podemos usar apenas o IF.
+No exemplo anterior mostramos como usamos IF-ELSE, na situação em que temos que executar alguma instrução quando a condição (<code>salário &lt;= 1000</code>), e também temos que executar alguma instrução quando a condição é falsa (<code>else</code>).</p>
 <p><strong>Problema Valor Absoluto</strong>: o valor absoluto de um número consiste em 'tirar o seu sinal'. O valor absoluto de um número positivo, ex. <code>9</code> é o próprio número. O valor de um número negativo, ex. <code>-9</code> é o número com seu sinal trocado, o que podemos alcançar multiplicando o valor por (-1), resultando em <code>9</code>.
 Neste problema tem que ler um número e mostrar o valor absoluto desse número. Exemplos de entrada e saída</p>
 <table>
@@ -190,6 +191,45 @@ Neste problema tem que ler um número e mostrar o valor absoluto desse número. 
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Aviso: o aluno é menor de idade.'</span>);
 
 }
+</div></code></pre>
+<h3 id="estrutura-geral">Estrutura Geral</h3>
+<p>Em Javascript podemos generalizamos a estrutura IF-ELSE da seguinte forma:</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// Condição simples</span>
+<span class="hljs-keyword">if</span> (condição){
+    <span class="hljs-comment">// Comandos caso a condição seja Verdadeira (True)</span>
+    comando1;
+    comando2;
+    ...
+    comandoN;
+}
+
+<span class="hljs-comment">// Condição composta</span>
+<span class="hljs-keyword">if</span> (condição){
+    <span class="hljs-comment">// Comandos caso a condição seja Verdadeira (True)</span>
+    comando1;
+    comando2;
+    ...
+    comandoN;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// Comandos caso a condição seja Falto (False)</span>
+    comandoA;
+    comandoB;
+    ...
+    comandoZ;
+}
+</div></code></pre>
+<p>Onde <code>(condição)</code> é uma expressão relacional (também chamada de expressão booleana), que em geral consiste no uso de um ou mais operadores de comparação (&lt;,&gt;,&lt;=,&gt;=,==,!=), que resultam em algum dos valores True (Verdadeiro) ou False (Falso).</p>
+<p>Ressalta-se ainda que, em situações em que apenas um comando é executado dentro do bloco de comandos entre <code>{</code> e <code>}</code>, estes sinais não são necessários e podem ser retirados. Contudo, recomenda-se o uso dos mesmos. Por exemplo, esta implementação:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">if</span> (condição){
+    comando1;
+}
+</div></code></pre>
+<p>é equivalente a esta outra:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">if</span> (condição)
+    comando1;
+</div></code></pre>
+<p>e ainda equivalente a esta outra:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">if</span> (condição) comando1;
 </div></code></pre>
 
     </body>

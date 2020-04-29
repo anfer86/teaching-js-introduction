@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estrutura IF-ELSE Aninhados</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body class="vscode-light">
+        <script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>  
+<h1 id="estrutura-if-else-aninhados">Estrutura IF-ELSE Aninhados</h1>
+<p>A estrutura IF-ELSE convencional permite executar comandos caso a condição seja True ou False. No entanto, existem situações em que precisamos de mais do que dois caminhos.</p>
+<p><strong>Problema situação do aluno</strong>: em uma determinada instituição um aluno pode estar em três situações de acordo com a média de suas notas: Aprovado (<code>media &gt;= 6</code>), de Recuperação (<code>6 &gt; media &gt;= 4</code>), Reprovado (<code>media &lt; 4</code>). Então neste problema temos 3 (três) possíveis caminhos. Supondo que uma variável chamada <code>media</code> possui o valor da média de um aluno, usamos IF-ELSE da seguinte forma.</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">if</span> (media &gt;= <span class="hljs-number">6</span>){
+    situacao = <span class="hljs-string">'Aprovado'</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (media &gt;= <span class="hljs-number">4</span>){
+    situacao = <span class="hljs-string">'de Recuperação'</span>    
+} <span class="hljs-keyword">else</span> {
+    situação = <span class="hljs-string">'Reprovado'</span>
+}
+<span class="hljs-comment">// Mostramos a situação do aluno</span>
+<span class="hljs-built_in">console</span>.log(situacao);
+</div></code></pre>
+<p>Dessa forma, lêmos a estrutura da seguinte forma: <strong>SE</strong> a media é maior ou igual a 6 <strong>ENTÃO</strong> a situação do aluno é Aprovado, <strong>SENÃO</strong> <strong>SE</strong> a média é maior ou igual a 4 <strong>ENTÃO</strong> a situação do aluno é de Recuperação, <strong>SENÃO</strong> a situação do aluno é Reprovado.</p>
+<p>Obs.: o termo <strong>SENÃO</strong> pode ser substituído por <strong>CASO CONTRÁRIO</strong> na leitura e interpretação do código.</p>
+<p>Essa estrutura é conhecida como IF-ELSE aninhados e sua estrutura geral é:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">if</span> (condição_1){
+    <span class="hljs-comment">// Bloco de comandos caso a condição_1 seja True (verdadeira)</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (condição_2){
+    <span class="hljs-comment">// Bloco de comandos caso a condição 1 seja False (falsa)</span>
+    <span class="hljs-comment">// e a condição_2 seja True (verdadeira)</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (condição_3){
+    <span class="hljs-comment">// Bloco de comandos caso as condições 1 e 2 sejam False (falsas)</span>
+    <span class="hljs-comment">// e a condição_3 True (verdadeira)</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// Bloco de comandos caso Todas condições anteriores sejam False(falsas)</span>
+}
+</div></code></pre>
+<p><strong>Problema exemplo</strong>: uma empresa necessita atualizar o salário de seus funcionários con o critério, quem ganha mais terá um aumento de salário menor, conforme a tabela:</p>
+<table>
+<thead>
+<tr>
+<th>Salário</th>
+<th style="text-align:center">Reajuste (aumento de salário)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Até R$ 1000</td>
+<td style="text-align:center"><code>25%</code></td>
+</tr>
+<tr>
+<td>Acima de R$ 1000 até R$ 2000</td>
+<td style="text-align:center"><code>10%</code></td>
+</tr>
+<tr>
+<td>Acima de R$ 2000 até R$ 4000</td>
+<td style="text-align:center"><code>5%</code></td>
+</tr>
+<tr>
+<td>Acima de R$ 4000</td>
+<td style="text-align:center"><code>2%</code></td>
+</tr>
+</tbody>
+</table>
+<p>Seguem abaixo alguns exemplos de entrada e saída para o programa:</p>
+<table>
+<thead>
+<tr>
+<th>Exemplos<br>de Entrada</th>
+<th>Exemplos<br>de Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>600</td>
+<td>Novo salário: R$ 750,00</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>Novo salário: R$ 1250,00</td>
+</tr>
+<tr>
+<td>1500</td>
+<td>Novo salário: R$ 1750,00</td>
+</tr>
+<tr>
+<td>2500</td>
+<td>Novo salário: R$ 2625,00</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>Novo salário: R$ 5100,00</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos receber o valor do salário atual do funcionário em um arquivo de entrada chamado <code>input.txt</code></p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo estruturas_condicionais/reajuste_salario_2/reajuste_salario_2.js</span>
+
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+
+<span class="hljs-keyword">var</span> salario = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]);
+
+<span class="hljs-comment">// se o salário é menor ou igual a R$ 1000</span>
+<span class="hljs-keyword">if</span> (salario &lt;= <span class="hljs-number">1000</span>){
+    
+    <span class="hljs-comment">// reajuste de 25%</span>
+    novo_salario = salario + salario * <span class="hljs-number">0.25</span>;
+
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (salario &lt;= <span class="hljs-number">2000</span>){ <span class="hljs-comment">// SENAO, se o salário for menor ou igual a R$ 2000</span>
+
+    <span class="hljs-comment">// reajuste de 10%</span>
+    novo_salario = salario + salario * <span class="hljs-number">0.10</span>;
+
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (salario &lt;= <span class="hljs-number">4000</span>){ <span class="hljs-comment">// SENAO, se o salário for menor ou igual a R$ 4000</span>
+
+    <span class="hljs-comment">// reajuste de 5%</span>
+    novo_salario = salario + salario * <span class="hljs-number">0.05</span>;
+
+} <span class="hljs-keyword">else</span> { <span class="hljs-comment">// SENÃO, significa que o salário é maior que R$ 4000</span>
+
+    novo_salario = salario + salario * <span class="hljs-number">0.02</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Novo salário R$ '</span> + novo_salario.toFixed(<span class="hljs-number">2</span>) )
+</div></code></pre>
+
+    </body>
+    </html>

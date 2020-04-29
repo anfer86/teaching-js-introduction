@@ -53,7 +53,8 @@ console.log('Novo salário R$ ' + novo_salario.toFixed(2) )
 
 ### Estrutura Simples e Composta
 
-Dependendo do tipo de problema que precisamos resolver podemos usar IF e ELSE ou podemos usar apenas o IF. No exemplo anterior mostramos como usamos IF-ELSE, na situação em que temos que executar alguma instrução quando a condição (`salário <= 1000`), e também temos que executar alguma instrução quando a condição é falsa (`else`).
+Dependendo do tipo de problema que precisamos resolver podemos usar IF e ELSE ou podemos usar apenas o IF.
+No exemplo anterior mostramos como usamos IF-ELSE, na situação em que temos que executar alguma instrução quando a condição (`salário <= 1000`), e também temos que executar alguma instrução quando a condição é falsa (`else`). 
 
 **Problema Valor Absoluto**: o valor absoluto de um número consiste em 'tirar o seu sinal'. O valor absoluto de um número positivo, ex. `9` é o próprio número. O valor de um número negativo, ex. `-9` é o número com seu sinal trocado, o que podemos alcançar multiplicando o valor por (-1), resultando em `9`.
 Neste problema tem que ler um número e mostrar o valor absoluto desse número. Exemplos de entrada e saída
@@ -116,3 +117,57 @@ if (idade < 18){
 
 }
 ```
+
+### Estrutura Geral
+
+Em Javascript podemos generalizamos a estrutura IF-ELSE da seguinte forma:
+
+```javascript
+// Condição simples
+if (condição){
+    // Comandos caso a condição seja Verdadeira (True)
+    comando1;
+    comando2;
+    ...
+    comandoN;
+}
+
+// Condição composta
+if (condição){
+    // Comandos caso a condição seja Verdadeira (True)
+    comando1;
+    comando2;
+    ...
+    comandoN;
+} else {
+    // Comandos caso a condição seja Falto (False)
+    comandoA;
+    comandoB;
+    ...
+    comandoZ;
+}
+```
+
+Onde `(condição)` é uma expressão relacional (também chamada de expressão booleana), que em geral consiste no uso de um ou mais operadores de comparação (<,>,<=,>=,==,!=), que resultam em algum dos valores True (Verdadeiro) ou False (Falso).
+
+Ressalta-se ainda que, em situações em que apenas um comando é executado dentro do bloco de comandos entre `{` e `}`, estes sinais não são necessários e podem ser retirados. Contudo, recomenda-se o uso dos mesmos. Por exemplo, esta implementação:
+
+```javascript
+if (condição){
+    comando1;
+}
+```
+
+é equivalente a esta outra:
+
+```javascript
+if (condição)
+    comando1;
+```
+
+e ainda equivalente a esta outra:
+
+```javascript
+if (condição) comando1;
+```
+
