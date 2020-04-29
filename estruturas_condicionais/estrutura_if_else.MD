@@ -120,7 +120,7 @@ if (idade < 18){
 
 ### Estrutura Geral
 
-Em Javascript podemos generalizamos a estrutura IF-ELSE da seguinte forma:
+Em Javascript generalizamos a estrutura IF-ELSE da seguinte forma:
 
 ```javascript
 // Condição simples
