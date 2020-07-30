@@ -1,7 +1,8 @@
 <script src="../jquery-3.4.1.min.js"></script>
 <script src="../jquery_preventDefault.js"></script>  
+<link rel="stylesheet" type="text/css" href="../style.css">
 
-# Estrutura IF-ELSE Aninhados
+# Estrutura de IF-ELSE Aninhados
 
 A estrutura IF-ELSE convencional permite executar comandos caso a condição seja True ou False. No entanto, existem situações em que precisamos de mais do que dois caminhos.
 

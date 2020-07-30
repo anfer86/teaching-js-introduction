@@ -2,28 +2,32 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Estrutura IF-ELSE Aninhados</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <title>Estrutura de IF-ELSE Aninhados</title>
         <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
-        <style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
                 font-size: 14px;
                 line-height: 1.6;
             }
         </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
         
         <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
     </head>
     <body class="vscode-light">
         <script src="../jquery-3.4.1.min.js"></script>
 <script src="../jquery_preventDefault.js"></script>  
-<h1 id="estrutura-if-else-aninhados">Estrutura IF-ELSE Aninhados</h1>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<h1 id="estrutura-de-if-else-aninhados">Estrutura de IF-ELSE Aninhados</h1>
 <p>A estrutura IF-ELSE convencional permite executar comandos caso a condição seja True ou False. No entanto, existem situações em que precisamos de mais do que dois caminhos.</p>
 <p><strong>Problema situação do aluno</strong>: em uma determinada instituição um aluno pode estar em três situações de acordo com a média de suas notas: Aprovado (<code>media &gt;= 6</code>), de Recuperação (<code>6 &gt; media &gt;= 4</code>), Reprovado (<code>media &lt; 4</code>). Então neste problema temos 3 (três) possíveis caminhos. Supondo que uma variável chamada <code>media</code> possui o valor da média de um aluno, usamos IF-ELSE da seguinte forma.</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">if</span> (media &gt;= <span class="hljs-number">6</span>){
