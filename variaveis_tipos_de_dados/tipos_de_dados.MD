@@ -4,7 +4,9 @@
 
 # Tipos de Dados
 
-Em Javascript existem os seguintes tipos de dados. As variáveis assumem tipos de dados de acordo com o que atribuímos para elas. Exemplos:
+Os tipos de dados são as maneiras em que se pode armazenar informação em memória, por exemplo, existe um tipo de dado para armazenar texto (`"Bom dia!"`) e outro para armazenar números (`1.25`). E as variáveis, espaços de memória que armazenam dados, assumem tipos de dados de acordo com o que atribuímos para elas.
+
+Em Javascript existem os seguintes tipos de dados:
 
 | **Tipo de Dado** | **Descricão** | **Exemplo**
 | ----- | ------ | ------ |
