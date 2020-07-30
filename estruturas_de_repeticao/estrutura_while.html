@@ -3,25 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <title>Estrutura `while`</title>
+        <style>
+</style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        <style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
                 font-size: 14px;
                 line-height: 1.6;
             }
         </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
         
         
     </head>
     <body class="vscode-light">
-        <h1 id="estrutura-while">Estrutura <code>while</code></h1>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+<h1 id="estrutura-while">Estrutura <code>while</code></h1>
 <p>Usamos esse tipo de laço quando não sabemos quantas vezes queremos executar uma determinado bloco de instruções, mas sabemos que temos que repetí-lo algumas vezes enquanto alguma condição for satisfeita.</p>
 <p>O <code>while</code> tem a seguinte estrutura:</p>
 <pre><code class="language-js"><div><span class="hljs-keyword">while</span> ([condicao]){
@@ -128,7 +131,7 @@
 <p><strong>Problema 3</strong></p>
 <p>Você está recebendo dados provenientes de uma fila de entrada ao cinema. Para um determinado filme a idade mínima é de 16 anos. Por isso, o teu programa deve deixar passar as pessoas com idade maior ou igual que 16 anos. Em caso de haver alguém com menos de 16 anos deverá chamar o segurança para retirar essa pessoa da fila e parar o programa.</p>
 <p>No arquivo de entrada você receberá valores identificadores dos clientes e a sua idade, como segue:</p>
-<pre><code><div>12113, 17
+<pre><code><code><div>12113, 17
 10221, 20
 99454, 32
 56445, 17
@@ -138,7 +141,7 @@
 12947, 23
 88349, 12
 11100, 60
-</div></code></pre>
+</div></code></code></pre>
 <p>Solução:</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
 <span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
@@ -166,11 +169,11 @@ Cliente 34585 pode passar.<br>
 Cliente 88332 pode passar.<br>
 Cliente 34573 não pode passar. Chamar o segurança.<br>
 </div>
-<h2 id="exerc%c3%adcios">Exercícios</h2>
+<h2 id="exercícios">Exercícios</h2>
 <p><strong>Exercício 1</strong></p>
 <p>Você foi contratado para melhorar o programa de fila de cinema implementado anteriormente. Como existem filmes que tem diferentes valores de idade mínima o teu programa tem que se adaptar para diferentes valores de idade mínima. Assim, a única alteração em relação ao exercício anterior é que a idade mínima será apresentada na primeira linha do arquivo de entrada.</p>
 <p>Arquivo de entrada:</p>
-<pre><code><div>14
+<pre><code><code><div>14
 12113, 17
 10221, 20
 99454, 32
@@ -181,7 +184,7 @@ Cliente 34573 não pode passar. Chamar o segurança.<br>
 12947, 23
 88349, 12
 11100, 60
-</div></code></pre>
+</div></code></code></pre>
 <p><strong>Exercício 2</strong></p>
 <p>Desenvolva um programa que faça o sorteio de dois dados, com valores de 1 a 6. Repita o processo até que os dois dados sorteados possuam o mesmo valor.</p>
 <p><strong>Atividade Complementar</strong></p>

@@ -3,25 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <title>Estrutura `for..of`</title>
+        <style>
+</style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        <style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
                 font-size: 14px;
                 line-height: 1.6;
             }
         </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
         
         
     </head>
     <body class="vscode-light">
-        <h1 id="estrutura-forof">Estrutura <code>for..of</code></h1>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+<h1 id="estrutura-forof">Estrutura <code>for..of</code></h1>
 <p>Usamos esse tipo de laço quando temos vários elementos dentro de um array, ou outra estrutura que armazena vários elementos dentro dela. O <code>for..of</code> tem a seguinte estrutura:</p>
 <pre><code class="language-js"><div><span class="hljs-keyword">for</span> (variavel <span class="hljs-keyword">of</span> array) {
   instruções
@@ -87,13 +90,13 @@ F<br>
 <p><strong>Problema 2</strong></p>
 <p>O comprimento dos textos em Tweets é comumente próximo a 33 caracteres, mas o limite permitido é de 280 caracteres. Você quer fazer uma aplicação que, se o tweet tiver mais do que 33 caracteres então vai adicionar após os 33 caracteres os três pontos <code>...</code>.</p>
 <p>No arquivo de entrada você receberá vários tweets.</p>
-<pre><code><div>// tweets/input.txt
+<pre><code><code><div>// tweets/input.txt
 @homem100medo:Lembrando que Tetris é na verdade uma metáfora da vida, pois nele seus erros se acumulam e os acertos desaparecem, jogo muito educativo.
 @julhapema:Gente é sério, já tamo em 2015. Quando é que a gente vai decidir que o futuro já chegou e começar a usar roupa prateada?
 @a4038789:Bom vou nessa a gente se fala outra hora minha bateria vai acabar ta em 78%
 @sinfo:a gente nunca parou pra pensar nos sentimentos da árvore se ela gosta de ser transformada no caderno do luan santana
 @luansgo:vamo marca um dia pra marca um dia
-</div></code></pre>
+</div></code></code></pre>
 <p>Programa:</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// tweets/tweets.js</span>
 <span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="../style.css">
+
 # Estrutura `for`
 
 Usamos esse tipo de laço quando sabemos quantas vezes queremos executar uma determinada instrução. O `for` tem a seguinte estrutura:
