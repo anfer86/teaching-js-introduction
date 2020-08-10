@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Operadores de Comparação (ou Lógicos)</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>  
+<h1 id="operadores-de-comparação-ou-lógicos">Operadores de Comparação (ou Lógicos)</h1>
+<p>Estes operadores são utilizados para comparar dois dados: valores de variáveis ou literais (valores fixos).</p>
+<h2 id="operadores-de-igualdade">Operadores de Igualdade</h2>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th style="text-align:left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td style="text-align:left">Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo e falso (false), caso contrário. Ignora o tipo de dado. Exemplos: <br><code>&gt; 10 == 10;</code><br><code>true</code><br><code>&gt; 10 == '10';</code><br><code>true</code><br><code>&gt; var x = 25;</code><br><code>&gt; x == 27;</code><br><code>false</code><br><code>&gt; y = 'Gato';</code><br><code>y == 'Gato';</code><br><code>true</code><br><code>&gt; (y == 'Cachorro');</code><br><code>false</code></td>
+</tr>
+<tr>
+<td>===</td>
+<td style="text-align:left">Exatamente Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo. <strong>Considera o tipo de dado</strong>. Exemplos: <br><code>&gt; 10 == 10;</code><br><code>true</code><br><code>&gt; 10 == '10';</code><br><code>false</code></td>
+</tr>
+<tr>
+<td>!=</td>
+<td style="text-align:left">Diferente. Retorna verdadeiro (true) se os dois dados possuem o <strong>conteúdo diferente</strong>. Ignora o tipo de dado. Exemplos: <br><code>&gt; 10 != 10;</code><br><code>false</code><br><code>&gt; 10 != '10';</code><br><code>false</code><br><code>&gt; var x = 25;</code><br><code>&gt; x != 27</code><br><code>true</code><br><code>&gt; y = 'Gato'</code><br><code>y != 'Gato'</code><br><code>false</code><br><code>&gt; (y != 'Cachorro')</code><br><code>true</code></td>
+</tr>
+<tr>
+<td>!==</td>
+<td style="text-align:left">Exatamente Diferente. Retorna verdadeiro (true) se os dois dados possuem o conteúdo diferente. <strong>Considera o tipo de dado</strong>. Exemplos: <br><code>&gt; 10 !== 10;</code><br><code>false</code><br><code>&gt; 10 !== '10';</code><br><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="operadores-relacionais">Operadores Relacionais</h2>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th style="text-align:left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; e &gt;=</td>
+<td style="text-align:left">Maior e maior ou igual. Retorna verdadeiro (true) se o primeiro dado é maior (&gt;) do que o segundo e falso (false) caso contrário. Exemplos: <br><code>&gt; (10 &gt; 5);</code><br><code>true</code><br><code>&gt; (5 &gt; 10);</code><br><code>false</code><br><code>&gt; var x = 25;</code><br><code>&gt; (x &gt;= 25);</code><br><code>true</code><br><code>&gt; (x &gt;= 20);</code><br><code>true</code><br><code>&gt; (x &gt;= 35);</code><br><code>false</code></td>
+</tr>
+<tr>
+<td>&lt; e &lt;=</td>
+<td style="text-align:left">Menor e menor ou igual. Retorna verdadeiro (true) se o primeiro dado é maior (&lt;&gt;) do que o segundo e falso (false) caso contrário. Exemplos: <br><code>&gt; (10 &lt; 5);</code><br><code>false</code><br><code>&gt; (5 &lt; 10);</code><br><code>true</code><br><code>&gt; var x = 25;</code><br><code>&gt; (x &lt;= 25);</code><br><code>true</code><br><code>&gt; (x &lt;= 20);</code><br><code>false</code><br><code>&gt; (x &lt;= 35);</code><br><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="operadores-lógicos">Operadores Lógicos</h2>
+<p>Os operadores lógicos são utilizados para comparar dados lógicos, sejam provenientes de variáveis, literais (valores fixos) ou resultado de expressões.</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th style="text-align:left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td style="text-align:left">Negação (Not). Retorna verdadeiro (true) se o dado é <code>false</code> e falso (false) caso contrário. Exemplos: <br><code>&gt; !(false);</code><br><code>true</code><br><code>&gt; !(10 &gt; 5);</code><br><code>false</code><br><code>&gt; !(5 &gt; 10);</code><br><code>true</code><br><code>&gt; var x = 25;</code><br><code>&gt; !(x &gt; 20);</code><br><code>false</code></td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td style="text-align:left">Conjunção (e, and). Retorna verdadeiro (true) se dois dados são <strong>ambos verdadeiros (true)</strong> e falso (false) caso contrário. Exemplos: <br><code>&gt; true &amp;&amp; true;</code><br><code>true</code><br><code>&gt; true &amp;&amp; false;</code><br><code>false</code><br><code>&gt; (10 &gt; 5) &amp;&amp; (5 &gt; 10);</code><br><code>false</code><br><code>&gt; var media = 7;</code><br><code>&gt; var faltas = 5;</code><br><code>&gt; (media &gt;= 6) &amp;&amp; (faltas &lt;= 10); \\ Condição de aprovação</code><br><code>true</code></td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td style="text-align:left">Disjunção (ou, or). Retorna verdadeiro (true) se em dois valores <strong>pelo menos um é verdadeiro</strong> e falso (false) caso contrário. Exemplos: <br><code>&gt; true || true;</code><br><code>true</code><br><code>&gt; true || false;</code><br><code>true</code><br><code>&gt; false || false;</code><br><code>false</code><br><code>&gt; (10 &gt; 5) || (5 &gt; 10);</code><br><code>true</code><br><code>&gt; var preco_produto = 50;</code><br><code>&gt; var faltas = 5;</code><br><code>&gt; (media &lt; 6) || (faltas &gt; 10); // Condicão de reprovação</code><br><code>true</code></td>
+</tr>
+</tbody>
+</table>
+
+    </body>
+    </html>
