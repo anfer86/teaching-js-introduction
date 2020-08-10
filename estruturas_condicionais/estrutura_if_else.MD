@@ -149,7 +149,7 @@ if (condição){
 }
 ```
 
-Onde `(condição)` é uma expressão relacional (também chamada de expressão booleana), que em geral consiste no uso de um ou mais operadores de comparação (<,>,<=,>=,==,!=), que resultam em algum dos valores True (Verdadeiro) ou False (Falso).
+Onde `(condição)` é uma expressão relacional (também chamada de expressão booleana), que em geral consiste no uso de um ou mais operadores de comparação (<,>,<=,>=,==,!=), que resultam em algum dos valores `true` (verdadeiro) ou `false` (falso). [Ver Operadores de Comparação](../operadores_expressoes/operadores_comparacao.html).
 
 Ressalta-se ainda que, em situações em que apenas um comando é executado dentro do bloco de comandos entre `{` e `}`, estes sinais não são necessários e podem ser retirados. Contudo, recomenda-se o uso dos mesmos. Por exemplo, esta implementação:
 
