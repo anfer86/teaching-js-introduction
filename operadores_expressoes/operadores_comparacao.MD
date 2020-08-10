@@ -9,9 +9,9 @@ Estes operadores são utilizados para comparar dois dados: valores de variáveis
 
 | Símbolo | Significado 
 | ------------- |:-----------------|
-| == | Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo e falso (false), caso contrário. Ignora o tipo de dado. Exemplos: <br>`> 10 == 10;`<br>`true`<br>`> 10 == '10';`<br>`true`<br>`> var x = 25;`<br>`> x == 27;`<br>`false`<br>`> y = 'Gato';`<br>`y == 'Gato';`<br>`true`<br>`> (y == 'Cachorro');`<br>`false`
+| == | Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo e falso (false), caso contrário. Ignora o tipo de dado. Exemplos: <br>`> 10 == 10;`<br>`true`<br>`> 10 == '10';`<br>`true`<br>`> var x = 25;`<br>`> x == 27;`<br>`false`<br>`> y = 'Gato';`<br>`> y == 'Gato';`<br>`true`<br>`> (y == 'Cachorro');`<br>`false`
 | === | Exatamente Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo. **Considera o tipo de dado**. Exemplos: <br>`> 10 == 10;`<br>`true`<br>`> 10 == '10';`<br>`false`
-| != | Diferente. Retorna verdadeiro (true) se os dois dados possuem o **conteúdo diferente**. Ignora o tipo de dado. Exemplos: <br>`> 10 != 10;`<br>`false`<br>`> 10 != '10';`<br>`false`<br>`> var x = 25;`<br>`> x != 27`<br>`true`<br>`> y = 'Gato'`<br>`y != 'Gato'`<br>`false`<br>`> (y != 'Cachorro')`<br>`true`
+| != | Diferente. Retorna verdadeiro (true) se os dois dados possuem o **conteúdo diferente**. Ignora o tipo de dado. Exemplos: <br>`> 10 != 10;`<br>`false`<br>`> 10 != '10';`<br>`false`<br>`> var x = 25;`<br>`> x != 27`<br>`true`<br>`> y = 'Gato'`<br>`> y != 'Gato'`<br>`false`<br>`> (y != 'Cachorro')`<br>`true`
 | !== | Exatamente Diferente. Retorna verdadeiro (true) se os dois dados possuem o conteúdo diferente. **Considera o tipo de dado**. Exemplos: <br>`> 10 !== 10;`<br>`false`<br>`> 10 !== '10';`<br>`true`
 
 ## Operadores Relacionais
@@ -29,7 +29,7 @@ Os operadores lógicos são utilizados para comparar dados lógicos, sejam prove
 | ------------- |:-----------------|
 | ! | Negação (Not). Retorna verdadeiro (true) se o dado é `false` e falso (false) caso contrário. Exemplos: <br>`> !(false);`<br>`true`<br>`> !(10 > 5);`<br>`false`<br>`> !(5 > 10);`<br>`true`<br>`> var x = 25;`<br>`> !(x > 20);`<br>`false`
 | && | Conjunção (e, and). Retorna verdadeiro (true) se dois dados são **ambos verdadeiros (true)** e falso (false) caso contrário. Exemplos: <br>`> true && true;`<br>`true`<br>`> true && false;`<br>`false`<br>`> (10 > 5) && (5 > 10);`<br>`false`<br>`> var media = 7;`<br>`> var faltas = 5;`<br>`> (media >= 6) && (faltas <= 10); \\ Condição de aprovação`<br>`true`
-| `||` | Disjunção (ou, or). Retorna verdadeiro (true) se em dois valores **pelo menos um é verdadeiro** e falso (false) caso contrário. Exemplos: <br>`> true || true;`<br>`true`<br>`> true || false;`<br>`true`<br>`> false || false;`<br>`false`<br>`> (10 > 5) || (5 > 10);`<br>`true`<br>`> var preco_produto = 50;`<br>`> var faltas = 5;`<br>`> (media < 6) || (faltas > 10); // Condicão de reprovação`<br>`true`
+| `||` | Disjunção (ou, or). Retorna verdadeiro (true) se em dois valores **pelo menos um é verdadeiro** e falso (false) caso contrário. Exemplos: <br>`> true || true;`<br>`true`<br>`> true || false;`<br>`true`<br>`> false || false;`<br>`false`<br>`> (10 > 5) || (5 > 10);`<br>`true`<br>`> var meida = 8;`<br>`> var faltas = 15;`<br>`> (media < 6) || (faltas > 10); // Condicão de reprovação`<br>`true`
 
 
 
