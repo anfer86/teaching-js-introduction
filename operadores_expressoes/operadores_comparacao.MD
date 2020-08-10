@@ -10,7 +10,7 @@ Estes operadores são utilizados para comparar dois dados: valores de variáveis
 | Símbolo | Significado 
 | ------------- |:-----------------|
 | == | Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo e falso (false), caso contrário. Ignora o tipo de dado. Exemplos: <br>`> 10 == 10;`<br>`true`<br>`> 10 == '10';`<br>`true`<br>`> var x = 25;`<br>`> x == 27;`<br>`false`<br>`> y = 'Gato';`<br>`> y == 'Gato';`<br>`true`<br>`> (y == 'Cachorro');`<br>`false`
-| === | Exatamente Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo. **Considera o tipo de dado**. Exemplos: <br>`> 10 == 10;`<br>`true`<br>`> 10 == '10';`<br>`false`
+| === | Exatamente Igual. Retorna verdadeiro (true) se os dois dados possuem o mesmo conteúdo. **Considera o tipo de dado**. Exemplos: <br>`> 10 === 10;`<br>`true`<br>`> 10 === '10';`<br>`false`
 | != | Diferente. Retorna verdadeiro (true) se os dois dados possuem o **conteúdo diferente**. Ignora o tipo de dado. Exemplos: <br>`> 10 != 10;`<br>`false`<br>`> 10 != '10';`<br>`false`<br>`> var x = 25;`<br>`> x != 27`<br>`true`<br>`> y = 'Gato'`<br>`> y != 'Gato'`<br>`false`<br>`> (y != 'Cachorro')`<br>`true`
 | !== | Exatamente Diferente. Retorna verdadeiro (true) se os dois dados possuem o conteúdo diferente. **Considera o tipo de dado**. Exemplos: <br>`> 10 !== 10;`<br>`false`<br>`> 10 !== '10';`<br>`true`
 
