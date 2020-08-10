@@ -37,7 +37,7 @@ Exemplos de entrada/saída:
 | 2 | 12<br>4 | 3<br>0 |
 | 3 | 16<br>5 | 3<br>1 |
 
-O exemplo #1 recebe como entrada 8 porções de pizza para dividir em 3 amigos. O programa mostra que cada pessoa vai comer 2 pedaços e que irão sobrar 2.
+O exemplo #1 recebe como entrada 8 porções de pizza para dividir em 3 amigos. O programa mostra que cada pessoa vai comer 2 porções e que irão sobrar 2 porções.
 
 Vamos implementar o programa usando as operações de *divisão* e de *resto da divisão*.
 
@@ -47,7 +47,7 @@ var lines = input.split('\n');
 
 var porcoes = parseInt(lines[0]);
 var pessoas = parseInt(lines[1]);
-
+F
 var porcoes_por_pessoa = parseInt( porcoes / pessoas );
 var sobra = porcoes % pessoas;
 

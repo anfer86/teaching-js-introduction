@@ -3,27 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>Operadores Aritméticos</title>
+        <style>
+</style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        <style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
                 font-size: 14px;
                 line-height: 1.6;
             }
         </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
         
         
     </head>
     <body class="vscode-light">
         <script src="../jquery-3.4.1.min.js"></script>
 <script src="../jquery_preventDefault.js"></script>  
-<h1 id="operadores-aritm%c3%a9ticos">Operadores Aritméticos</h1>
+<h1 id="operadores-aritméticos">Operadores Aritméticos</h1>
 <p>Os operadores aritméticos são utilizados para realizar cálculos. A maior parte dos operadores são funcionalidades que estão presentes em qualquer calculadora.</p>
 <table>
 <thead>
@@ -111,14 +113,14 @@
 </tr>
 </tbody>
 </table>
-<p>O exemplo #1 recebe como entrada 8 porções de pizza para dividir em 3 amigos. O programa mostra que cada pessoa vai comer 2 pedaços e que irão sobrar 2.</p>
+<p>O exemplo #1 recebe como entrada 8 porções de pizza para dividir em 3 amigos. O programa mostra que cada pessoa vai comer 2 porções e que irão sobrar 2 porções.</p>
 <p>Vamos implementar o programa usando as operações de <em>divisão</em> e de <em>resto da divisão</em>.</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
 <span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
 
 <span class="hljs-keyword">var</span> porcoes = <span class="hljs-built_in">parseInt</span>(lines[<span class="hljs-number">0</span>]);
 <span class="hljs-keyword">var</span> pessoas = <span class="hljs-built_in">parseInt</span>(lines[<span class="hljs-number">1</span>]);
-
+F
 <span class="hljs-keyword">var</span> porcoes_por_pessoa = <span class="hljs-built_in">parseInt</span>( porcoes / pessoas );
 <span class="hljs-keyword">var</span> sobra = porcoes % pessoas;
 
