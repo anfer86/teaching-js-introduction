@@ -31,8 +31,8 @@ O programa tem o seguinte código:
 var input = require('fs').readFileSync('input.txt', 'utf8');
 var lines = input.split('\n');
 
-var salario_atual = parseFloat(lines.shift());
-var reajuste = parseFloat(lines.shift());
+var salario_atual = parseFloat(lines[0]);
+var reajuste = parseFloat(lines[1];
 
 var novo_salario = salario_atual + salario_atual * reajuste;
 
@@ -101,8 +101,8 @@ Vamos reescrever o programa anterior, criando uma variável chamada `salario` pa
 var input = require('fs').readFileSync('input.txt', 'utf8');
 var lines = input.split('\n');
 
-var salario = parseFloat(lines.shift()); // *** alteração aqui
-var reajuste = parseFloat(lines.shift());
+var salario = parseFloat(lines[0]); // *** alteração aqui
+var reajuste = parseFloat(lines[1]);
 
 console.log('Salário atual (lido do arquivo): R$ ' + salario_atual); // ** alteração aqui 
 console.log('Reajuste (lido do arquivo): ' + reajuste);
