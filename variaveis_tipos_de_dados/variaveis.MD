@@ -114,11 +114,11 @@ console.log('Novo salário: R$ ' + salario); // alteração aqui
 
 A saída do programa será a mesma que do programa anterior, mas tendo declarado uma variável a menos. Isso indica também que nosso programa consome menos **memória** do que a primeira versão (mais especificamente 64 bits ou 8 bytes a menos). Note também que não usamos a palavra `var` na linha em que substituímos o valor da variável `salario`, pois a palavra `var` é usada apenas para definir (criar) uma nova variável.
 
-Os dados na memória ficaram conforme tabela abaixo. O valor ```3500.00``` riscado indica que a variável ```salario_atual``` continha esse valor inicialmente, mas o mesmo foi substituído pelo resultado da operações, ```4025.00```.
+Os dados na memória ficaram conforme tabela abaixo. O valor ```3500.00``` riscado indica que a variável ```salario``` continha esse valor inicialmente, mas o mesmo foi substituído pelo resultado da operações, ```4025.00```.
 
 | Endereço de <br> Memória  | Nome da<br>Variável | Valor
 | ------------- | ------------- | ------------- |
-| 0 | ```salario_atual```  | <strike>3500.00</strike> 4025.00
+| 0 | ```salario```  | <strike>3500.00</strike> 4025.00
 | 1 | ```reajuste```  | ```0.15```
 | ... | ... | ...
 

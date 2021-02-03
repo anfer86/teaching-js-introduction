@@ -2,28 +2,31 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Variáveis</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <title>Vari&aacute;veis</title>
         <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
-        <style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
                 font-size: 14px;
                 line-height: 1.6;
             }
         </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
         
         <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
     </head>
-    <body class="vscode-light">
+    <body class="vscode-body vscode-light">
         <script src="../jquery-3.4.1.min.js"></script>
 <script src="../jquery_preventDefault.js"></script>
-<h1 id="vari%c3%a1veis">Variáveis</h1>
+<h1 id="variáveis">Variáveis</h1>
 <p>Durante a criação de algoritmos torna-se necessário armazenar dados e informações com resultados parciais ou finais, resultado das instruções que são executadas.</p>
 <p>Suponha um programa de <strong>cálculo de salário</strong>, em que o usuário tem que providenciar o <strong>salário atual</strong> e o <strong>percentual de reajuste</strong>, e o sistema calcula o novo salário. Nesse programa, as informações providenciadas pelo usuário, o <em>valor do salário atual</em> e o <em>percentual de reajuste</em>, devem ser armazenadas na <strong>memória</strong> do computador, de forma que possam ser usadas para realizar o cálculo do novo salário. Além disso, o <em>valor do novo salário</em> precisa também ser armazenado na <em>memória</em>.</p>
 <blockquote>
@@ -67,17 +70,17 @@
 </div></code></pre>
 <p>O programa tem o seguinte código:</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// reajuste_de_salario/reajuste_de_salario.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> salario_atual = <span class="hljs-built_in">parseFloat</span>(lines.shift());
-<span class="hljs-keyword">var</span> reajuste = <span class="hljs-built_in">parseFloat</span>(lines.shift());
+<span class="hljs-keyword">var</span> salario_atual = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]);
+<span class="hljs-keyword">var</span> reajuste = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">1</span>];
 
 <span class="hljs-keyword">var</span> novo_salario = salario_atual + salario_atual * reajuste;
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Salário atual (lido do arquivo): R$ '</span> + salario_atual);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Reajuste (lido do arquivo): '</span> + reajuste);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Novo salário: R$ '</span> + novo_salario)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Salário atual (lido do arquivo): R$ &#x27;</span> + salario_atual);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Reajuste (lido do arquivo): &#x27;</span> + reajuste);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Novo salário: R$ &#x27;</span> + novo_salario)
 </div></code></pre>
 <p>Ao executar o nosso programa a saída esperada é:</p>
 <div style="border: 1px dashed black; padding: 5px;">
@@ -85,7 +88,7 @@ Salário atual (lido do arquivo): R$ 3500 <br>
 Reajuste (lido do arquivo): 0.15 <br>
 Novo salário: R$ 4025 <br>
 </div>
-<h2 id="nomes-de-vari%c3%a1veis">Nomes de Variáveis</h2>
+<h2 id="nomes-de-variáveis">Nomes de Variáveis</h2>
 <p>O programador é quem define o nome que quer dar a cada variável. Preferencialmente as variáveis devem ter nomes de fácil compreensão, para que qualquer programador consiga entender o programa. Apesar dessa liberdade para nomear variáveis, existe algumas regras simples que devem ser respeitadas para criar nomes de variáveis.</p>
 <p>Os nomes de variáveis <strong>não podem</strong>:</p>
 <ul>
@@ -105,10 +108,10 @@ Novo salário: R$ 4025 <br>
 <blockquote>
 <p><strong>Nota</strong>: ao tentar criar variáveis com esses nomes o interpretador da linguagem vai emitir um erro, não sendo possível executar o restante do programa</p>
 </blockquote>
-<h2 id="uso-de-mai%c3%basculas-e-min%c3%basculas">Uso de Maiúsculas e Minúsculas</h2>
+<h2 id="uso-de-maiúsculas-e-minúsculas">Uso de Maiúsculas e Minúsculas</h2>
 <p>Javascript é uma linguagem <em>case-sensitive</em>, o que significa que é sensível ao uso de maiúsculas e minúsculas ao definido variáveis. Assim, se criarmos uma variável chamada <code>salario</code>, não podemos nos referir a essa variável usando <code>Salario</code> ou <code>SALARIO</code>. Se a variável foi definida em minúsculo deve ser sempre usada dessa forma.</p>
 <p>Ainda vale ressaltar que se definirmos uma variável <code>salario</code> e outra <code>SALARIO</code> estaríamos nos referindo a duas variáveis diferentes que usam endereços de memória diferentes para armazenamento.</p>
-<h2 id="nome-de-vari%c3%a1veis-com-palavras-compostas">Nome de Variáveis com Palavras Compostas</h2>
+<h2 id="nome-de-variáveis-com-palavras-compostas">Nome de Variáveis com Palavras Compostas</h2>
 <p>Em muitas ocasiões precisamos definir nomes de variáveis com mais do que uma palavra. Para isso existem dois padrões comumente aceitos:</p>
 <h3 id="camelcase">CamelCase</h3>
 <p>Neste padrão cada palavra é iniciada com maiúsculas e unidas sem espaços. Por exemplo, uma variável que se refere ao <em>salário inicial</em> de alguém, o nome da variável seria <code>SalarioInicial</code> ou <code>salarioInicial</code>.</p>
@@ -116,27 +119,27 @@ Novo salário: R$ 4025 <br>
 <blockquote>
 <p><strong>Nota</strong>: você deve ter observado que demos duas opções em cada exemplo. A primeira opção inicia com letra maiúscula e é chamada <strong>UpperCamelCase</strong>. A segunda opção inicial com letra minúscula e é chamada <strong>lowerCamelCase</strong>. Para variáveis e funções é <em>mais comum</em> utilizar <em>lowerCamelCase</em>.</p>
 </blockquote>
-<h3 id="underscore">Under_score</h3>
+<h3 id="under_score">Under_score</h3>
 <p>Neste padrão as palavras são unidas por underscore (_) no lugar de espaço. Por exemplo, a variável de <em>salário inicial</em> seria nomeada como <code>salario_inicial</code>. Geralmente usam-se as palavras em minúsculo para variáveis e funções.</p>
-<h2 id="reutilizando-%c3%81reas-de-mem%c3%b3ria">Reutilizando Áreas de Memória</h2>
+<h2 id="reutilizando-áreas-de-memória">Reutilizando Áreas de Memória</h2>
 <p>Observando o programa <code>reajuste_salario</code>, verificamos que criamos três variáveis para armazenar os dados e resultados parciais. As variáveis são assim chamadas, pois são áreas de memória que podem <em>variar</em> o seu valor o longo do desenvolvimento do programa. Assim, podemos reutilizar as áreas der memória para atribuir resultados dos cálculo.</p>
 <p>Vamos reescrever o programa anterior, criando uma variável chamada <code>salario</code> para armazenar inicialmente o salario atual mas posteriormente o salário reajustados. Vejamos:</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// reajuste_de_salario/reajuste_de_salario_versao_2.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> salario = <span class="hljs-built_in">parseFloat</span>(lines.shift()); <span class="hljs-comment">// *** alteração aqui</span>
-<span class="hljs-keyword">var</span> reajuste = <span class="hljs-built_in">parseFloat</span>(lines.shift());
+<span class="hljs-keyword">var</span> salario = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]); <span class="hljs-comment">// *** alteração aqui</span>
+<span class="hljs-keyword">var</span> reajuste = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">1</span>]);
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Salário atual (lido do arquivo): R$ '</span> + salario_atual); <span class="hljs-comment">// ** alteração aqui </span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Reajuste (lido do arquivo): '</span> + reajuste);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Salário atual (lido do arquivo): R$ &#x27;</span> + salario_atual); <span class="hljs-comment">// ** alteração aqui </span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Reajuste (lido do arquivo): &#x27;</span> + reajuste);
 
 salario = salario + salario * reajuste; <span class="hljs-comment">// *** alteração aqui</span>
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Novo salário: R$ '</span> + salario); <span class="hljs-comment">// alteração aqui</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Novo salário: R$ &#x27;</span> + salario); <span class="hljs-comment">// alteração aqui</span>
 </div></code></pre>
 <p>A saída do programa será a mesma que do programa anterior, mas tendo declarado uma variável a menos. Isso indica também que nosso programa consome menos <strong>memória</strong> do que a primeira versão (mais especificamente 64 bits ou 8 bytes a menos). Note também que não usamos a palavra <code>var</code> na linha em que substituímos o valor da variável <code>salario</code>, pois a palavra <code>var</code> é usada apenas para definir (criar) uma nova variável.</p>
-<p>Os dados na memória ficaram conforme tabela abaixo. O valor <code>3500.00</code> riscado indica que a variável <code>salario_atual</code> continha esse valor inicialmente, mas o mesmo foi substituído pelo resultado da operações, <code>4025.00</code>.</p>
+<p>Os dados na memória ficaram conforme tabela abaixo. O valor <code>3500.00</code> riscado indica que a variável <code>salario</code> continha esse valor inicialmente, mas o mesmo foi substituído pelo resultado da operações, <code>4025.00</code>.</p>
 <table>
 <thead>
 <tr>
@@ -148,7 +151,7 @@ salario = salario + salario * reajuste; <span class="hljs-comment">// *** altera
 <tbody>
 <tr>
 <td>0</td>
-<td><code>salario_atual</code></td>
+<td><code>salario</code></td>
 <td><strike>3500.00</strike> 4025.00</td>
 </tr>
 <tr>
