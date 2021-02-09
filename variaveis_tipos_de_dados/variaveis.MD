@@ -143,7 +143,7 @@ Além desse erro, o exemplo também mostra uma prática incomum ao definir const
 
 ```javascript
 // arquivo constantes/uso_correto.js
-const PI = 4.14159;
+const PI = 3.14159;
 const NUMERO_MAXIMO_DE_ALUNOS = 40;
 const NUMERO_MINIMO_DE_ALUNOS = 6;
 ...
