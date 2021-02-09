@@ -29,7 +29,7 @@ Os operadores lógicos são utilizados para comparar dados lógicos, sejam prove
 | ------------- |:-----------------|
 | ! | Negação (Not). Retorna verdadeiro (true) se o dado é `false` e falso (false) caso contrário. Exemplos: <br>`> !(false);`<br>`true`<br>`> !(10 > 5);`<br>`false`<br>`> !(5 > 10);`<br>`true`<br>`> var x = 25;`<br>`> !(x > 20);`<br>`false`
 | && | Conjunção (e, and). Retorna verdadeiro (true) se dois dados são **ambos verdadeiros (true)** e falso (false) caso contrário. Exemplos: <br>`> true && true;`<br>`true`<br>`> true && false;`<br>`false`<br>`> (10 > 5) && (5 > 10);`<br>`false`<br>`> var media = 7;`<br>`> var faltas = 5;`<br>`> (media >= 6) && (faltas <= 10); \\ Condição de aprovação`<br>`true`
-| `||` | Disjunção (ou, or). Retorna verdadeiro (true) se em dois valores **pelo menos um é verdadeiro** e falso (false) caso contrário. Exemplos: <br>`> true || true;`<br>`true`<br>`> true || false;`<br>`true`<br>`> false || false;`<br>`false`<br>`> (10 > 5) || (5 > 10);`<br>`true`<br>`> var meida = 8;`<br>`> var faltas = 15;`<br>`> (media < 6) || (faltas > 10); // Condicão de reprovação`<br>`true`
+| `||` | Disjunção (ou, or). Retorna verdadeiro (true) se em dois valores **pelo menos um é verdadeiro** e falso (false) caso contrário. Exemplos: <br>`> true || true;`<br>`true`<br>`> true || false;`<br>`true`<br>`> false || false;`<br>`false`<br>`> (10 > 5) || (5 > 10);`<br>`true`<br>`> var media = 8;`<br>`> var faltas = 15;`<br>`> (media < 6) || (faltas > 10); // Condicão de reprovação`<br>`true`
 
 
 

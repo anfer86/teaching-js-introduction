@@ -17,7 +17,7 @@ Os operadores aritméticos são utilizados para realizar cálculos. A maior part
 
 ## Problemas Resolvidos
 
-**Divisão da Pizza**
+**Divisão da Pizza (Divisão e Resto, lógica modular)**
 
 Um grupo de amigos/as querem pedir uma pizza. A ideia deles é que todos comam o mesmo número de fatias.
 
@@ -47,7 +47,7 @@ var lines = input.split('\n');
 
 var porcoes = parseInt(lines[0]);
 var pessoas = parseInt(lines[1]);
-F
+
 var porcoes_por_pessoa = parseInt( porcoes / pessoas );
 var sobra = porcoes % pessoas;
 
