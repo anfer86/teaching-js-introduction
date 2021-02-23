@@ -19,7 +19,7 @@ Estes operadores são utilizados para comparar dois dados: valores de variáveis
 | Símbolo | Significado 
 | ------------- |:-----------------|
 | > e >= | Maior e maior ou igual. Retorna verdadeiro (true) se o primeiro dado é maior (>) do que o segundo e falso (false) caso contrário. Exemplos: <br>`> (10 > 5);`<br>`true`<br>`> (5 > 10);`<br>`false`<br>`> var x = 25;`<br>`> (x >= 25);`<br>`true`<br>`> (x >= 20);`<br>`true`<br>`> (x >= 35);`<br>`false`
-| < e <= | Menor e menor ou igual. Retorna verdadeiro (true) se o primeiro dado é maior (<>) do que o segundo e falso (false) caso contrário. Exemplos: <br>`> (10 < 5);`<br>`false`<br>`> (5 < 10);`<br>`true`<br>`> var x = 25;`<br>`> (x <= 25);`<br>`true`<br>`> (x <= 20);`<br>`false`<br>`> (x <= 35);`<br>`true`
+| < e <= | Menor e menor ou igual. Retorna verdadeiro (true) se o primeiro dado é menor (<) do que o segundo e falso (false) caso contrário. Exemplos: <br>`> (10 < 5);`<br>`false`<br>`> (5 < 10);`<br>`true`<br>`> var x = 25;`<br>`> (x <= 25);`<br>`true`<br>`> (x <= 20);`<br>`false`<br>`> (x <= 35);`<br>`true`
 
 ## Operadores Lógicos
 
