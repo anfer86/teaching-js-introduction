@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Estrutura `for`</title>
+        <title>Estrutura &grave;for&grave;</title>
         <style>
 </style>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
@@ -23,9 +23,8 @@
         <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
     </head>
-    <body class="vscode-light">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-<h1 id="estrutura-for">Estrutura <code>for</code></h1>
+    <body class="vscode-body vscode-light">
+        <h1 id="estrutura-for">Estrutura <code>for</code></h1>
 <p>Usamos esse tipo de laço quando sabemos quantas vezes queremos executar uma determinada instrução. O <code>for</code> tem a seguinte estrutura:</p>
 <pre><code class="language-js"><div><span class="hljs-keyword">for</span> ([expressaoInicial]; [condicao]; [incremento]){
   instruções
@@ -41,7 +40,7 @@
 <p>Voltando ao exemplo apresentado anteriormente.</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// passo_a_frente/passo_a_frente.js</span>
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {  
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ande um passo para frente'</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ande um passo para frente&#x27;</span>);
 }
 </div></code></pre>
 <p>Seguem todos os passos que ocorreram neste programa:</p>
@@ -117,8 +116,8 @@
 </div></code></pre>
 <p>Solução:</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// media_notas/media_notas.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> n = <span class="hljs-built_in">Number</span>(lines[<span class="hljs-number">0</span>]);
 <span class="hljs-keyword">var</span> soma = <span class="hljs-number">0</span>;
@@ -129,7 +128,7 @@
 }
 
 <span class="hljs-keyword">var</span> media = soma / n;
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Média: '</span> + media.toFixed(<span class="hljs-number">1</span>));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Média: &#x27;</span> + media.toFixed(<span class="hljs-number">1</span>));
 </div></code></pre>
 <p>Saída esperada:</p>
 <div style="border: 1px dashed black; padding: 5px;">

@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Estrutura `while`</title>
+        <title>Estrutura &grave;while&grave;</title>
         <style>
 </style>
         
@@ -22,9 +22,8 @@
         
         
     </head>
-    <body class="vscode-light">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-<h1 id="estrutura-while">Estrutura <code>while</code></h1>
+    <body class="vscode-body vscode-light">
+        <h1 id="estrutura-while">Estrutura <code>while</code></h1>
 <p>Usamos esse tipo de laço quando não sabemos quantas vezes queremos executar uma determinado bloco de instruções, mas sabemos que temos que repetí-lo algumas vezes enquanto alguma condição for satisfeita.</p>
 <p>O <code>while</code> tem a seguinte estrutura:</p>
 <pre><code class="language-js"><div><span class="hljs-keyword">while</span> ([condicao]){
@@ -44,10 +43,10 @@
 <span class="hljs-keyword">var</span> objetivo = <span class="hljs-number">7</span>;
 <span class="hljs-keyword">var</span> numero = sortear(<span class="hljs-number">10</span>);
 <span class="hljs-keyword">while</span> (numero != objetivo) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'O número sorteado foi '</span> + numero + <span class="hljs-string">'. Vamos sortear outro número.'</span>)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;O número sorteado foi &#x27;</span> + numero + <span class="hljs-string">&#x27;. Vamos sortear outro número.&#x27;</span>)
     numero = sortear(<span class="hljs-number">10</span>);
 }
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Você atingiu seu objetivo, o número sorteado foi o '</span> + numero)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Você atingiu seu objetivo, o número sorteado foi o &#x27;</span> + numero)
 </div></code></pre>
 <blockquote>
 <p><strong>Pratique!</strong>: implemente um programa que faça o sorteio de números de 1 a 100 e sorteie também o valor do <code>objetivo</code>.</p>
@@ -65,8 +64,8 @@
 <span class="hljs-number">-1</span>
 </div></code></pre>
 <p>Nesta solução vamos usar a função <code>shift()</code> para acessar os dados, com o objetivo de mostrar a sequência com que vamos consumindo cada nota até chegar no último valor. Solução:</p>
-<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> n = <span class="hljs-number">0</span>;
 <span class="hljs-keyword">var</span> soma = <span class="hljs-number">0</span>;
@@ -80,7 +79,7 @@
 }
 
 <span class="hljs-keyword">var</span> media = soma / n;
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Média: '</span>, media.toFixed(<span class="hljs-number">1</span>));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Média: &#x27;</span>, media.toFixed(<span class="hljs-number">1</span>));
 </div></code></pre>
 <p>Passo a passo o que está acontecendo no programa:</p>
 <ol>
@@ -112,16 +111,16 @@
 
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Comprando um produto<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'mensagem'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#x27;mensagem&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-keyword">var</span> resposta = confirm(<span class="hljs-string">'Você gostaria de comprar o produto?'</span>);
+    <span class="hljs-keyword">var</span> resposta = confirm(<span class="hljs-string">&#x27;Você gostaria de comprar o produto?&#x27;</span>);
     <span class="hljs-keyword">while</span> (resposta != <span class="hljs-literal">true</span>){
-        resposta = confirm(<span class="hljs-string">'Você gostaria de comprar o produto?'</span>);
+        resposta = confirm(<span class="hljs-string">&#x27;Você gostaria de comprar o produto?&#x27;</span>);
     }
-    <span class="hljs-keyword">var</span> mensagem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'mensagem'</span>);
-    mensagem.innerHTML = <span class="hljs-string">"Parabéns, você acabou de comprar o produto!"</span>;
+    <span class="hljs-keyword">var</span> mensagem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;mensagem&#x27;</span>);
+    mensagem.innerHTML = <span class="hljs-string">&quot;Parabéns, você acabou de comprar o produto!&quot;</span>;
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
@@ -143,21 +142,21 @@
 11100, 60
 </div></code></code></pre>
 <p>Solução:</p>
-<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> cliente_dados = lines.shift().split(<span class="hljs-string">", "</span>);
+<span class="hljs-keyword">var</span> cliente_dados = lines.shift().split(<span class="hljs-string">&quot;, &quot;</span>);
 <span class="hljs-keyword">var</span> cliente_id = cliente_dados[<span class="hljs-number">0</span>];
 <span class="hljs-keyword">var</span> cliente_idade = <span class="hljs-built_in">Number</span>(cliente_dados[<span class="hljs-number">1</span>]);
 
 <span class="hljs-keyword">while</span> (cliente_idade &gt;= <span class="hljs-number">16</span>){
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cliente '</span> + cliente_id + <span class="hljs-string">" pode passar."</span>);    
-    cliente_dados = lines.shift().split(<span class="hljs-string">", "</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Cliente &#x27;</span> + cliente_id + <span class="hljs-string">&quot; pode passar.&quot;</span>);    
+    cliente_dados = lines.shift().split(<span class="hljs-string">&quot;, &quot;</span>);
     cliente_id = cliente_dados[<span class="hljs-number">0</span>];
     cliente_idade = <span class="hljs-built_in">Number</span>(cliente_dados[<span class="hljs-number">1</span>]);    
 }
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cliente '</span> + cliente_id + <span class="hljs-string">" não pode passar. Chamar o segurança."</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Cliente &#x27;</span> + cliente_id + <span class="hljs-string">&quot; não pode passar. Chamar o segurança.&quot;</span>);
 </div></code></pre>
 <p>Resultado esperado:</p>
 <div style="border: 1px dashed black; padding: 5px;">

@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Estrutura `for..of`</title>
+        <title>Estrutura &grave;for&period;&period;of&grave;</title>
         <style>
 </style>
         
@@ -22,9 +22,8 @@
         
         
     </head>
-    <body class="vscode-light">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-<h1 id="estrutura-forof">Estrutura <code>for..of</code></h1>
+    <body class="vscode-body vscode-light">
+        <h1 id="estrutura-forof">Estrutura <code>for..of</code></h1>
 <p>Usamos esse tipo de laço quando temos vários elementos dentro de um array, ou outra estrutura que armazena vários elementos dentro dela. O <code>for..of</code> tem a seguinte estrutura:</p>
 <pre><code class="language-js"><div><span class="hljs-keyword">for</span> (variavel <span class="hljs-keyword">of</span> array) {
   instruções
@@ -32,10 +31,10 @@
 </div></code></pre>
 <p>Suponha um array contendo os seguintes dados <code>arr = [&quot;Andres&quot;, &quot;Fabiano&quot;,&quot;Laura&quot;,&quot;Mari&quot;, &quot;João&quot;]</code> e tenho interesse em mostrar uma mensagem de bom dia para todos os elementos do array. Por exemplo, <code>Bom dia Andres</code>, <code>Bom dia Fabiano</code> e assim por diante.</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// bom_dia/bom_dia.js</span>
-<span class="hljs-keyword">var</span> arr = [<span class="hljs-string">"Andres"</span>, <span class="hljs-string">"Fabiano"</span>,<span class="hljs-string">"Laura"</span>,<span class="hljs-string">"Mari"</span>, <span class="hljs-string">"João"</span>];
+<span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&quot;Andres&quot;</span>, <span class="hljs-string">&quot;Fabiano&quot;</span>,<span class="hljs-string">&quot;Laura&quot;</span>,<span class="hljs-string">&quot;Mari&quot;</span>, <span class="hljs-string">&quot;João&quot;</span>];
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> nome <span class="hljs-keyword">of</span> arr) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Bom Dia '</span> + nome + <span class="hljs-string">"!"</span>)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Bom Dia &#x27;</span> + nome + <span class="hljs-string">&quot;!&quot;</span>)
 }
 </div></code></pre>
 <p>Neste programa acontece o seguinte:</p>
@@ -71,10 +70,10 @@ Carlos Andres Ferrero
 </div></code></pre>
 <p>Programa:</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// iniciais_do_nome/iniciais_do_nome.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> nomes = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">' '</span>);
+<span class="hljs-keyword">var</span> nomes = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">&#x27; &#x27;</span>);
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> nome <span class="hljs-keyword">of</span> nomes){
     <span class="hljs-keyword">let</span> primeira_letra = nome[<span class="hljs-number">0</span>];
@@ -99,21 +98,21 @@ F<br>
 </div></code></code></pre>
 <p>Programa:</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// tweets/tweets.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> posts = lines;
 <span class="hljs-keyword">var</span> limite = <span class="hljs-number">33</span>;
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> post <span class="hljs-keyword">of</span> posts){
-    <span class="hljs-keyword">let</span> post_dados = post.split(<span class="hljs-string">':'</span>);
+    <span class="hljs-keyword">let</span> post_dados = post.split(<span class="hljs-string">&#x27;:&#x27;</span>);
     <span class="hljs-keyword">let</span> usuario = post_dados[<span class="hljs-number">0</span>];
     <span class="hljs-keyword">let</span> tweet = post_dados[<span class="hljs-number">1</span>];
 
     <span class="hljs-keyword">if</span> (tweet.length &gt; limite)
-        tweet = tweet.substring(<span class="hljs-number">0</span>,limite) + <span class="hljs-string">'...'</span>
+        tweet = tweet.substring(<span class="hljs-number">0</span>,limite) + <span class="hljs-string">&#x27;...&#x27;</span>
     
-    <span class="hljs-built_in">console</span>.log(usuario + <span class="hljs-string">':'</span> + tweet)
+    <span class="hljs-built_in">console</span>.log(usuario + <span class="hljs-string">&#x27;:&#x27;</span> + tweet)
 }
 </div></code></pre>
 <p>Saída esperada:</p>
