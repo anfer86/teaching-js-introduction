@@ -25,7 +25,7 @@ for (let i = 0; i < 5; i++) {
 ```
 
 Seguem todos os passos que ocorreram neste programa:
-1. Cria uma variável chamada `i` e inicia ela com valor `i = 1`. Essa variável somente vai existir dentro do `for` (por isso o `let` ao invés de `var`) .
+1. Cria uma variável chamada `i` e inicia ela com valor `i = 0`. Essa variável somente vai existir dentro do `for` (por isso o `let` ao invés de `var`) .
 2. Verifica se `i < 5`. Como é verdadeiro executa a instrução.
 3. Mostra no console "Ande um passo para frente"
 4. Incrementa o valor de `i` em uma unidade usando `i++`. O `i++` é igual que fazer `i = i+1` ou `i += 1`. O novo valor de `i` passou de `0` para `1`.
