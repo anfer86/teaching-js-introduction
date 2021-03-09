@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" href="../style.css">
-
 # Estrutura `while`
 
 Usamos esse tipo de laço quando não sabemos quantas vezes queremos executar uma determinado bloco de instruções, mas sabemos que temos que repetí-lo algumas vezes enquanto alguma condição for satisfeita.
