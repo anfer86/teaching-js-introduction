@@ -1,3 +1,5 @@
+
+
 # Funções
 
 Uma função é um subprograma ou sub-rotina que tem como objetivo executar uma tarefa específica. Funções são executadas quando algum outro programa ou subprograma chama elas, como por exemplo como chamamos a função `Math.max()` para saber qual é o valor máximo de um array de valores.

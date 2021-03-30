@@ -2,39 +2,42 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Estruturas de Repetição</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <title>Estruturas de Repeti&ccedil;&atilde;o</title>
         <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
-        <style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
                 font-size: 14px;
                 line-height: 1.6;
             }
         </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
         
         <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
     </head>
-    <body class="vscode-light">
-        <h1 id="estruturas-de-repeti%c3%a7%c3%a3o">Estruturas de Repetição</h1>
+    <body class="vscode-body vscode-light">
+        <h1 id="estruturas-de-repetição">Estruturas de Repetição</h1>
 <p>As estruturas de repetição, chamadas também de laços, são uma forma simples de executar uma instrução repetidas vezes. Essas estruturas podem ser usada para objetivos como:</p>
 <ul>
 <li>Repetir uma mensagem o número de vezes que a gente quiser.</li>
 <li>Calcular a média de notas baseado em um número qualquer de notas, não sendo necessário limitar apenas para 4 notas.</li>
 <li>Dada idade de um grupo de pessoas qualquer saber quantas são maiores de idade.</li>
-<li>Aplicar o mesmo procesamento a vários textos, como tweets.</li>
+<li>Aplicar o mesmo processamento a vários textos, como tweets.</li>
 <li>Ao integrar Javascript com HTML podemos também mostar vários elementos, como produtos, em HTMl.</li>
 </ul>
 <p>Vamos criar uma exemplo simples para ver como funciona esta estrutura.</p>
 <p>Crie uma pasta para armazenar os arquivos de estruturas de repetição chamada <code>estruturas_de_repeticao</code>, dentro dela criaremos as pastas dos nosso exercícios. Dentro dessa pasta implemente o seguinte exemplo.</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// passo_a_frente/passo_a_frente.js</span>
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {  
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ande um passo para frente'</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ande um passo para frente&#x27;</span>);
 }
 </div></code></pre>
 <p>A saída esperada é:</p>
@@ -49,7 +52,7 @@ Ande um passo para frente<br>
 <p>Vamos focar nas seguintes estruturas:</p>
 <ul>
 <li><code>for</code></li>
-<li><code>for..of</code></li>
+<li><code>for..of  </code></li>
 <li><code>while..do</code></li>
 <li><code>do...while</code></li>
 </ul>
@@ -69,7 +72,7 @@ Ande um passo para frente<br>
 <p>Voltando ao exemplo apresentado anteriormente.</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// passo_a_frente/passo_a_frente.js</span>
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {  
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ande um passo para frente'</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ande um passo para frente&#x27;</span>);
 }
 </div></code></pre>
 <p>Seguem todos os passos que ocorreram neste programa:</p>
@@ -145,8 +148,8 @@ Ande um passo para frente<br>
 </div></code></pre>
 <p>Solução:</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// media_notas/media_notas.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> n = <span class="hljs-built_in">Number</span>(lines[<span class="hljs-number">0</span>]);
 <span class="hljs-keyword">var</span> soma = <span class="hljs-number">0</span>;
@@ -157,15 +160,15 @@ Ande um passo para frente<br>
 }
 
 <span class="hljs-keyword">var</span> media = soma / n;
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Média: '</span> + media.toFixed(<span class="hljs-number">1</span>));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Média: &#x27;</span> + media.toFixed(<span class="hljs-number">1</span>));
 </div></code></pre>
 <p>Saída esperada:</p>
 <div style="border: 1px dashed black; padding: 5px;">
 Média: 8.9<br>
 </div>
-<h3 id="exerc%c3%adcios">Exercícios</h3>
+<h3 id="exercícios">Exercícios</h3>
 <p><strong>1. Soma de Quadrados</strong></p>
-<p>Faça um programa que calcule e mostre a soma dos quadrados dos números de 1 a 10. O quadrado de um número <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> é <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> ou <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x*x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>. Este exercício não contém dados de entrada, apenas saída. Crie uma pasta chamada <code>soma_de_quadrados</code> para armazenar a solução deste exercício.</p>
+<p>Faça um programa que calcule e mostre a soma dos quadrados dos números de 1 a 10. O quadrado de um número <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> é <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> ou <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∗</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x*x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>. Este exercício não contém dados de entrada, apenas saída. Crie uma pasta chamada <code>soma_de_quadrados</code> para armazenar a solução deste exercício.</p>
 <p>Saída esperada:</p>
 <div style="border: 1px dashed black; padding: 5px;">
 Soma de quadrados de 1 a 10: 385<br>
@@ -196,10 +199,10 @@ Maiores de idade: 4<br>
 </div></code></pre>
 <p>Suponha um array contendo os seguintes dados <code>arr = [&quot;Andres&quot;, &quot;Fabiano&quot;,&quot;Laura&quot;,&quot;Mari&quot;, &quot;João&quot;]</code> e tenho interesse em mostrar uma mensagem de bom dia para todos os elementos do array. Por exemplo, <code>Bom dia Andres</code>, <code>Bom dia Fabiano</code> e assim por diante.</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// bom_dia/bom_dia.js</span>
-<span class="hljs-keyword">var</span> arr = [<span class="hljs-string">"Andres"</span>, <span class="hljs-string">"Fabiano"</span>,<span class="hljs-string">"Laura"</span>,<span class="hljs-string">"Mari"</span>, <span class="hljs-string">"João"</span>];
+<span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&quot;Andres&quot;</span>, <span class="hljs-string">&quot;Fabiano&quot;</span>,<span class="hljs-string">&quot;Laura&quot;</span>,<span class="hljs-string">&quot;Mari&quot;</span>, <span class="hljs-string">&quot;João&quot;</span>];
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> nome <span class="hljs-keyword">of</span> arr) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Bom Dia '</span> + nome + <span class="hljs-string">"!"</span>)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Bom Dia &#x27;</span> + nome + <span class="hljs-string">&quot;!&quot;</span>)
 }
 </div></code></pre>
 <p>Neste programa acontece o seguinte:</p>
@@ -235,10 +238,10 @@ Carlos Andres Ferrero
 </div></code></pre>
 <p>Programa:</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// iniciais_do_nome/iniciais_do_nome.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> nomes = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">' '</span>);
+<span class="hljs-keyword">var</span> nomes = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">&#x27; &#x27;</span>);
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> nome <span class="hljs-keyword">of</span> nomes){
     <span class="hljs-keyword">let</span> primeira_letra = nome[<span class="hljs-number">0</span>];
@@ -254,30 +257,30 @@ F<br>
 <p><strong>Problema 2</strong></p>
 <p>O comprimento dos textos em Tweets é comumente próximo a 33 caracteres, mas o limite permitido é de 280 caracteres. Você quer fazer uma aplicação que, se o tweet tiver mais do que 33 caracteres então vai adicionar após os 33 caracteres os três pontos <code>...</code>.</p>
 <p>No arquivo de entrada você receberá vários tweets.</p>
-<pre><code><div>// tweets/input.txt
+<pre><code><code><div>// tweets/input.txt
 @homem100medo:Lembrando que Tetris é na verdade uma metáfora da vida, pois nele seus erros se acumulam e os acertos desaparecem, jogo muito educativo.
 @julhapema:Gente é sério, já tamo em 2015. Quando é que a gente vai decidir que o futuro já chegou e começar a usar roupa prateada?
 @a4038789:Bom vou nessa a gente se fala outra hora minha bateria vai acabar ta em 78%
 @sinfo:a gente nunca parou pra pensar nos sentimentos da árvore se ela gosta de ser transformada no caderno do luan santana
 @luansgo:vamo marca um dia pra marca um dia
-</div></code></pre>
+</div></code></code></pre>
 <p>Programa:</p>
 <pre><code class="language-js"><div><span class="hljs-comment">// tweets/tweets.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> posts = lines;
 <span class="hljs-keyword">var</span> limite = <span class="hljs-number">33</span>;
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> post <span class="hljs-keyword">of</span> posts){
-    <span class="hljs-keyword">let</span> post_dados = post.split(<span class="hljs-string">':'</span>);
+    <span class="hljs-keyword">let</span> post_dados = post.split(<span class="hljs-string">&#x27;:&#x27;</span>);
     <span class="hljs-keyword">let</span> usuario = post_dados[<span class="hljs-number">0</span>];
     <span class="hljs-keyword">let</span> tweet = post_dados[<span class="hljs-number">1</span>];
 
     <span class="hljs-keyword">if</span> (tweet.length &gt; limite)
-        tweet = tweet.substring(<span class="hljs-number">0</span>,limite) + <span class="hljs-string">'...'</span>
+        tweet = tweet.substring(<span class="hljs-number">0</span>,limite) + <span class="hljs-string">&#x27;...&#x27;</span>
     
-    <span class="hljs-built_in">console</span>.log(usuario + <span class="hljs-string">':'</span> + tweet)
+    <span class="hljs-built_in">console</span>.log(usuario + <span class="hljs-string">&#x27;:&#x27;</span> + tweet)
 }
 </div></code></pre>
 <p>Saída esperada:</p>
@@ -302,25 +305,25 @@ F<br>
                 <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Operação<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Resultado<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tabuada"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tabuada&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">    
     <span class="hljs-keyword">var</span> valor = <span class="hljs-number">7</span>;
-    <span class="hljs-keyword">var</span> tabuada = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tabuada'</span>);
+    <span class="hljs-keyword">var</span> tabuada = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;tabuada&#x27;</span>);
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++){
-        <span class="hljs-keyword">let</span> tr = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"tr"</span>);
-        tr.innerHTML = <span class="hljs-string">"&lt;td&gt;"</span> + valor + <span class="hljs-string">" x "</span> + i + <span class="hljs-string">"&lt;/td&gt;"</span> +
-                       <span class="hljs-string">"&lt;td&gt;"</span> + (valor * i) + <span class="hljs-string">"&lt;/td&gt;"</span>;
+        <span class="hljs-keyword">let</span> tr = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;tr&quot;</span>);
+        tr.innerHTML = <span class="hljs-string">&quot;&lt;td&gt;&quot;</span> + valor + <span class="hljs-string">&quot; x &quot;</span> + i + <span class="hljs-string">&quot;&lt;/td&gt;&quot;</span> +
+                       <span class="hljs-string">&quot;&lt;td&gt;&quot;</span> + (valor * i) + <span class="hljs-string">&quot;&lt;/td&gt;&quot;</span>;
         tabuada.appendChild(tr);
     }
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
 <p>O resultado esperado será uma tabela com a tabuada do número 7.</p>
-<h3 id="exerc%c3%adcios-1">Exercícios</h3>
+<h3 id="exercícios-1">Exercícios</h3>
 <p>Resolver a lista de exercícios proposta no URI sobre Estruturas de Repetição.</p>
 
     </body>

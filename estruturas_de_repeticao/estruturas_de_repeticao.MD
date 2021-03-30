@@ -4,7 +4,7 @@ As estruturas de repetição, chamadas também de laços, são uma forma simples
 - Repetir uma mensagem o número de vezes que a gente quiser.
 - Calcular a média de notas baseado em um número qualquer de notas, não sendo necessário limitar apenas para 4 notas.
 - Dada idade de um grupo de pessoas qualquer saber quantas são maiores de idade.
-- Aplicar o mesmo procesamento a vários textos, como tweets.
+- Aplicar o mesmo processamento a vários textos, como tweets.
 - Ao integrar Javascript com HTML podemos também mostar vários elementos, como produtos, em HTMl.
 
 Vamos criar uma exemplo simples para ver como funciona esta estrutura. 
