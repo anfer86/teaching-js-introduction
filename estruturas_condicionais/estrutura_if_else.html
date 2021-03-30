@@ -23,10 +23,9 @@
         <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
     </head>
-    <body class="vscode-light">
+    <body class="vscode-body vscode-light">
         <script src="../jquery-3.4.1.min.js"></script>
 <script src="../jquery_preventDefault.js"></script>  
-<link rel="stylesheet" type="text/css" href="../style.css">
 <h1 id="estrutura-if-else">Estrutura IF-ELSE</h1>
 <p>As estruturas de seleção ou condicionais servem para desviar o fluxo de execução de instruções. O fato de um programa decidir executar um certo conjunto de instruções (ou outro) geralmente depende do estado (valor) de uma ou mais variáveis. Por esse motivo, deve-se analisar o valor dela(s) para saber que rumo a execução do programa deve tomar.</p>
 <p><strong>Problema exemplo</strong>: uma empresa necessita atualizar o salário de seus funcionários. Você precisa desenvolver um programa que dado um valor de salário faça o reajuste do valor conforme a tabela abaixo:</p>
@@ -83,8 +82,8 @@
 <p>Vamos receber o valor do salário atual do funcionário em um arquivo de entrada chamado <code>input.txt</code></p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo estruturas_condicionais/reajuste_salario/reajuste_salario.js</span>
 
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> salario = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]);
 
@@ -101,7 +100,7 @@
 
 }
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Novo salário R$ '</span> + novo_salario.toFixed(<span class="hljs-number">2</span>) )
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Novo salário R$ &#x27;</span> + novo_salario.toFixed(<span class="hljs-number">2</span>) )
 </div></code></pre>
 <h3 id="estrutura-simples-e-composta">Estrutura Simples e Composta</h3>
 <p>Dependendo do tipo de problema que precisamos resolver podemos usar IF e ELSE ou podemos usar apenas o IF.
@@ -140,8 +139,8 @@ Neste problema tem que ler um número e mostrar o valor absoluto desse número. 
 </table>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo estruturas_condicionais/valor_absoluto/valor_absoluto.js</span>
 
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> valor = <span class="hljs-built_in">parseInt</span>(lines[<span class="hljs-number">0</span>]);
 
@@ -177,22 +176,22 @@ Neste problema tem que ler um número e mostrar o valor absoluto desse número. 
 </table>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo estruturas_condicionais/sair_da_aula/sair_da_aula.js</span>
 
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> dados = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">','</span>);
+<span class="hljs-keyword">var</span> dados = lines[<span class="hljs-number">0</span>].split(<span class="hljs-string">&#x27;,&#x27;</span>);
 
 <span class="hljs-keyword">var</span> nome = dados[<span class="hljs-number">0</span>];
 <span class="hljs-keyword">var</span> curso = dados[<span class="hljs-number">1</span>];
 <span class="hljs-keyword">var</span> idade = <span class="hljs-built_in">Number</span>(dados[<span class="hljs-number">2</span>]); <span class="hljs-comment">// Pode usar também parseInt(dados[2])</span>
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'O aluno '</span>+ nome + <span class="hljs-string">' do curso '</span>+ curso + <span class="hljs-string">' solicitou sair da aula.'</span>;)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;O aluno &#x27;</span>+ nome + <span class="hljs-string">&#x27; do curso &#x27;</span>+ curso + <span class="hljs-string">&#x27; solicitou sair da aula.&#x27;</span>;)
 
 <span class="hljs-comment">// se for menor de idade </span>
 <span class="hljs-keyword">if</span> (idade &lt; <span class="hljs-number">18</span>){
         
     <span class="hljs-comment">// Mostramos um aviso</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Aviso: o aluno é menor de idade.'</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Aviso: o aluno é menor de idade.&#x27;</span>);
 
 }
 </div></code></pre>
