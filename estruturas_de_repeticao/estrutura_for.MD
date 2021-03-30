@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>
+
 # Estrutura `for`
 
 Usamos esse tipo de laço quando sabemos quantas vezes queremos executar uma determinada instrução. O `for` tem a seguinte estrutura:

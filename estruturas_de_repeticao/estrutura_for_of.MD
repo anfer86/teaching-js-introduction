@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>
+
 # Estrutura `for..of`
 
 Usamos esse tipo de laço quando temos vários elementos dentro de um array, ou outra estrutura que armazena vários elementos dentro dela. O `for..of` tem a seguinte estrutura:

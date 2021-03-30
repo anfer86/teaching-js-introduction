@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>
+
 # Estrutura `while`
 
 Usamos esse tipo de laço quando não sabemos quantas vezes queremos executar uma determinado bloco de instruções, mas sabemos que temos que repetí-lo algumas vezes enquanto alguma condição for satisfeita.

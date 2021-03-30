@@ -22,12 +22,12 @@
         
         
     </head>
-    <body class="vscode-light">
+    <body class="vscode-body vscode-light">
         <script src="../jquery-3.4.1.min.js"></script>
 <script src="../jquery_preventDefault.js"></script>
-<link rel="stylesheet" type="text/css" href="../style.css">
 <h1 id="tipos-de-dados">Tipos de Dados</h1>
-<p>Em Javascript existem os seguintes tipos de dados. As variáveis assumem tipos de dados de acordo com o que atribuímos para elas. Exemplos:</p>
+<p>Os tipos de dados são as maneiras em que se pode armazenar informação em memória, por exemplo, existe um tipo de dado para armazenar texto (<code>&quot;Bom dia!&quot;</code>) e outro para armazenar números (<code>1.25</code>). E as variáveis, espaços de memória que armazenam dados, assumem tipos de dados de acordo com o que atribuímos para elas.</p>
+<p>Em Javascript existem os seguintes tipos de dados:</p>
 <table>
 <thead>
 <tr>
@@ -71,8 +71,8 @@
 </table>
 <p>Para sabermos qual é o <strong>tipo de dado</strong> associado a uma <strong>variável</strong> usamos a função <code>typeof(nome_da_variavel)</code>. Vamos mostrar o tipo de todas as variáveis que forma definidas na tabela acima.</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo tipos_de_dados/usando_typeof.js</span>
-<span class="hljs-keyword">var</span> msg1 = <span class="hljs-string">"Bom dia"</span>;
-<span class="hljs-keyword">var</span> msg2 = <span class="hljs-string">'Bom dia'</span>;
+<span class="hljs-keyword">var</span> msg1 = <span class="hljs-string">&quot;Bom dia&quot;</span>;
+<span class="hljs-keyword">var</span> msg2 = <span class="hljs-string">&#x27;Bom dia&#x27;</span>;
 
 <span class="hljs-keyword">var</span> nota_trabalho = <span class="hljs-number">10</span>;
 <span class="hljs-keyword">var</span> media_final = <span class="hljs-number">9.6</span>;
@@ -81,9 +81,9 @@
 <span class="hljs-keyword">var</span> maior_de_idade = <span class="hljs-literal">false</span>;
 
 <span class="hljs-keyword">var</span> pessoa = {
-    <span class="hljs-attr">nome</span>: <span class="hljs-string">"Andres"</span>,
-    <span class="hljs-attr">profissao</span>: <span class="hljs-string">"Professor"</span>,
-    <span class="hljs-attr">data_nascimento</span>: <span class="hljs-string">"10/02/1986"</span>,
+    <span class="hljs-attr">nome</span>: <span class="hljs-string">&quot;Andres&quot;</span>,
+    <span class="hljs-attr">profissao</span>: <span class="hljs-string">&quot;Professor&quot;</span>,
+    <span class="hljs-attr">data_nascimento</span>: <span class="hljs-string">&quot;10/02/1986&quot;</span>,
     <span class="hljs-attr">idade</span>: <span class="hljs-number">34</span>,
     <span class="hljs-attr">maior_de_idade</span>: <span class="hljs-literal">true</span>
 }
@@ -96,17 +96,17 @@
 <span class="hljs-keyword">var</span> x;
 
 <span class="hljs-comment">// &lt;nome da variável&gt;: &lt;tipos da variável&gt;</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"msg1: "</span> + <span class="hljs-keyword">typeof</span>(msg1) );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;msg1: &quot;</span> + <span class="hljs-keyword">typeof</span>(msg1) );
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"media_final: "</span> + <span class="hljs-keyword">typeof</span>(media_final) );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;media_final: &quot;</span> + <span class="hljs-keyword">typeof</span>(media_final) );
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"maior_de_idade: "</span> + <span class="hljs-keyword">typeof</span>(maior_de_idade) );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;maior_de_idade: &quot;</span> + <span class="hljs-keyword">typeof</span>(maior_de_idade) );
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"pessoa: "</span> + <span class="hljs-keyword">typeof</span>(pessoa) );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;pessoa: &quot;</span> + <span class="hljs-keyword">typeof</span>(pessoa) );
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"media_aritmetica: "</span> + <span class="hljs-keyword">typeof</span>(media_aritmetica) );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;media_aritmetica: &quot;</span> + <span class="hljs-keyword">typeof</span>(media_aritmetica) );
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"x: "</span> + <span class="hljs-keyword">typeof</span>(x) );
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;x: &quot;</span> + <span class="hljs-keyword">typeof</span>(x) );
 </div></code></pre>
 <p>O resultado esperado desse programa será:</p>
 <div style="border: 1px dashed black; padding: 5px; font-family: courier">
@@ -121,8 +121,8 @@ x: undefined
 <p>Considere o programa abaixo, que lê o nome de funcionário e seu salário de um arquivo e calcula o salário. Mostre os tipos de dados de: <code>nome_funcionario</code>, <code>salario_atual</code>, <code>novo_salario</code>, <code>reajustar_salario</code>.</p>
 <pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo tipos_de_dados/reajuste_funcionario/programa.js</span>
 
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-string">'input.txt'</span>, <span class="hljs-string">'utf8'</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">'\n'</span>);
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
 <span class="hljs-keyword">var</span> nome_funcionario = lines.shift();
 <span class="hljs-keyword">var</span> salario_atual = <span class="hljs-built_in">parseFloat</span>(lines.shift());

@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>
+
 # Estruturas de Repetição
 
 As estruturas de repetição, chamadas também de laços, são uma forma simples de executar uma instrução repetidas vezes. Essas estruturas podem ser usada para objetivos como:
