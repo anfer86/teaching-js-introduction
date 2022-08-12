@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Vari&aacute;veis</title>
+        <title>Algoritmos</title>
         <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -27,6 +27,41 @@
 	color: var(--vscode-editorError-foreground);
 }
 
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
 </style>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
@@ -43,168 +78,89 @@
 .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
         
-        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
     </head>
     <body class="vscode-body vscode-light">
-        <script src="../jquery-3.4.1.min.js"></script>
-<script src="../jquery_preventDefault.js"></script>
-<h1 id="variáveis">Variáveis</h1>
-<p>Durante a criação de algoritmos torna-se necessário armazenar dados e informações com resultados parciais ou finais, resultado das instruções que são executadas.</p>
-<p>Suponha um programa de <strong>cálculo de reajuste de salário</strong>, em que o usuário tem que providenciar o <strong>salário atual</strong> e o <strong>percentual de reajuste</strong>, e o sistema calcula o novo salário. Nesse programa, as informações providenciadas pelo usuário, o <em>valor do salário atual</em> e o <em>percentual de reajuste</em>, devem ser armazenadas na <strong>memória</strong> do computador, de forma que possam ser usadas para realizar o cálculo do novo salário. Além disso, o <em>valor do novo salário</em> precisa também ser armazenado na <em>memória</em>.</p>
+        <h1 id="algoritmos">Algoritmos</h1>
 <blockquote>
-<p><strong>Exemplo:</strong> Você vai usar o programa relatado acima, para realizar o reajuste de um salário de programador de computadores, de R$ 3500,00 em 15%. No momento que você entra com essas informações no programa, essas são armazenadas pelo programa em variáveis, a saber, <code>salario_atual: 3500.00</code> e <code>reajuste: 0.15</code>. O programa vai realizar o cálculo do novo salário, a saber <code>novo_salario = salario_atual + salario_atual * reajuste</code>, que para este exemplo o resultado será <code>3500.00 + 3500.00 * 0.15 = 4025.00</code>. Assim, após realizado o cálculo o valor do novo salário será armazenado na variável, ou seja, <code>novo_salario: 4025.00 </code>. Uma outra forma de visualizar isso é:</p>
+<p>Você sabe o que são algoritmos? Cuidado para não confundir com algarismos, que são símbolos numéricos.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>Endereço de <br> Memória</th>
-<th>Nome da<br>Variável</th>
-<th>Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><code>salario_atual</code></td>
-<td><code>3500.00</code></td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>reajuste</code></td>
-<td><code>0.15</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>novo_salario</code></td>
-<td><code>4025.00</code></td>
-</tr>
-<tr>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Implementação:</strong> vamos criar um programa, chamado <code>reajuste_de_salario</code> (crie uma pasta dentro da pasta de disciplina com esse nome). O nosso programa vai ler de um arquivo, chamado <code>input.txt</code> que contém as informações de salário e reajuste, um por linha,  por exemplo.</p>
-<pre><code class="language-js"><div><span class="hljs-comment">// reajuste_de_salario/input.txt</span>
-<span class="hljs-number">3500.00</span>
-<span class="hljs-number">0.15</span>
-</div></code></pre>
-<p>O programa tem o seguinte código:</p>
-<pre><code class="language-javascript"><div><span class="hljs-comment">// reajuste_de_salario/reajuste_de_salario.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
-
-<span class="hljs-keyword">var</span> salario_atual = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]);
-<span class="hljs-keyword">var</span> reajuste = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">1</span>];
-
-<span class="hljs-keyword">var</span> novo_salario = salario_atual + salario_atual * reajuste;
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Salário atual (lido do arquivo): R$ &#x27;</span> + salario_atual);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Reajuste (lido do arquivo): &#x27;</span> + reajuste);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Novo salário: R$ &#x27;</span> + novo_salario)
-</div></code></pre>
-<p>Ao executar o nosso programa a saída esperada é:</p>
-<div style="border: 1px dashed black; padding: 5px;">
-Salário atual (lido do arquivo): R$ 3500 <br>
-Reajuste (lido do arquivo): 0.15 <br>
-Novo salário: R$ 4025 <br>
-</div>
-<h2 id="nomes-de-variáveis">Nomes de Variáveis</h2>
-<p>O programador é quem define o nome que quer dar a cada variável. Preferencialmente as variáveis devem ter nomes de fácil compreensão, para que qualquer programador consiga entender o programa. Apesar dessa liberdade para nomear variáveis, existe algumas regras simples que devem ser respeitadas para criar nomes de variáveis.</p>
-<p>Os nomes de variáveis <strong>não podem</strong>:</p>
+<p>Um <strong>algoritmo</strong> pode ser entendido como uma SEQUÊNCIA DE INSTRUÇÕES (ações executáveis) para obtenção de UMA SOLUÇÃO para determinado PROBLEMA. Pode parecer estranho que uma palavra que talvez você ainda não conheça já fazia parte do seu dia-a-dia.</p>
+<p>Mas, o que seriam essas sequência de instruções, uma solução e um problema? Um dos exemplos mais comuns de algoritmos são receitas culinárias. Suponha que o teu PROBLEMA é fazer um <strong>bolo</strong>. Existem diferentes receitas OU SOLUÇÕES para fazer um <strong>bolo</strong>, e observe que algumas receitas podem demorar mais tempo do que outras e resultar em um produto de melhor qualidade. A SEQUÊNCIA DE INSTRUÇÕES de uma receita ou SOLUÇÃO é um <strong>algoritmo</strong>. Como segue:</p>
+<pre><code><code><div>ALGORITMO - RECEITA BOLOS SIMPLES
+1. Bata as claras em neve e reserve.
+2. Misture as gemas, a margarina e o açúcar até obter uma massa homogênea.
+3. Acrescente o leite e a farinha de trigo aos poucos, sem parar de bater.
+4. Por último, adicione as claras em neve e o fermento.
+5. Despeje a massa em uma forma grande de furo central untada e enfarinhada.
+6. Asse em forno médio 180 °C, preaquecido, por aproximadamente 40 minutos ou ao furar o bolo com um garfo, este saia limpo.
+</div></code></code></pre>
+<p>Uma das características mais importantes é que qualquer um que decidir que seguir essa receita irá obter um bolo ao final do processo.</p>
+<p>Seguindo essa linha, podemos também entender um <strong>algoritmo</strong> como um padrão de comportamento expresso como uma sequência finita de ações. Essa definição foi realizada por Dijkstra (1971). <a href="https://pt.wikipedia.org/wiki/Edsger_Dijkstra">Dijkstra</a> foi um cientista da computação holandês, conhecido por suas contribuições nas áreas de desenvolvimento de algoritmos e programas.</p>
+<p>O raciocínio algorítmico tem por objetivo resolver problemas utilizando uma sequência de instruções. Lamentavelmente, o computador não entende algoritmos descritos em linguagem natural (por enquanto), como a receita de bolo mencionada anteriormente.</p>
+<p>A seguir são apresentados alguns exemplos de algoritmos básicos, no formato de descrição narrativa, para resolver problemas específicos.</p>
+<h2 id="somar-dois-números">Somar dois números</h2>
+<pre><code><code><div>ALGORITMO - SOMAR DOIS NÚMEROS
+1. Ler os dois números
+2. Realizar a operação de soma dos dois números
+3. Mostrar o resultado da operação
+</div></code></code></pre>
+<p>Para os valores de entrada <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn></mrow><annotation encoding="application/x-tex">13</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">13</span></span></span></span> e <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>17</mn></mrow><annotation encoding="application/x-tex">17</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">17</span></span></span></span> a execução do algoritmo retorna o valor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">30</span></span></span></span>.</p>
+<h2 id="dividir-dois-números">Dividir dois números</h2>
+<pre><code><code><div>ALGORITMO - DIVIDIR DOIS NÚMEROS
+1. Ler os dois números
+2. Se o denominador é igual a zero
+    2.1 Mostrar a mensagem 'Divisão impossível'
+3. Senão
+    3.1 Realizar a operação de divisão dos dois números
+    3.2 Mostrar o resultado da operação
+</div></code></code></pre>
+<p>Para os valores de entrada <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span> e <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> a execução do algoritmo retorna o valor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span>. Ja para os valores de entrada <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span> e <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, o algoritmo retorna 'Divisão impossível'.</p>
+<h2 id="iniciais-de-nome-completo">Iniciais de nome completo</h2>
+<pre><code><code><div>ALGORITMO - INICIAIS DE NOME COMPLETO
+1. Ler o nome completo de uma pessoa
+2. Separar os nomes da pessoa (procurando por espaço) e colocá-los em uma 'lista de nomes' 
+3. Criar uma lista de iniciais, vazia
+4. Para cada 'nome' na 'lista de nomes':
+    4.1 Extrair a primeira letra de 'nome'
+    4.2 Adicionar essa letra na 'lista de iniciais' 
+5. Mostrar a lista de iniciais com um ponto entre cada letra
+</div></code></code></pre>
+<p>Para o nome completo 'João Paulo Silva' a execução do algoritmo retorna 'J.P.S'. Já para o nome 'Maria Eugênia Silveira Gomes' o algoritmo retorna 'M.E.S.G'.</p>
+<h2 id="ordenar-produtos-por-preço-ordem-crescente">Ordenar produtos por preço (ordem crescente)</h2>
+<pre><code><code><div>ALGORITMO - ORDENAR PRODUTOS POR PREÇO (CRESCENTE)
+1. Ler uma lista de produtos no formato (nome, preco)
+2. Verificar se a lista de produtos está ordenada
+3. Se não está ordenada
+    3.1 Procurar um par de produtos em sequencia não ordenados (decrescente)
+    3.2 Trocar o par de produtos de posição
+    3.3 Voltar ao passo 2
+4. Mostrar a lista de produtos ordenada
+</div></code></code></pre>
+<p>Para a seguinte lista de produtos [('Milho para Pipoca', 6.99), ('Açucar Refinado', 5.99), ('Amido de Milho', 10.19), ('Óleo de Soja', 9.99)]
+a execução do algoritmo como resultado [('Açucar Refinado', 5.99),('Milho para Pipoca', 6.99),('Óleo de Soja', 9.99), ('Amido de Milho', 10.19)].</p>
+<p>Podemos ir um pouco mais a fundo para entender como o algoritmo realizou essa trocas, como segue:</p>
 <ul>
-<li>Conter espaços.</li>
-<li>Começar com número.</li>
-<li>Conter caracteres especiais: +,-,*,/,%,(,),{,},!,@,#.</li>
-<li>Usar nomes reservados para outras funcionalidades. Em javascript alguns exemplos são: <em>function</em>, <em>var</em>, <em>new</em>, <em>for</em>, <em>return</em>.</li>
+<li>Ler uma lista de produtos no formato (nome, preco): <strong>[('Milho para Pipoca', 6.99), ('Açucar Refinado', 5.99), ('Amido de Milho', 10.19), ('Óleo de Soja', 9.99)]</strong></li>
+<li>Verificar se a lista de produtos está ordenada</li>
+<li>Se não está ordenada: <strong>não está</strong></li>
+<li>Procurar um par de produtos em sequencia não ordenados: <strong>('Milho para Pipoca', 6.99) e ('Açucar Refinado', 5.99)</strong></li>
+<li>Trocar o par de produtos de posição: <strong>[('Açucar Refinado', 5.99), ('Milho para Pipoca', 6.99), ('Amido de Milho', 10.19), ('Óleo de Soja', 9.99)]</strong></li>
+<li>Voltar ao passo 2</li>
+<li>Verificar se a lista de produtos está ordenada</li>
+<li>Se não está ordenada: <strong>não está</strong></li>
+<li>Procurar um par de produtos em sequencia não ordenados: <strong>('Amido de Milho', 10.19), ('Óleo de Soja', 9.99)</strong>.</li>
+<li>Trocar o par de produtos de posição: <strong>[('Açucar Refinado', 5.99), ('Milho para Pipoca', 6.99), ('Óleo de Soja', 9.99), ('Amido de Milho', 10.19)]</strong></li>
+<li>Voltar ao passo 2</li>
+<li>Verificar se a lista de produtos está ordenada</li>
+<li>Se não está ordenada: <strong>está</strong></li>
+<li>Mostrar a lista de produtos ordenada</li>
 </ul>
-<p>Exemplos de nomes de variáveis permitidas são: <code>nome_cliente</code>, <code>salario_atual</code>, <code>cidade</code>, <code>nota1</code>, <code>nota2</code>.</p>
-<p>Exemplos de nomes de variáveis <strong>não permitidas</strong> são:</p>
-<ul>
-<li><code>nome cliente</code>, pois possui espaço entre <code>nome</code> e <code>cliente</code></li>
-<li><code>1ra_nota</code>, pois inicia com número</li>
-<li><code>nota#1</code>, pois contém o caractere especial <code>#</code></li>
-<li><code>function</code>, pois é uma palavra reservada do javascript</li>
-</ul>
+<p>Seguindo a sequência de passos do algoritmo mencionado você poderá ordenar qualquer lista de produtos em ordem crescente, independentemente do número de produtos que contenha a lista.</p>
 <blockquote>
-<p><strong>Nota</strong>: ao tentar criar variáveis com esses nomes o interpretador da linguagem vai emitir um erro, não sendo possível executar o restante do programa</p>
+<p><code>input</code> (traduzido <code>entrada</code>) é nome comumente utilizado para um arquivo com dados de entrada, mas qualquer outro nome de arquivo seria possível.</p>
 </blockquote>
-<h2 id="uso-de-maiúsculas-e-minúsculas">Uso de Maiúsculas e Minúsculas</h2>
-<p>Javascript é uma linguagem <em>case-sensitive</em>, o que significa que é sensível ao uso de maiúsculas e minúsculas ao definido variáveis. Assim, se criarmos uma variável chamada <code>salario</code>, não podemos nos referir a essa variável usando <code>Salario</code> ou <code>SALARIO</code>. Se a variável foi definida em minúsculo deve ser sempre usada dessa forma.</p>
-<p>Ainda vale ressaltar que se definirmos uma variável <code>salario</code> e outra <code>SALARIO</code> estaríamos nos referindo a duas variáveis diferentes que usam endereços de memória diferentes para armazenamento.</p>
-<h2 id="nome-de-variáveis-com-palavras-compostas">Nome de Variáveis com Palavras Compostas</h2>
-<p>Em muitas ocasiões precisamos definir nomes de variáveis com mais do que uma palavra. Para isso existem dois padrões comumente aceitos:</p>
-<h3 id="camelcase">CamelCase</h3>
-<p>Neste padrão cada palavra é iniciada com maiúsculas e unidas sem espaços. Por exemplo, uma variável que se refere ao <em>salário inicial</em> de alguém, o nome da variável seria <code>SalarioInicial</code> ou <code>salarioInicial</code>.</p>
-<p>Um outro exemplo, ao criar uma variável para armazenar o valor de <em>salário com bônus</em> de vendas, o nome da variável seria <code>SalarioComBonus</code> ou <code>salarioComBonus</code>.</p>
-<blockquote>
-<p><strong>Nota</strong>: você deve ter observado que demos duas opções em cada exemplo. A primeira opção inicia com letra maiúscula e é chamada <strong>UpperCamelCase</strong>. A segunda opção inicial com letra minúscula e é chamada <strong>lowerCamelCase</strong>. Para variáveis e funções é <em>mais comum</em> utilizar <em>lowerCamelCase</em>.</p>
-</blockquote>
-<h3 id="under_score">Under_score</h3>
-<p>Neste padrão as palavras são unidas por underscore (_) no lugar de espaço. Por exemplo, a variável de <em>salário inicial</em> seria nomeada como <code>salario_inicial</code>. Geralmente usam-se as palavras em minúsculo para variáveis e funções.</p>
-<h2 id="reutilizando-áreas-de-memória">Reutilizando Áreas de Memória</h2>
-<p>Observando o programa <code>reajuste_salario</code>, verificamos que criamos três variáveis para armazenar os dados e resultados parciais. As variáveis são assim chamadas, pois são áreas de memória que podem <em>variar</em> o seu valor o longo do desenvolvimento do programa. Assim, podemos reutilizar as áreas der memória para atribuir resultados dos cálculo.</p>
-<p>Vamos reescrever o programa anterior, criando uma variável chamada <code>salario</code> para armazenar inicialmente o salario atual mas posteriormente o salário reajustados. Vejamos:</p>
-<pre><code class="language-javascript"><div><span class="hljs-comment">// reajuste_de_salario/reajuste_de_salario_versao_2.js</span>
-<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
-<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
 
-<span class="hljs-keyword">var</span> salario = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">0</span>]); <span class="hljs-comment">// *** alteração aqui</span>
-<span class="hljs-keyword">var</span> reajuste = <span class="hljs-built_in">parseFloat</span>(lines[<span class="hljs-number">1</span>]);
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Salário atual (lido do arquivo): R$ &#x27;</span> + salario_atual); <span class="hljs-comment">// ** alteração aqui </span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Reajuste (lido do arquivo): &#x27;</span> + reajuste);
-
-salario = salario + salario * reajuste; <span class="hljs-comment">// *** alteração aqui</span>
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Novo salário: R$ &#x27;</span> + salario); <span class="hljs-comment">// alteração aqui</span>
-</div></code></pre>
-<p>A saída do programa será a mesma que do programa anterior, mas tendo declarado uma variável a menos. Isso indica também que nosso programa consome menos <strong>memória</strong> do que a primeira versão (mais especificamente 64 bits ou 8 bytes a menos). Note também que não usamos a palavra <code>var</code> na linha em que substituímos o valor da variável <code>salario</code>, pois a palavra <code>var</code> é usada apenas para definir (criar) uma nova variável.</p>
-<p>Os dados na memória ficaram conforme tabela abaixo. O valor <code>3500.00</code> riscado indica que a variável <code>salario</code> continha esse valor inicialmente, mas o mesmo foi substituído pelo resultado da operações, <code>4025.00</code>.</p>
-<table>
-<thead>
-<tr>
-<th>Endereço de <br> Memória</th>
-<th>Nome da<br>Variável</th>
-<th>Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><code>salario</code></td>
-<td><strike>3500.00</strike> 4025.00</td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>reajuste</code></td>
-<td><code>0.15</code></td>
-</tr>
-<tr>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
-<h2 id="constantes">Constantes</h2>
-<p>Assim como as variáveis, consistem em áreas de memória para armazenar dados. Mas, diferente das variáveis, as constantes não podem ter seus dados alterados.</p>
-<p>Uma constante é definida com um valor inicial e não é possível alterar o seu valor no decorrer do programa.</p>
-<p>Veja o seguinte exemplo. Vamos criar uma constante com um valor inicial, por exemplo, 3500, e vamos tentar realizar o reajuste do salario em 15%:</p>
-<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo constantes/uso_incorreto.js</span>
-<span class="hljs-keyword">const</span> salario = <span class="hljs-number">3500.00</span>;
-salario = salario + salario * <span class="hljs-number">0.15</span>
-</div></code></pre>
-<p>Ao tentar executar esse programa, o <em>node</em> vai mostrar o erro <strong>TypeError: Assignment to constant variable.</strong> Esse erro significa que estamos tentar atribuir (<em>assign</em>) um valor para uma constante (<em>constant</em>). E por definição isso não é permitido.</p>
-<p>Além desse erro, o exemplo também mostra uma prática incomum ao definir constantes. As constantes são geralmente nomeadas em maiúsculo, por exemplo, <code>PI</code>, <code>NUMERO_MAXIMO_DE_ALUNOS</code>, <code>NUMERO_MINIMO_DE_ALUNOS</code>. Declaramos essas constantes da seguinte forma:</p>
-<pre><code class="language-javascript"><div><span class="hljs-comment">// arquivo constantes/uso_correto.js</span>
-<span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.14159</span>;
-<span class="hljs-keyword">const</span> NUMERO_MAXIMO_DE_ALUNOS = <span class="hljs-number">40</span>;
-<span class="hljs-keyword">const</span> NUMERO_MINIMO_DE_ALUNOS = <span class="hljs-number">6</span>;
-...
-</div></code></pre>
-
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
     </body>
     </html>

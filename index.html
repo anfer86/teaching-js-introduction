@@ -38,16 +38,18 @@
           <a href="#" class="menu_item">Dashboard</a>
           <a href="#" class="menu_item">Shortcuts</a>
         -->
-        <!--
+        
         <a href="" class="menu_item" data-toggle="collapse" data-target="#submenu_introducao">Introdução</a>
         <div class="collapse" id="submenu_introducao" aria-expanded="false">
           <ul class="flex-column pl-2 nav">
-            <li><a class="menu_subitem" href="#">Algoritmos</a></li>
-            <li><a class="menu_subitem" href="#">Linguagens de Programação</a></li>
-            <li><a class="menu_subitem" href="#">Introdução a Javascript</a></li>
+            <li><a class="menu_subitem" href="introducao/algoritmos.html">Algoritmos</a></li>
+            <li><a class="menu_subitem" href="introducao/implementação_algoritmos.html">Implementação de Algoritmos</a></li>
+            <li><a class="menu_subitem" href="introducao/introducao_javascript.html">Introdução a Javascript</a></li>
           </ul>
         </div>        
-        -->
+        
+        
+        <!-- <a href="introducao/algoritmos.html" class="menu_item">Algoritmos</a> -->
         
         <a href="javascript:;" class="menu_item" data-toggle="collapse" data-target="#submenu_variaveis">Variáveis e Tipos de Dados</a>
         <div class="collapse" id="submenu_variaveis" aria-expanded="false">
@@ -162,7 +164,7 @@
       </nav>
       
       <div class="embed-responsive container" style="height: 90%;">
-        <iframe id="frame" class="embed-responsive-item" src="" style=""></iframe>        
+        <iframe id="frame" class="embed-responsive-item" src="variaveis_tipos_de_dados/variaveis.html" style=""></iframe>        
       </div>
       
       <!-- /#page-content-wrapper -->
@@ -192,8 +194,7 @@
     $(".menu_subitem").attr('class', 'mylink nav-link py-1');    
     
     $(".mylink").click(function(e) {
-      e.preventDefault();
-      console.log(this.href);
+      e.preventDefault();      
       $('#frame').attr('src', this.href);
     });
     
