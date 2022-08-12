@@ -93,6 +93,3 @@ Podemos ir um pouco mais a fundo para entender como o algoritmo realizou essa tr
 - Mostrar a lista de produtos ordenada
 
 Seguindo a sequência de passos do algoritmo mencionado você poderá ordenar qualquer lista de produtos em ordem crescente, independentemente do número de produtos que contenha a lista.
-
-
-> `input` (traduzido `entrada`) é nome comumente utilizado para um arquivo com dados de entrada, mas qualquer outro nome de arquivo seria possível.

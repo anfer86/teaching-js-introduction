@@ -80,6 +80,139 @@
     </head>
     <body class="vscode-body vscode-light">
         <h1 id="introdução-a-javascript">Introdução a Javascript</h1>
+<p>De modo bem geral, programas computacionais transformam <code>dados de entrada</code> em <code>dados de saída</code> por meio da execução de um conjunto de instruções.</p>
+<h2 id="entrada-de-dados">Entrada de Dados</h2>
+<p>Ao construir um programa é necessário decidir qual é a origem dos dados que esse programa vai processar. Para exemplificar, vamos pensar em três diferentes cenários para o programa de <code>Multiplicação de Dois Números</code>:</p>
+<ol>
+<li>Os dados provém de um arquivo chamado <code>input.txt</code></li>
+<li>Oa dados provém do usuário durante a execução do programa</li>
+<li>Os dados provém de uma página Web</li>
+<li>Os dados provém de uma página Web usando um formulário</li>
+</ol>
+<p>Embora o problema de dividir dois números seja o mesmo, observe que existem diferentes formas de ser implementado de acordo com a necessidade do cliente de quem vai usar o programa.</p>
+<p>A seguir vamos apresentar diferentes formas de fazer entrada de dados para programas em Javascript.</p>
+<h2 id="1-leitura-de-arquivo">1. Leitura de arquivo</h2>
+<p>Para realizar a leitura de um arquivo em javascript devemos usa-se <code>require('fs').readFileSync()</code>.</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+</div></code></pre>
+<blockquote>
+<p><code>fs</code> refere-se ao módulo <a href="https://nodejs.dev/learn/the-nodejs-fs-module"><em>file system</em></a></p>
+</blockquote>
+<blockquote>
+<p><code>readFileSync</code> é uma função dentro desse módulo que permite fazer a leitura de arquivos.</p>
+</blockquote>
+<blockquote>
+<p><code>var</code> indica a criação de uma variável, basicamente a definição de uma pequena área na memória (RAM) para armazenar dados.</p>
+</blockquote>
+<p>O arquivo será lido de maneira bruta, sem considerar as quebras de linhas contidas no arquivo, por ex. se um arquivo contiver o seguinte conteúdo:</p>
+<pre><code><code><div>10
+4
+</div></code></code></pre>
+<p>a variável <code>input</code> receberá o valor <code>'10\n4'</code>, onde <code>\n</code> refere-se a uma quabra (pulo) de linha dentro do arquivo. Isto é, para obter os dados do arquivo separados por linha devemos executar uma instrução adicional que quebra o dados de entrada pelo símbolo <code>\n</code>, como segue:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>)
+</div></code></pre>
+<blockquote>
+<p><code>split</code> (separar, em português) é uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split">função</a> que permite quebrar um texto em partes, retornando uma lista com as partes.</p>
+</blockquote>
+<p>Dessa forma, a variável <code>lines</code> vai receber uma lista com os dados separados por linha, a saber <code>['10','4']</code>.</p>
+<blockquote>
+<p>Em javascript utilizamos colchetes [ ] indicar uma lista de valores (comumente chamada de vetor ou <a href="%5Bhttps://%5D(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array)">array</a>.</p>
+</blockquote>
+<p>A seguir, a implementação completa do programa <code>multiplica_dois_numeros.js</code> em javascript:</p>
+<pre><code class="language-javascript"><div><span class="hljs-comment">// 1. Ler os dois números</span>
+<span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+<span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>);
+<span class="hljs-keyword">var</span> a = <span class="hljs-built_in">Number</span>(lines[<span class="hljs-number">0</span>]);
+<span class="hljs-keyword">var</span> b = <span class="hljs-built_in">Number</span>(lines[<span class="hljs-number">1</span>]);
+<span class="hljs-comment">// 2. Realizar a operação de Multiplicação dos dois números</span>
+<span class="hljs-keyword">var</span> x = a * b;
+<span class="hljs-comment">// 3. Mostrar o resultado da operação</span>
+<span class="hljs-built_in">console</span>.log(x);
+</div></code></pre>
+<p>Dado que o arquivo <code>input.txt</code> contém:</p>
+<pre><code><code><div>10
+4
+</div></code></code></pre>
+<p>A execução do programa retorna o resultado:</p>
+<pre><code><code><div>40
+</div></code></code></pre>
+<blockquote>
+<p><strong>Importante</strong>: para executar o programa, é necessário salvar os arquivos <code>multiplica_dois_numeros.js</code> e <code>input.txt</code> na mesma pasta, abrir o terminal nessa pasta e, por fim, executar o comando <code>node multiplica_dois_numeros</code> para rodar o programa.</p>
+</blockquote>
+<ol start="2">
+<li>Leitura de dados pelo terminal</li>
+</ol>
+<p>Alguns programas também podem ser executados utilizando terminal, interagindo no formato perguntas e respostas, como demonstra o exemplo abaixo:</p>
+<pre><code><code><div>&gt;node entrada_terminal.js
+Insira o primeiro número
+10
+Insira o segundo número
+4
+Resultado
+40
+</div></code></code></pre>
+<p>Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução a seguir:</p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> readline = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;readline&#x27;</span>);
+
+<span class="hljs-keyword">var</span> rl = readline.createInterface({
+    <span class="hljs-attr">input</span>: process.stdin,
+    <span class="hljs-attr">output</span>: process.stdout
+});
+
+<span class="hljs-comment">// 1. Ler os dois números</span>
+rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">respostaA</span>) </span>{
+  rl.question(<span class="hljs-string">&#x27;Insira o segundo número\n&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">respostaB</span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-built_in">Number</span>(respostaA)
+    <span class="hljs-keyword">var</span> b = <span class="hljs-built_in">Number</span>(respostaB)
+    <span class="hljs-comment">// 2. Realizar a operação de Multiplicação dos dois números</span>
+    <span class="hljs-keyword">var</span> x = a * b
+    <span class="hljs-comment">// 3. Mostrar o resultado da operação</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Resultado&#x27;</span>)
+    <span class="hljs-built_in">console</span>.log(x)
+    rl.close();
+  });
+});
+</div></code></pre>
+<p>Observe que essa solução não requer de nenhum arquivo de entrada, pois o programa vai solicitar os dados que ele necessita para o usuário durante a execução do programa.</p>
+<h2 id="3-por-meio-de-uma-página-web">3. Por meio de uma página web</h2>
+<p>Neste formato o usuário vai fazer a entrada de dados do programa por meio de uma interface gráfica Web. Cliquei no botão abaixo para verificar o comportamento.</p>
+<div>
+    <button id="buttonMultiplicarDoisNumeros">Multiplicar dois números</button>    
+</div>
+<script type='text/javascript'>
+    document.getElementById('buttonMultiplicarDoisNumeros').onclick = function (){
+        // 1. Ler os dois números
+        var respostaA = window.prompt("Insira o primeiro número")
+        var respostaB = window.prompt("Insira o segundo número")
+        var a = Number(respostaA)
+        var b = Number(respostaB)
+        // 2. Realizar a operação de Multiplicação dos dois números
+        var x = a * b
+        // 3. Mostrar o resultado da operação            
+        window.confirm('Resultado ' + x)
+    }
+</script>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;buttonMultiplicarDoisNumeros&quot;</span>&gt;</span>
+        Multiplicar dois números
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text/javascript&#x27;</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;buttonMultiplicarDoisNumeros&#x27;</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">// 1. Ler os dois números</span>
+        <span class="hljs-keyword">var</span> respostaA = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">&quot;Insira o primeiro número&quot;</span>)
+        <span class="hljs-keyword">var</span> respostaB = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">&quot;Insira o segundo número&quot;</span>)
+        <span class="hljs-keyword">var</span> a = <span class="hljs-built_in">Number</span>(respostaA)
+        <span class="hljs-keyword">var</span> b = <span class="hljs-built_in">Number</span>(respostaB)
+        <span class="hljs-comment">// 2. Realizar a operação de Multiplicação dos dois números</span>
+        <span class="hljs-keyword">var</span> x = a * b
+        <span class="hljs-comment">// 3. Mostrar o resultado da operação            </span>
+        <span class="hljs-built_in">window</span>.confirm(<span class="hljs-string">&#x27;Resultado &#x27;</span> + x)
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
 
         
         
