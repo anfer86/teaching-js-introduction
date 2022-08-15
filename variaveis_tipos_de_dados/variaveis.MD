@@ -107,6 +107,11 @@ var reajuste = parseFloat(lines[1]);
 console.log('Salário atual (lido do arquivo): R$ ' + salario_atual); // ** alteração aqui 
 console.log('Reajuste (lido do arquivo): ' + reajuste);
 
+/**
+ * A variável 'salario' vai receber (símbolo de =)
+ * o valor de 'salario' acrescido (símbolo de +) do
+ * 'salário' multiplicado pelo 'reajuste'
+ */
 salario = salario + salario * reajuste; // *** alteração aqui
 
 console.log('Novo salário: R$ ' + salario); // alteração aqui
