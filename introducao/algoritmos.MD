@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>  
+
 # Algoritmos
 
 > Você sabe o que são algoritmos? Cuidado para não confundir com algarismos, que são símbolos numéricos.

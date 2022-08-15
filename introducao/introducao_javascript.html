@@ -79,9 +79,11 @@
         
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="introdução-a-javascript">Introdução a Javascript</h1>
+        <script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>  
+<h1 id="introdução-a-javascript">Introdução a Javascript</h1>
 <p>De modo bem geral, programas computacionais transformam <code>dados de entrada</code> em <code>dados de saída</code> por meio da execução de um conjunto de instruções.</p>
-<h2 id="entrada-de-dados">Entrada de Dados</h2>
+<h2 id="entrada-e-saída-de-dados">Entrada e Saída de Dados</h2>
 <p>Ao construir um programa é necessário decidir qual é a origem dos dados que esse programa vai processar. Para exemplificar, vamos pensar em três diferentes cenários para o programa de <code>Multiplicação de Dois Números</code>:</p>
 <ol>
 <li>Os dados provém de um arquivo chamado <code>input.txt</code></li>
@@ -89,10 +91,10 @@
 <li>Os dados provém de uma página Web</li>
 <li>Os dados provém de uma página Web usando um formulário</li>
 </ol>
-<p>Embora o problema de dividir dois números seja o mesmo, observe que existem diferentes formas de ser implementado de acordo com a necessidade do cliente de quem vai usar o programa.</p>
-<p>A seguir vamos apresentar diferentes formas de fazer entrada de dados para programas em Javascript.</p>
+<p>Embora o problema de multiplicar dois números seja o mesmo, observe que existem diferentes formas de ser implementado de acordo com a necessidade do cliente de quem vai usar o programa: tanto para entrada de dados, quanto para a saída de dados.</p>
+<p>A seguir vamos apresentar diferentes formas de fazer entrada e saída de dados para programas em Javascript.</p>
 <h2 id="1-leitura-de-arquivo">1. Leitura de arquivo</h2>
-<p>Para realizar a leitura de um arquivo em javascript devemos usa-se <code>require('fs').readFileSync()</code>.</p>
+<p>Para realizar a leitura de um arquivo em javascript usa-se <code>require('fs').readFileSync()</code>.</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
 </div></code></pre>
 <blockquote>
@@ -108,7 +110,7 @@
 <pre><code><code><div>10
 4
 </div></code></code></pre>
-<p>a variável <code>input</code> receberá o valor <code>'10\n4'</code>, onde <code>\n</code> refere-se a uma quabra (pulo) de linha dentro do arquivo. Isto é, para obter os dados do arquivo separados por linha devemos executar uma instrução adicional que quebra o dados de entrada pelo símbolo <code>\n</code>, como segue:</p>
+<p>a variável <code>input</code> receberá o valor <code>'10\n4'</code>, onde <code>\n</code> refere-se a uma quebra (pulo) de linha dentro do arquivo. Isto é, para obter os dados do arquivo separados por linha devemos executar uma instrução adicional que quebra o dados de entrada pelo símbolo <code>\n</code>, como segue:</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>).readFileSync(<span class="hljs-string">&#x27;input.txt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
 <span class="hljs-keyword">var</span> lines = input.split(<span class="hljs-string">&#x27;\n&#x27;</span>)
 </div></code></pre>
@@ -130,6 +132,9 @@
 <span class="hljs-comment">// 3. Mostrar o resultado da operação</span>
 <span class="hljs-built_in">console</span>.log(x);
 </div></code></pre>
+<blockquote>
+<p><code>console.log</code> é uma maneira simples de mostrar um resultado da execução de um programa em javascript, usando o terminal ou console do interpretador que está sendo usado: em geral, cada <em>browser</em> tem um interpretador (Google Chrome, Mozilla Firefox, entre outros) e o Node.js também tem um interpretador.</p>
+</blockquote>
 <p>Dado que o arquivo <code>input.txt</code> contém:</p>
 <pre><code><code><div>10
 4
@@ -140,19 +145,17 @@
 <blockquote>
 <p><strong>Importante</strong>: para executar o programa, é necessário salvar os arquivos <code>multiplica_dois_numeros.js</code> e <code>input.txt</code> na mesma pasta, abrir o terminal nessa pasta e, por fim, executar o comando <code>node multiplica_dois_numeros</code> para rodar o programa.</p>
 </blockquote>
-<ol start="2">
-<li>Leitura de dados pelo terminal</li>
-</ol>
+<h2 id="2-leitura-de-dados-pelo-terminal">2. Leitura de dados pelo terminal</h2>
 <p>Alguns programas também podem ser executados utilizando terminal, interagindo no formato perguntas e respostas, como demonstra o exemplo abaixo:</p>
-<pre><code><code><div>&gt;node entrada_terminal.js
-Insira o primeiro número
-10
-Insira o segundo número
-4
-Resultado
-40
+<pre><code><code><div>&gt; node multiplica_dois_numeros_terminal.js
+(Sistema) Insira o primeiro número
+(Usuário) 10
+(Sistema) Insira o segundo número
+(Usuário) 4
+(Sistema) Resultado
+(Sistema) 40
 </div></code></code></pre>
-<p>Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução a seguir:</p>
+<p>Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução:</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> readline = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;readline&#x27;</span>);
 
 <span class="hljs-keyword">var</span> rl = readline.createInterface({
@@ -174,8 +177,10 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
   });
 });
 </div></code></pre>
+<blockquote>
 <p>Observe que essa solução não requer de nenhum arquivo de entrada, pois o programa vai solicitar os dados que ele necessita para o usuário durante a execução do programa.</p>
-<h2 id="3-por-meio-de-uma-página-web">3. Por meio de uma página web</h2>
+</blockquote>
+<h2 id="3-por-meio-de-uma-página-web">3. Por meio de uma página Web</h2>
 <p>Neste formato o usuário vai fazer a entrada de dados do programa por meio de uma interface gráfica Web. Cliquei no botão abaixo para verificar o comportamento.</p>
 <div>
     <button id="buttonMultiplicarDoisNumeros">Multiplicar dois números</button>    
@@ -193,13 +198,20 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
         window.confirm('Resultado ' + x)
     }
 </script>
-<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;buttonMultiplicarDoisNumeros&quot;</span>&gt;</span>
-        Multiplicar dois números
-    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<p>Código fonte:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Multiplicar dois Números<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;buttonMultiplicarDoisNumeros&quot;</span>&gt;</span>
+                Multiplicar dois números
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text/javascript&#x27;</span>&gt;</span><span class="javascript">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text/javascript&#x27;</span>&gt;</span><span class="javascript">
     <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;buttonMultiplicarDoisNumeros&#x27;</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
         <span class="hljs-comment">// 1. Ler os dois números</span>
         <span class="hljs-keyword">var</span> respostaA = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">&quot;Insira o primeiro número&quot;</span>)
@@ -211,8 +223,122 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
         <span class="hljs-comment">// 3. Mostrar o resultado da operação            </span>
         <span class="hljs-built_in">window</span>.confirm(<span class="hljs-string">&#x27;Resultado &#x27;</span> + x)
     }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
+<blockquote>
+<p>Observe que nesta solução a entrada de dados ocorre por meio de janelas lançadas através do <em>browser</em>, seja Google Chrome, Mozilla Firefox, ou outro. O mesmo ocorre com o resultado, que é apresentado na forma de uma janela de confirmação.</p>
+</blockquote>
+<h2 id="4-por-meio-de-uma-página-web-usando-um-formulário">4. Por meio de uma página Web usando um formulário</h2>
+<p>Neste formato o usuário vai fazer a entrada de dados do programa por meio de uma interface gráfica Web. Cliquei no botão abaixo para verificar o comportamento.</p>
+<div>
+    <p><input id="inputPrimeiroNumero" placeholder="Primeiro Número"/></p>
+    <p><input id="inputSegundoNumero" placeholder="Segundo Número"/></p>
+    <p><button id="buttonMultiplicar">Multiplicar</button></p>
+    <p><input id="inputResultado" placeholder="Resultado" disabled/></p>
+</div>
+<script type='text/javascript'>
+    document.getElementById('buttonMultiplicar').onclick = function (){
+        // 1. Ler os dois números
+        var respostaA = document.getElementById('inputPrimeiroNumero').value
+        var respostaB = document.getElementById('inputSegundoNumero').value
+        var a = Number(respostaA)
+        var b = Number(respostaB)
+        // 2. Realizar a operação de Multiplicação dos dois números
+        var x = a * b
+        // 3. Mostrar o resultado da operação  
+        var resultado = document.getElementById('inputResultado')
+        resultado.value = x
+    }
+</script>
+<p>Código fonte:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Multiplicar dois Números<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputPrimeiroNumero&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Primeiro Número&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputSegundoNumero&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Segundo Número&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;buttonMultiplicar&quot;</span>&gt;</span>Multiplicar<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputResultado&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Resultado&quot;</span> <span class="hljs-attr">disabled</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text/javascript&#x27;</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;buttonMultiplicar&#x27;</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">// 1. Ler os dois números</span>
+        <span class="hljs-keyword">var</span> respostaA = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;inputPrimeiroNumero&#x27;</span>).value
+        <span class="hljs-keyword">var</span> respostaB = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;inputSegundoNumero&#x27;</span>).value
+        <span class="hljs-keyword">var</span> a = <span class="hljs-built_in">Number</span>(respostaA)
+        <span class="hljs-keyword">var</span> b = <span class="hljs-built_in">Number</span>(respostaB)
+        <span class="hljs-comment">// 2. Realizar a operação de Multiplicação dos dois números</span>
+        <span class="hljs-keyword">var</span> x = a * b
+        <span class="hljs-comment">// 3. Mostrar o resultado da operação  </span>
+        <span class="hljs-keyword">var</span> resultado = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;inputResultado&#x27;</span>)
+        resultado.value = x
+    }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>Observe que neste exemplo os dados de entrada provém dos campos de um formulário e o resultado também é apresentado em um campo de resultado. Ao clicar no botão de multiplicar a implementação do algoritmo busca nos devidos campos os dados para efetuar a operação matemática.</p>
+</blockquote>
+<h2 id="resumo-e-considerações-finais">Resumo e considerações finais</h2>
+<p>Como vocês devem ter observado para um determinado problema a ser resolvido a entrada de dados e a saída de dados podem variar de acordo com as necessidades do cliente que irá utilizar o programa. Em geral, neste curso estaremos utilizando:</p>
+<ul>
+<li>Entrada de dados: função <code>readFileSync</code> para leitura de dados do arquivo</li>
+<li>Saída de Dados: função <code>console.log</code> para mostrar resultados no console do interpretador</li>
+</ul>
+<p>Assim, a referência para desenvolver a maior parte dos nossos programas é o exemplo <code>multiplica_dois_numeros.js</code> junto com o arquivo <code>input.txt</code>.</p>
+<p>Segue abaixo um resumo das principais funções que foram utilizadas nesta introdução e de outras funções também muito úteis para desenvolver algoritmos em javascript.</p>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Descrição</th>
+<th>Exemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>readFileSync</code></td>
+<td>Leitura de dados de arquivo</td>
+<td><code>&gt; var input = require('fs').readFileSync('input.txt', 'utf8');</code><br><code>&gt; input</code><br><code>'10\n4</code></td>
+</tr>
+<tr>
+<td><code>console.log</code></td>
+<td>Escreve no console do interpretador</td>
+<td><code>&gt; console.log('Programar é bom demais!');</code><br><code>'Programar é bom demais!</code></td>
+</tr>
+<tr>
+<td><code>split</code></td>
+<td>Separa um texto em partes, usando um separador</td>
+<td><code>&gt; var lines = input.split('\n');</code><br><code>&gt; lines</code><br><code>['10','4']</code></td>
+</tr>
+<tr>
+<td><code>Number</code></td>
+<td>Transforma um texto em um número (inteiro ou real)</td>
+<td><code>&gt; var a = Number(lines[0]);</code><br><code>&gt; a</code><br><code>10</code></td>
+</tr>
+<tr>
+<td><code>parseInt</code></td>
+<td>Transforma um texto em um número inteiro (int)</td>
+<td><code>&gt; var idade = parseInt('25');</code><br><code>&gt; idade</code><br><code>25</code></td>
+</tr>
+<tr>
+<td><code>parseFloat</code></td>
+<td>Transforma um texto em um número real (<em>floating point</em> ou ponto flutuante)</td>
+<td><code>&gt; var troco = parseFloat('9.28');</code><br><code>&gt; troco + 1</code><br><code>10.28</code></td>
+</tr>
+<tr>
+<td><code>toFixed</code></td>
+<td>Transformar um número para texto, arrendando considerando um número de casas decimais</td>
+<td><code>console.log(troco.toFixed(1));</code><br><code>&gt; 9.3</code></td>
+</tr>
+</tbody>
+</table>
 
         
         

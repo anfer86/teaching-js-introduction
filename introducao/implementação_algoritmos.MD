@@ -1,3 +1,6 @@
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery_preventDefault.js"></script>  
+
 # Implementação de Algoritmos
 
 Para que o computador seja capaz de resolver problemas por meio de algoritmos é necessário utilizar uma linguagem de programação, pois o computador não entende os algoritmos descritos de forma narrativa em linguagem natural, seja em português, inglês, ou outra língua.
