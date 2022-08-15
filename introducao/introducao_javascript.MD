@@ -248,12 +248,15 @@ Assim, a referência para desenvolver a maior parte dos nossos programas é o ex
 
 Segue abaixo um resumo das principais funções que foram utilizadas nesta introdução e de outras funções também muito úteis para desenvolver algoritmos em javascript.
 
-| Função | Descrição | Exemplo de uso | 
+| Função ou Símbolo | Descrição | Exemplo de uso | 
 | ------------ | ------------------ | -------- |
-| `readFileSync` | Leitura de dados de arquivo | `> var input = require('fs').readFileSync('input.txt', 'utf8');`<br>`> input`<br>`'10\n4`  |
-| `console.log` | Escreve no console do interpretador | `> console.log('Programar é bom demais!');`<br>`'Programar é bom demais!` |
-| `split` | Separa um texto em partes, usando um separador | `> var lines = input.split('\n');`<br>`> lines`<br>`['10','4']` |
-| `Number` | Transforma um texto em um número (inteiro ou real)| `> var a = Number(lines[0]);`<br>`> a`<br>`10` |
-| `parseInt` | Transforma um texto em um número inteiro (int)| `> var idade = parseInt('25');`<br>`> idade`<br>`25` |
-| `parseFloat` | Transforma um texto em um número real (*floating point* ou ponto flutuante)| `> var troco = parseFloat('9.28');`<br>`> troco + 1`<br>`10.28` |
-| `toFixed` | Transformar um número para texto, arrendando considerando um número de casas decimais | `console.log(troco.toFixed(1));`<br>`> 9.3` |
+| [`readFileSync`](https://nodejs.org/api/fs.html#fsreadfilesyncpath-options) | Leitura de dados de arquivo | `> var input = require('fs').readFileSync('input.txt', 'utf8');`<br>`> input`<br>`'10\n4`  |
+| [`console.log`](https://developer.mozilla.org/pt-BR/docs/Web/API/console/log) | Escreve no console do interpretador | `> console.log('Programar é bom demais!');`<br>`'Programar é bom demais!` |
+| [`split`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split) | Separa um texto em partes, usando um separador | `> var lines = input.split('\n');`<br>`> lines`<br>`['10','4']` |
+| [`Number`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number) | Transforma um texto em um número (inteiro ou real)| `> var a = Number(lines[0]);`<br>`> a`<br>`10` |
+| [`parseInt`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseInt) | Transforma um texto em um número inteiro (int)| `> var idade = parseInt('25');`<br>`> idade`<br>`25` |
+| [`parseFloat`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseFloat) | Transforma um texto em um número real (*floating point* ou ponto flutuante)| `> var troco = parseFloat('9.28');`<br>`> troco + 1`<br>`10.28` |
+| [`toFixed`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) | Transformar um número para texto, arrendando considerando um número de casas decimais | `console.log(troco.toFixed(1));`<br>`> 9.3` |
+| [`[i] colchetes`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array) | Retorna o i-ésimo elemento de uma lista, sem removê-lo | `> var x = lines[0];`<br>`> x`<br>`'10'`<br>`> lines`<br>`['10','4']` |
+| [`shift`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) | Remove e retorna o primeiro elemento da lista | `> var x = lines.shift();`<br>`> x`<br>`'10'`<br>`> lines`<br>`['4']` |
+

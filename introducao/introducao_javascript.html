@@ -296,46 +296,56 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
 <table>
 <thead>
 <tr>
-<th>Função</th>
+<th>Função ou Símbolo</th>
 <th>Descrição</th>
 <th>Exemplo de uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>readFileSync</code></td>
+<td><a href="https://nodejs.org/api/fs.html#fsreadfilesyncpath-options"><code>readFileSync</code></a></td>
 <td>Leitura de dados de arquivo</td>
 <td><code>&gt; var input = require('fs').readFileSync('input.txt', 'utf8');</code><br><code>&gt; input</code><br><code>'10\n4</code></td>
 </tr>
 <tr>
-<td><code>console.log</code></td>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/console/log"><code>console.log</code></a></td>
 <td>Escreve no console do interpretador</td>
 <td><code>&gt; console.log('Programar é bom demais!');</code><br><code>'Programar é bom demais!</code></td>
 </tr>
 <tr>
-<td><code>split</code></td>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>split</code></a></td>
 <td>Separa um texto em partes, usando um separador</td>
 <td><code>&gt; var lines = input.split('\n');</code><br><code>&gt; lines</code><br><code>['10','4']</code></td>
 </tr>
 <tr>
-<td><code>Number</code></td>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number"><code>Number</code></a></td>
 <td>Transforma um texto em um número (inteiro ou real)</td>
 <td><code>&gt; var a = Number(lines[0]);</code><br><code>&gt; a</code><br><code>10</code></td>
 </tr>
 <tr>
-<td><code>parseInt</code></td>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseInt"><code>parseInt</code></a></td>
 <td>Transforma um texto em um número inteiro (int)</td>
 <td><code>&gt; var idade = parseInt('25');</code><br><code>&gt; idade</code><br><code>25</code></td>
 </tr>
 <tr>
-<td><code>parseFloat</code></td>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseFloat"><code>parseFloat</code></a></td>
 <td>Transforma um texto em um número real (<em>floating point</em> ou ponto flutuante)</td>
 <td><code>&gt; var troco = parseFloat('9.28');</code><br><code>&gt; troco + 1</code><br><code>10.28</code></td>
 </tr>
 <tr>
-<td><code>toFixed</code></td>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed"><code>toFixed</code></a></td>
 <td>Transformar um número para texto, arrendando considerando um número de casas decimais</td>
 <td><code>console.log(troco.toFixed(1));</code><br><code>&gt; 9.3</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>[i] colchetes</code></a></td>
+<td>Retorna o i-ésimo elemento de uma lista, sem removê-lo</td>
+<td><code>&gt; var x = lines[0];</code><br><code>&gt; x</code><br><code>'10'</code><br><code>&gt; lines</code><br><code>['10','4']</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"><code>shift</code></a></td>
+<td>Remove e retorna o primeiro elemento da lista</td>
+<td><code>&gt; var x = lines.shift();</code><br><code>&gt; x</code><br><code>'10'</code><br><code>&gt; lines</code><br><code>['4']</code></td>
 </tr>
 </tbody>
 </table>
