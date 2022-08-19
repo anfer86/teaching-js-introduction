@@ -75,10 +75,11 @@ Dado que o arquivo `input.txt` contém:
 
 A execução do programa retorna o resultado:
 ```
+> node multiplica_dois_numeros.js
 40
 ```
 
-> **Importante**: para executar o programa, é necessário salvar os arquivos `multiplica_dois_numeros.js` e `input.txt` na mesma pasta, abrir o terminal nessa pasta e, por fim, executar o comando `node multiplica_dois_numeros` para rodar o programa.
+> **Atividade**: Crie e salve os arquivos `multiplica_dois_numeros.js` e `input.txt` em uma pasta chamada `multiplica_dois_numeros`. Após isso, abrir o terminal nessa pasta e, por fim, executar o comando `node multiplica_dois_numeros` para rodar o seu programa. Você vai obter o resultado apresentado acima. Experimente outros valores de entrada para o arquivo `input.txt` e verifique se a saída do seu programa está correta.
 
 ## 2. Leitura de dados pelo terminal
 
@@ -94,7 +95,7 @@ Alguns programas também podem ser executados utilizando terminal, interagindo n
 (Sistema) 40
 ```
 
-Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução:
+Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução `multiplica_dois_numeros_terminal.js`:
 
 ```javascript
 var readline = require('readline');
@@ -121,6 +122,8 @@ rl.question('Insira o primeiro número\n', function (respostaA) {
 
 > Observe que essa solução não requer de nenhum arquivo de entrada, pois o programa vai solicitar os dados que ele necessita para o usuário durante a execução do programa.
 
+> **Atividade**: Crie e salve o arquivo `multiplica_dois_numeros_terminal.js` na pasta `multiplica_dois_numeros`. Para executar o seu programa, abra o terminal na pasta e execute o comando `node multiplica_dois_numeros_terminal.js`
+
 ## 3. Por meio de uma página Web
 
 Neste formato o usuário vai fazer a entrada de dados do programa por meio de uma interface gráfica Web. Cliquei no botão abaixo para verificar o comportamento.
@@ -143,7 +146,7 @@ Neste formato o usuário vai fazer a entrada de dados do programa por meio de um
     }
 </script>
 
-Código fonte:
+Código fonte do arquivo `multiplica_dois_numeros_web.html`:
 ```html
 <html>
     <head>
@@ -175,6 +178,7 @@ Código fonte:
 
 > Observe que nesta solução a entrada de dados ocorre por meio de janelas lançadas através do *browser*, seja Google Chrome, Mozilla Firefox, ou outro. O mesmo ocorre com o resultado, que é apresentado na forma de uma janela de confirmação.
 
+> **Atividade**: Crie e salve o arquivo `multiplica_dois_numeros_web.html` na pasta `multiplica_dois_numeros`. Para abrir o site a partir do VSCode, clique com o botão direito do mouse no arquivo `multiplica_dois_numeros_web.html` e escolha a opção `Show in Browser` ou `Open with Live Server`. Após isso, você poderá clicar no botão para executar o seu programa.
 
 ## 4. Por meio de uma página Web usando um formulário
 
@@ -202,7 +206,7 @@ Neste formato o usuário vai fazer a entrada de dados do programa por meio de um
     }
 </script>
 
-Código fonte:
+Código fonte `multiplica_dois_numeros_web_form.html`:
 
 ```html
 <html>
@@ -237,6 +241,9 @@ Código fonte:
 ```
 
 > Observe que neste exemplo os dados de entrada provém dos campos de um formulário e o resultado também é apresentado em um campo de resultado. Ao clicar no botão de multiplicar a implementação do algoritmo busca nos devidos campos os dados para efetuar a operação matemática.
+
+> **Atividade**: Crie e salve o arquivo `multiplica_dois_numeros_web_form.html` na pasta `multiplica_dois_numeros`. Para abrir o site a partir do VSCode, clique com o botão direito do mouse no arquivo `multiplica_dois_numeros_web_form.html` e escolha a opção `Show in Browser` ou `Open with Live Server`.
+
 
 ## Resumo e considerações finais
 

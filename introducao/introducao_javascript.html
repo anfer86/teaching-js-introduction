@@ -140,10 +140,11 @@
 4
 </div></code></code></pre>
 <p>A execução do programa retorna o resultado:</p>
-<pre><code><code><div>40
+<pre><code><code><div>&gt; node multiplica_dois_numeros.js
+40
 </div></code></code></pre>
 <blockquote>
-<p><strong>Importante</strong>: para executar o programa, é necessário salvar os arquivos <code>multiplica_dois_numeros.js</code> e <code>input.txt</code> na mesma pasta, abrir o terminal nessa pasta e, por fim, executar o comando <code>node multiplica_dois_numeros</code> para rodar o programa.</p>
+<p><strong>Atividade</strong>: Crie e salve os arquivos <code>multiplica_dois_numeros.js</code> e <code>input.txt</code> em uma pasta chamada <code>multiplica_dois_numeros</code>. Após isso, abrir o terminal nessa pasta e, por fim, executar o comando <code>node multiplica_dois_numeros</code> para rodar o seu programa. Você vai obter o resultado apresentado acima. Experimente outros valores de entrada para o arquivo <code>input.txt</code> e verifique se a saída do seu programa está correta.</p>
 </blockquote>
 <h2 id="2-leitura-de-dados-pelo-terminal">2. Leitura de dados pelo terminal</h2>
 <p>Alguns programas também podem ser executados utilizando terminal, interagindo no formato perguntas e respostas, como demonstra o exemplo abaixo:</p>
@@ -155,7 +156,7 @@
 (Sistema) Resultado
 (Sistema) 40
 </div></code></code></pre>
-<p>Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução:</p>
+<p>Em algumas linguagens como Java e Python a implementação desse tipo de solução é trivial, mas em javascript não é trivial e requer um entendimento mais profundo da linguagem. De qualquer forma, a seguir é apresentada uma solução <code>multiplica_dois_numeros_terminal.js</code>:</p>
 <pre><code class="language-javascript"><div><span class="hljs-keyword">var</span> readline = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;readline&#x27;</span>);
 
 <span class="hljs-keyword">var</span> rl = readline.createInterface({
@@ -180,6 +181,9 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
 <blockquote>
 <p>Observe que essa solução não requer de nenhum arquivo de entrada, pois o programa vai solicitar os dados que ele necessita para o usuário durante a execução do programa.</p>
 </blockquote>
+<blockquote>
+<p><strong>Atividade</strong>: Crie e salve o arquivo <code>multiplica_dois_numeros_terminal.js</code> na pasta <code>multiplica_dois_numeros</code>. Para executar o seu programa, abra o terminal na pasta e execute o comando <code>node multiplica_dois_numeros_terminal.js</code></p>
+</blockquote>
 <h2 id="3-por-meio-de-uma-página-web">3. Por meio de uma página Web</h2>
 <p>Neste formato o usuário vai fazer a entrada de dados do programa por meio de uma interface gráfica Web. Cliquei no botão abaixo para verificar o comportamento.</p>
 <div>
@@ -198,7 +202,7 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
         window.confirm('Resultado ' + x)
     }
 </script>
-<p>Código fonte:</p>
+<p>Código fonte do arquivo <code>multiplica_dois_numeros_web.html</code>:</p>
 <pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Multiplicar dois Números<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -229,6 +233,9 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
 <blockquote>
 <p>Observe que nesta solução a entrada de dados ocorre por meio de janelas lançadas através do <em>browser</em>, seja Google Chrome, Mozilla Firefox, ou outro. O mesmo ocorre com o resultado, que é apresentado na forma de uma janela de confirmação.</p>
 </blockquote>
+<blockquote>
+<p><strong>Atividade</strong>: Crie e salve o arquivo <code>multiplica_dois_numeros_web.html</code> na pasta <code>multiplica_dois_numeros</code>. Para abrir o site a partir do VSCode, clique com o botão direito do mouse no arquivo <code>multiplica_dois_numeros_web.html</code> e escolha a opção <code>Show in Browser</code> ou <code>Open with Live Server</code>. Após isso, você poderá clicar no botão para executar o seu programa.</p>
+</blockquote>
 <h2 id="4-por-meio-de-uma-página-web-usando-um-formulário">4. Por meio de uma página Web usando um formulário</h2>
 <p>Neste formato o usuário vai fazer a entrada de dados do programa por meio de uma interface gráfica Web. Cliquei no botão abaixo para verificar o comportamento.</p>
 <div>
@@ -251,7 +258,7 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
         resultado.value = x
     }
 </script>
-<p>Código fonte:</p>
+<p>Código fonte <code>multiplica_dois_numeros_web_form.html</code>:</p>
 <pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Multiplicar dois Números<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -284,6 +291,9 @@ rl.question(<span class="hljs-string">&#x27;Insira o primeiro número\n&#x27;</s
 </div></code></pre>
 <blockquote>
 <p>Observe que neste exemplo os dados de entrada provém dos campos de um formulário e o resultado também é apresentado em um campo de resultado. Ao clicar no botão de multiplicar a implementação do algoritmo busca nos devidos campos os dados para efetuar a operação matemática.</p>
+</blockquote>
+<blockquote>
+<p><strong>Atividade</strong>: Crie e salve o arquivo <code>multiplica_dois_numeros_web_form.html</code> na pasta <code>multiplica_dois_numeros</code>. Para abrir o site a partir do VSCode, clique com o botão direito do mouse no arquivo <code>multiplica_dois_numeros_web_form.html</code> e escolha a opção <code>Show in Browser</code> ou <code>Open with Live Server</code>.</p>
 </blockquote>
 <h2 id="resumo-e-considerações-finais">Resumo e considerações finais</h2>
 <p>Como vocês devem ter observado para um determinado problema a ser resolvido a entrada de dados e a saída de dados podem variar de acordo com as necessidades do cliente que irá utilizar o programa. Em geral, neste curso estaremos utilizando:</p>
