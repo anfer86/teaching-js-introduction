@@ -19,7 +19,7 @@ Em Javascript existem os seguintes tipos de dados:
 Para sabermos qual é o **tipo de dado** associado a uma **variável** usamos a função `typeof(nome_da_variavel)`. Vamos mostrar o tipo de todas as variáveis que forma definidas na tabela acima.
 
 ```javascript
-// arquivo tipos_de_dados/usando_typeof.js
+// tipos_de_dados/usando_typeof.js
 var msg1 = "Bom dia";
 var msg2 = 'Bom dia';
 
@@ -67,36 +67,3 @@ pessoa: object<br>
 media_aritmetica: function<br>
 x: undefined
 </div>
-
-**Exercício**
-
-Considere o programa abaixo, que lê o nome de funcionário e seu salário de um arquivo e calcula o salário. Mostre os tipos de dados de: `nome_funcionario`, `salario_atual`, `novo_salario`, `reajustar_salario`.
-
-```javascript
-// arquivo tipos_de_dados/reajuste_funcionario/programa.js
-
-var input = require('fs').readFileSync('input.txt', 'utf8');
-var lines = input.split('\n');
-
-var nome_funcionario = lines.shift();
-var salario_atual = parseFloat(lines.shift());
-var reajuste = parseFloat(lines.shift());
-
-var reajustar_salario = function (salario, reajuste){
-    return salario + salario * reajuste;
-}
-
-var novo_salario = reajustar_salario (salario_atual, reajuste);
-
-// TODO
-// Implementar o código para mostrar os tipos de dados abaixo desta linha.
-```
-
-O resultado esperado da execução do seu programa deve ser:
-<div style="border: 1px dashed black; padding: 5px; font-family: courier">
-nome_funcionario: string<br>
-salario_atual: number<br>
-novo_salario: number<br>
-reajustar_salario: function<br>
-</div>
-
