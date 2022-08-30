@@ -3,11 +3,11 @@
 
 # Variáveis
 
-Durante a criação de algoritmos torna-se necessário armazenar dados e informações com resultados parciais ou finais, resultado das instruções que são executadas. 
+Durante a execução de algoritmos torna-se necessário armazenar os resultados parciais ou finais, decorrentes das instruções que são executadas, em algum lugar. Esse lugar é a memória RAM (*Random Access Memory*) do computador. Para isso, durante a criação do nosso programa vamos definir e criar variáveis, as quais identificam as áreas de memória que serão utilizadas durante a execução do programa. 
 
-Suponha um programa de **cálculo de reajuste de salário**, em que o usuário tem que providenciar o **salário atual** e o **percentual de reajuste**, e o sistema calcula o novo salário. Nesse programa, as informações providenciadas pelo usuário, o *valor do salário atual* e o *percentual de reajuste*, devem ser armazenadas na **memória** do computador, de forma que possam ser usadas para realizar o cálculo do novo salário. Além disso, o *valor do novo salário* precisa também ser armazenado na *memória*.
+Suponha um programa de **cálculo de reajuste de salário**, em que o usuário tem que providenciar o **salário atual** e o **percentual de reajuste**, e o sistema calcula o novo salário. Nesse programa, as informações providenciadas pelo usuário, o *valor do salário atual* e o *percentual de reajuste*, devem ser armazenadas na **memória** do computador, de forma que possam ser usadas para realizar o cálculo do novo salário. Além disso, o *valor do novo salário* precisa também ser armazenado em algum lugar da *memória*.
 
->**Exemplo:** Você vai usar o programa relatado acima, para realizar o reajuste de um salário de programador de computadores, de R$ 3500,00 em 15%. No momento que você entra com essas informações no programa, essas são armazenadas pelo programa em variáveis, a saber, ```salario_atual: 3500.00``` e ```reajuste: 0.15```. O programa vai realizar o cálculo do novo salário, a saber ```novo_salario = salario_atual + salario_atual * reajuste```, que para este exemplo o resultado será ```3500.00 + 3500.00 * 0.15 = 4025.00```. Assim, após realizado o cálculo o valor do novo salário será armazenado na variável, ou seja, ```novo_salario: 4025.00 ```. Uma outra forma de visualizar isso é:
+> Você vai usar o programa relatado acima para simular o reajuste de um salário de programador de computadores, de R$ 3500,00 em 15%. No momento que você entra com essas informações no programa, essas são armazenadas pelo programa em variáveis, a saber, ```salario_atual: 3500.00``` e ```reajuste: 0.15```. O programa vai realizar o cálculo do novo salário, a saber ```novo_salario = salario_atual + salario_atual * reajuste```, que para este exemplo o resultado será ```3500.00 + 3500.00 * 0.15 = 4025.00```. Assim, após realizado o cálculo o valor do novo salário será armazenado em outra variável, ```novo_salario: 4025.00 ```. Uma outra forma de visualizar isso é:
 
 | Endereço de <br> Memória  | Nome da<br>Variável | Valor
 | ------------- | ------------- | ------------- |
@@ -44,6 +44,7 @@ console.log('Novo salário: R$ ' + novo_salario)
 Ao executar o nosso programa a saída esperada é:
 
 <div style="border: 1px dashed black; padding: 5px;">
+> node reajuste_de_salario.js <br>
 Salário atual (lido do arquivo): R$ 3500 <br>
 Reajuste (lido do arquivo): 0.15 <br>
 Novo salário: R$ 4025 <br>
@@ -137,7 +138,7 @@ Uma constante é definida com um valor inicial e não é possível alterar o seu
 Veja o seguinte exemplo. Vamos criar uma constante com um valor inicial, por exemplo, 3500, e vamos tentar realizar o reajuste do salario em 15%:
 
 ```javascript
-// arquivo constantes/uso_incorreto.js
+// constantes/uso_incorreto.js
 const salario = 3500.00;
 salario = salario + salario * 0.15
 ```
@@ -147,7 +148,7 @@ Ao tentar executar esse programa, o *node* vai mostrar o erro **TypeError: Assig
 Além desse erro, o exemplo também mostra uma prática incomum ao definir constantes. As constantes são geralmente nomeadas em maiúsculo, por exemplo, `PI`, `NUMERO_MAXIMO_DE_ALUNOS`, `NUMERO_MINIMO_DE_ALUNOS`. Declaramos essas constantes da seguinte forma:
 
 ```javascript
-// arquivo constantes/uso_correto.js
+// constantes/uso_correto.js
 const PI = 3.14159;
 const NUMERO_MAXIMO_DE_ALUNOS = 40;
 const NUMERO_MINIMO_DE_ALUNOS = 6;
