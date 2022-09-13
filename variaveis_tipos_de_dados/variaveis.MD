@@ -32,7 +32,7 @@ var input = require('fs').readFileSync('input.txt', 'utf8');
 var lines = input.split('\n');
 
 var salario_atual = parseFloat(lines[0]);
-var reajuste = parseFloat(lines[1];
+var reajuste = parseFloat(lines[1]);
 
 var novo_salario = salario_atual + salario_atual * reajuste;
 
@@ -105,7 +105,7 @@ var lines = input.split('\n');
 var salario = parseFloat(lines[0]); // *** alteração aqui
 var reajuste = parseFloat(lines[1]);
 
-console.log('Salário atual (lido do arquivo): R$ ' + salario_atual); // ** alteração aqui 
+console.log('Salário atual (lido do arquivo): R$ ' + salario); // ** alteração aqui 
 console.log('Reajuste (lido do arquivo): ' + reajuste);
 
 /**
